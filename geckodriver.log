@@ -1,0 +1,1265 @@
+1600214658652	geckodriver	INFO	Listening on 127.0.0.1:60669
+1600214660659	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileyjIvWL"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600214662400	Marionette	INFO	Listening on port 60674
+1600214662763	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1600214863100	geckodriver	INFO	Listening on 127.0.0.1:61172
+1600214865106	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilehTt019"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600214866841	Marionette	INFO	Listening on port 61177
+1600214867212	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi59364425, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi59364425, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi59364425, line 469: TypeError: k is undefined
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1600215009556	geckodriver	INFO	Listening on 127.0.0.1:61693
+1600215011563	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilepoLo7R"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600215013332	Marionette	INFO	Listening on port 61698
+1600215013672	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi86825043, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi86825043, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi86825043, line 469: TypeError: k is undefined
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1600215057774	Marionette	INFO	Stopped listening on port 61698
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1600215171857	geckodriver	INFO	Listening on 127.0.0.1:62232
+1600215173864	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileBLCKKu"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600215175584	Marionette	INFO	Listening on port 62237
+1600215175970	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi51312411, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi51312411, line 469: TypeError: k is undefined
+1600215456754	geckodriver	INFO	Listening on 127.0.0.1:62737
+1600215458761	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilenRJ3YX"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600215460479	Marionette	INFO	Listening on port 62742
+1600215460876	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi87084929, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi87084929, line 469: TypeError: k is undefined
+1600215519382	geckodriver	INFO	Listening on 127.0.0.1:63168
+1600215521387	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilekThXW8"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600215523098	Marionette	INFO	Listening on port 63183
+1600215523493	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/382734/41790888/dcm/dcmads.js, line 1001: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.57/0.js, line 613: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi41939745, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi41939745, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 560"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:560:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 560, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 560: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi41939745, line 469: TypeError: k is undefined
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+1600217068010	Marionette	INFO	Stopped listening on port 63183
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+Temp\\rust_mozprofiletunsJW"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600215760633	Marionette	INFO	Listening on port 63873
+1600215760989	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi69431022, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi69431022, line 469: TypeError: k is undefined
+1600215904584	geckodriver	INFO	Listening on 127.0.0.1:64338
+1600215906597	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileTlVtGc"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600215908264	Marionette	INFO	Listening on port 64343
+1600215908706	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 271: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi84322128, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi84322128, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi84322128, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1600217758390	Marionette	INFO	Stopped listening on port 64343
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ionette	WARN	TLS certificate errors will be ignored for this session
+1600215993896	geckodriver	INFO	Listening on 127.0.0.1:65000
+1600215995902	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileB6hCKW"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600215997670	Marionette	INFO	Listening on port 65005
+1600215998007	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi91898294, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi91898294, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi91898294, line 469: TypeError: k is undefined
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi73246772, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi73246772, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi73246772, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1600217069024	Marionette	INFO	Stopped listening on port 65005
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+Temp\\rust_mozprofilekwSzsY"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600216133111	Marionette	INFO	Listening on port 49226
+1600216133354	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi54703417, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi54703417, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi54703417, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi81284139, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi81284139, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi81284139, line 469: TypeError: k is undefined
+1600217756905	Marionette	INFO	Stopped listening on port 49226
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+onsole.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600216233829	Marionette	INFO	Listening on port 49860
+1600216234127	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi38220906, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi38220906, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1600216249713	Marionette	INFO	Stopped listening on port 49860
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1600216264102	geckodriver	INFO	Listening on 127.0.0.1:50345
+1600216266108	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileTtlGh6"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600216267913	Marionette	INFO	Listening on port 50350
+1600216268213	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi2669180, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi2669180, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi2669180, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1600217193967	Marionette	INFO	Stopped listening on port 50350
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1600218770982	geckodriver	INFO	Listening on 127.0.0.1:52391
+1600218772989	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofile7MQAOZ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600218774421	Marionette	INFO	Listening on port 52396
+1600218774602	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi77036242, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi77036242, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi77036242, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi98758212, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi98758212, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi98758212, line 469: TypeError: k is undefined
+1600219030028	Marionette	INFO	Stopped listening on port 52396
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+Temp\\rust_mozprofileitAxUH"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600219025523	Marionette	INFO	Listening on port 52956
+1600219025634	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi36056183, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi36056183, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi36056183, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1600219281473	geckodriver	INFO	Listening on 127.0.0.1:53479
+1600219283479	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilento3yU"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600219285201	Marionette	INFO	Listening on port 53484
+1600219285587	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi2087481, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi2087481, line 469: TypeError: k is undefined
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+[GFX1-]: Present1 failed: 0x887a0001
+1600221878410	geckodriver	INFO	Listening on 127.0.0.1:54400
+1600221880416	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofile8K0avs"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600221882064	Marionette	INFO	Listening on port 54405
+1600221882521	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://players.brightcove.net/3948005062001/zRtuFJOcV_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi40466971, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi40466971, line 469: TypeError: k is undefined
+JavaScript error: https://z.moatads.com/abcimavideo618769704984/moatvideo.js#_moatApi40466971, line 469: TypeError: k is undefined
+1607458084938	geckodriver	INFO	Listening on 127.0.0.1:64737
+1607458087986	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilenwMwbQ"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607458091256	Marionette	INFO	Listening on port 64746
+1607458091676	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607458469098	Marionette	INFO	Stopped listening on port 64746
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+emp\\rust_mozprofileys9tBS"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607458466696	Marionette	INFO	Listening on port 65094
+1607458467159	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+SourceActor threw an exception: [Exception... "Failed to open input source 'file:///'"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 668"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:668:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:516:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:440:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:407:17
+_resurrectSource@resource://devtools/server/actors/thread.js:2105:69
+addAllSources@resource://devtools/server/actors/thread.js:1500:14
+onSources@resource://devtools/server/actors/thread.js:1506:10
+onPacket@resource://devtools/server/devtools-server-connection.js:379:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 668, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 668: NS_ERROR_FAILURE: Failed to open input source 'file:///'
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 567"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:567:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 567, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 567: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: https://fw.adsafeprotected.com/rjss/servedby.flashtalking.com/513494/49824807/imp/8/136338;5021456;201;js;AccuenTradeDesk;AudiT12020NTLNationalFIAAPHDPCrossDisplayAwareness00dCPM728x90FTTTDLuxuryPMP/?ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_ifb=1&ft_domain=www.espn.com&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.espn.com%2F&gdpr=0&gdpr_consent=&us_privacy=${US_PRIVACY}&cachebuster=945528.1146166964, line 1057: NS_ERROR_NOT_INITIALIZED: 
+1607459519118	geckodriver	INFO	Listening on 127.0.0.1:65479
+1607459522193	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilervdd96"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607459525106	Marionette	INFO	Listening on port 65487
+1607459525367	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607459645457	geckodriver	INFO	Listening on 127.0.0.1:49256
+1607459648528	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileYBL3Gt"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607459651146	Marionette	INFO	Listening on port 49264
+1607459651214	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607460081358	geckodriver	INFO	Listening on 127.0.0.1:49520
+1607460084433	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileuuwiLa"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607460087315	Marionette	INFO	Listening on port 49528
+1607460087644	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607460276353	geckodriver	INFO	Listening on 127.0.0.1:49754
+1607460279383	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileaGLLN5"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607460282178	Marionette	INFO	Listening on port 49762
+1607460282581	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607460390638	Marionette	INFO	Stopped listening on port 49762
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+emp\\rust_mozprofilem1B7kI"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607460386966	Marionette	INFO	Listening on port 49978
+1607460387268	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607463927707	Marionette	INFO	Stopped listening on port 49978
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607464619091	geckodriver	INFO	Listening on 127.0.0.1:50621
+1607464622178	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile64F5cB"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607464625153	Marionette	INFO	Listening on port 50632
+1607464625379	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1607464707330	Marionette	INFO	Stopped listening on port 50632
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+d profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607464703451	Marionette	INFO	Listening on port 50843
+1607464703849	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://vidstat.taboola.com/vpaid/units/28_5_3/infra/cmTagFEED_MANAGER.js, line 11: TypeError: IntersectionObserver.observe: Argument 1 is not an object.
+1607464724330	Marionette	INFO	Stopped listening on port 50843
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607464725948	geckodriver	INFO	Listening on 127.0.0.1:51074
+1607464729022	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileCYnFDc"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607464732112	Marionette	INFO	Listening on port 51082
+1607464732221	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://vidstat.taboola.com/vpaid/units/28_5_3/infra/cmTagFEED_MANAGER.js, line 11: TypeError: IntersectionObserver.observe: Argument 1 is not an object.
+JavaScript error: https://cdn.doubleverify.com/dv-measurements632.js, line 76: TypeError: h.b.L() is undefined
+JavaScript error: https://cdn.doubleverify.com/dv-measurements632.js, line 76: TypeError: h.b.L() is undefined
+1607464911877	Marionette	INFO	Stopped listening on port 51082
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607464914650	geckodriver	INFO	Listening on 127.0.0.1:51357
+1607464917740	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilenq6Nn7"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607464920641	Marionette	INFO	Listening on port 51365
+1607464920951	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://vidstat.taboola.com/vpaid/units/28_5_3/infra/cmTagFEED_MANAGER.js, line 9: TypeError: this.player.on is not a function
+JavaScript error: https://fw.adsafeprotected.com/rjss/www.googletagservices.com/533219/50304395/dcm/dcmads.js?adsafe_pb=https://mpc.mxptint.net/1S28SCD7F8179S70FES3E771S12CSFASB3SB4E399_D4FFF471_547AE72SD4E32F_D4FFF479_1464A78%3fhttp://r.mxptint.net%3fhttps://mpd.mxptint.net/1/S1/G1/T179/js?siz=300x250&cpd=31722&ssl=1, line 1057: NS_ERROR_NOT_INITIALIZED: 
+1607464986934	geckodriver	INFO	Listening on 127.0.0.1:51587
+1607464990006	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileteMWs4"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607464992794	Marionette	INFO	Listening on port 51595
+1607464993204	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607465626355	geckodriver	INFO	Listening on 127.0.0.1:51937
+1607465629440	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileoUcXFv"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607465632274	Marionette	INFO	Listening on port 51945
+1607465632613	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607465707627	geckodriver	INFO	Listening on 127.0.0.1:52111
+1607465710696	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileYLnw79"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607465713503	Marionette	INFO	Listening on port 52119
+1607465713907	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607465754708	Marionette	INFO	Stopped listening on port 52119
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607466000311	geckodriver	INFO	Listening on 127.0.0.1:52300
+1607466003388	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile4r0K43"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607466006345	Marionette	INFO	Listening on port 52308
+1607466006598	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607466025461	geckodriver	INFO	Listening on 127.0.0.1:52488
+1607466028520	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilekaxP0F"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607466031487	Marionette	INFO	Listening on port 52496
+1607466031727	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607466124449	geckodriver	INFO	Listening on 127.0.0.1:52646
+1607466127512	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileCssW5W"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607466130524	Marionette	INFO	Listening on port 52655
+1607466130702	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607466435847	geckodriver	INFO	Listening on 127.0.0.1:52840
+1607466438937	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile4c2DXR"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607466441605	Marionette	INFO	Listening on port 52848
+1607466442140	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607467119077	geckodriver	INFO	Listening on 127.0.0.1:53191
+1607467122133	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilenmFmcl"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607467124982	Marionette	INFO	Listening on port 53199
+1607467125305	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607467810981	Marionette	INFO	Stopped listening on port 53199
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile1sC20k"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607467392506	Marionette	INFO	Listening on port 53501
+1607467392726	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607468044794	Marionette	INFO	Stopped listening on port 53501
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+emp\\rust_mozprofilef8zBxS"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607467717759	Marionette	INFO	Listening on port 61893
+1607467718132	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607467808524	geckodriver	INFO	Listening on 127.0.0.1:62070
+1607467811604	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileVQ1bue"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607467814566	Marionette	INFO	Listening on port 62078
+1607467814793	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607467842039	Marionette	INFO	Stopped listening on port 62078
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607467843824	geckodriver	INFO	Listening on 127.0.0.1:62336
+1607467846878	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilenRNrNj"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607467849884	Marionette	INFO	Listening on port 62345
+1607467850077	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607467888267	Marionette	INFO	Stopped listening on port 62345
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607467890362	geckodriver	INFO	Listening on 127.0.0.1:62552
+1607467893452	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileodqGwx"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607467896347	Marionette	INFO	Listening on port 62563
+1607467896654	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607468046462	geckodriver	INFO	Listening on 127.0.0.1:62817
+1607468049528	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilem6XQwX"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607468052538	Marionette	INFO	Listening on port 62825
+1607468052711	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607468098506	geckodriver	INFO	Listening on 127.0.0.1:63093
+1607468101591	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileaHiA9W"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607468104601	Marionette	INFO	Listening on port 63101
+1607468104799	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607468179398	geckodriver	INFO	Listening on 127.0.0.1:63367
+1607468182457	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile3x1Mhc"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607468185173	Marionette	INFO	Listening on port 63375
+1607468185652	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607468230306	Marionette	INFO	Stopped listening on port 63375
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607469137235	geckodriver	INFO	Listening on 127.0.0.1:63683
+1607469140316	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile13vHez"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607469143047	Marionette	INFO	Listening on port 63691
+1607469143525	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607469355343	geckodriver	INFO	Listening on 127.0.0.1:63939
+1607469358427	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile2JLFP0"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1607469377469	geckodriver	INFO	Listening on 127.0.0.1:63958
+1607469380534	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileOgc9OP"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607469383336	Marionette	INFO	Listening on port 63966
+1607469383724	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607469438587	geckodriver	INFO	Listening on 127.0.0.1:64121
+1607469441675	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileP6OX9R"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607469444419	Marionette	INFO	Listening on port 64129
+1607469444883	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607469721868	geckodriver	INFO	Listening on 127.0.0.1:64312
+1607469724948	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilemkpCq6"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607469727699	Marionette	INFO	Listening on port 64320
+1607469728113	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://imasdk.googleapis.com/js/sdkloader/ima3.js, line 497: uncaught exception: AdError 1101: The provided containerElement information: element is invalid.
+JavaScript error: https://vidstat.taboola.com/vpaid/units/28_5_3/infra/cmTagFEED_MANAGER.js, line 11: TypeError: IntersectionObserver.observe: Argument 1 is not an object.
+1607469834780	geckodriver	INFO	Listening on 127.0.0.1:64549
+1607469837861	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileG6mXhf"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607469840863	Marionette	INFO	Listening on port 64557
+1607469841051	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607469888137	Marionette	INFO	Stopped listening on port 64557
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607470170605	geckodriver	INFO	Listening on 127.0.0.1:64837
+1607470173668	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileZLDIiD"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607470176806	Marionette	INFO	Listening on port 64845
+1607470176861	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607542235133	geckodriver	INFO	Listening on 127.0.0.1:57533
+1607542238176	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilejiNlUl"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607542242214	Marionette	INFO	Listening on port 57545
+1607542242404	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607542727362	geckodriver	INFO	Listening on 127.0.0.1:57718
+1607542730427	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileKcaRvW"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607542733735	Marionette	INFO	Listening on port 57726
+1607542734131	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607543038764	geckodriver	INFO	Listening on 127.0.0.1:57897
+1607543041814	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilec2PXQQ"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607543044894	Marionette	INFO	Listening on port 57905
+1607543045032	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607543087477	geckodriver	INFO	Listening on 127.0.0.1:58076
+1607543090523	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilegOUJhX"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607543094108	Marionette	INFO	Listening on port 58084
+1607543094258	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607545136908	geckodriver	INFO	Listening on 127.0.0.1:55235
+1607545139951	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileQaqmwp"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607545143227	Marionette	INFO	Listening on port 55243
+1607545143702	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+[Parent 15884, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:166
+1607545228149	Marionette	INFO	Stopped listening on port 55243
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607545382135	geckodriver	INFO	Listening on 127.0.0.1:55511
+1607545385186	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile4rA3iF"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607545388266	Marionette	INFO	Listening on port 55519
+1607545388392	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607547744922	geckodriver	INFO	Listening on 127.0.0.1:56069
+1607547747953	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileP3I9Tk"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607547750947	Marionette	INFO	Listening on port 56077
+1607547751165	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607547818638	geckodriver	INFO	Listening on 127.0.0.1:56319
+1607547821682	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileK9E2Ag"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607547824749	Marionette	INFO	Listening on port 56328
+1607547824865	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607547923570	Marionette	INFO	Stopped listening on port 56328
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607547926961	geckodriver	INFO	Listening on 127.0.0.1:56563
+1607547930012	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile3G6528"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607547933589	Marionette	INFO	Listening on port 56572
+1607547933741	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607550391520	geckodriver	INFO	Listening on 127.0.0.1:57159
+1607550394580	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileNDMWuP"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607550397507	Marionette	INFO	Listening on port 57167
+1607550397779	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607550865344	geckodriver	INFO	Listening on 127.0.0.1:57439
+1607550868410	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileorAwoI"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607550871374	Marionette	INFO	Listening on port 57447
+1607550871622	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607550893460	Marionette	INFO	Stopped listening on port 57447
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607550896179	geckodriver	INFO	Listening on 127.0.0.1:57620
+1607550899260	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileuuB9q1"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607550902445	Marionette	INFO	Listening on port 57629
+1607550902963	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607550995369	geckodriver	INFO	Listening on 127.0.0.1:57793
+1607550998450	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilejKMQbu"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607551001825	Marionette	INFO	Listening on port 57801
+1607551002156	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607554552418	geckodriver	INFO	Listening on 127.0.0.1:58518
+1607554555510	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilereDkbe"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607554558615	Marionette	INFO	Listening on port 58526
+1607554558739	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607554749163	Marionette	INFO	Stopped listening on port 58526
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+emp\\rust_mozprofileyPFcWm"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607554734538	Marionette	INFO	Listening on port 58745
+1607554735026	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607554812048	Marionette	INFO	Stopped listening on port 58745
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607554817739	geckodriver	INFO	Listening on 127.0.0.1:58940
+1607554820795	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileggKUcg"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607554824424	Marionette	INFO	Listening on port 58948
+1607554824505	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: , line 0: NotAllowedError: The play method is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1607639043250	geckodriver	INFO	Listening on 127.0.0.1:53885
+1607639046314	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilez6reCL"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607639049535	Marionette	INFO	Listening on port 53893
+1607639050017	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+1607639076368	Marionette	INFO	Stopped listening on port 53893
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607639259041	geckodriver	INFO	Listening on 127.0.0.1:54118
+1607639262098	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileFjOHez"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607639265398	Marionette	INFO	Listening on port 54126
+1607639265818	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607639287189	Marionette	INFO	Stopped listening on port 54126
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
