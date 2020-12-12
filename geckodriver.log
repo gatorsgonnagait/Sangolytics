@@ -1263,3 +1263,971 @@ Can't find symbol 'eglSetDamageRegionKHR'.
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1607712362579	geckodriver	INFO	Listening on 127.0.0.1:58282
+1607712364585	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileBqC2wl"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607712366491	Marionette	INFO	Listening on port 58290
+1607712366710	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+Handler function _httpStopRequest threw an exception: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsITraceableChannel.setNewListener]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://devtools/server/actors/network-monitor/network-observer.js :: _setupResponseListener :: line 1085"  data: no]
+Stack: _setupResponseListener@resource://devtools/server/actors/network-monitor/network-observer.js:1085:38
+_createNetworkEvent@resource://devtools/server/actors/network-monitor/network-observer.js:911:12
+_httpStopRequest@resource://devtools/server/actors/network-monitor/network-observer.js:409:14
+exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:103:22
+Line: 1085, column: 0
+console.error: ({})
+Handler function _httpStopRequest threw an exception: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsITraceableChannel.setNewListener]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://devtools/server/actors/network-monitor/network-observer.js :: _setupResponseListener :: line 1085"  data: no]
+Stack: _setupResponseListener@resource://devtools/server/actors/network-monitor/network-observer.js:1085:38
+_createNetworkEvent@resource://devtools/server/actors/network-monitor/network-observer.js:911:12
+_httpStopRequest@resource://devtools/server/actors/network-monitor/network-observer.js:409:14
+exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:103:22
+Line: 1085, column: 0
+console.error: ({})
+Handler function _httpStopRequest threw an exception: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsITraceableChannel.setNewListener]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://devtools/server/actors/network-monitor/network-observer.js :: _setupResponseListener :: line 1085"  data: no]
+Stack: _setupResponseListener@resource://devtools/server/actors/network-monitor/network-observer.js:1085:38
+_createNetworkEvent@resource://devtools/server/actors/network-monitor/network-observer.js:911:12
+_httpStopRequest@resource://devtools/server/actors/network-monitor/network-observer.js:409:14
+exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:103:22
+Line: 1085, column: 0
+console.error: ({})
+Handler function _httpStopRequest threw an exception: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsITraceableChannel.setNewListener]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://devtools/server/actors/network-monitor/network-observer.js :: _setupResponseListener :: line 1085"  data: no]
+Stack: _setupResponseListener@resource://devtools/server/actors/network-monitor/network-observer.js:1085:38
+_createNetworkEvent@resource://devtools/server/actors/network-monitor/network-observer.js:911:12
+_httpStopRequest@resource://devtools/server/actors/network-monitor/network-observer.js:409:14
+exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:103:22
+Line: 1085, column: 0
+console.error: ({})
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 567"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:567:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 567, column: 0
+console.error: ({})
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 567"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:567:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 567, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 567: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 567"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:567:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 567, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 567: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 567: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 567"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:567:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 567, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 567: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://s0.2mdn.net/9215174/1603819421900/js/create.js, line 586: TypeError: that.legal.legalhitarea is undefined
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+JavaScript error: https://s0.2mdn.net/instream/video/client.js, line 32: NS_ERROR_NOT_INITIALIZED: 
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1607713836333	Marionette	INFO	Stopped listening on port 58290
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607713840227	geckodriver	INFO	Listening on 127.0.0.1:59361
+1607713842233	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileQegGIR"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607713852267	geckodriver	INFO	Listening on 127.0.0.1:59380
+1607713854274	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilevCcF0N"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607713856120	Marionette	INFO	Listening on port 59385
+1607713856489	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607714060120	Marionette	INFO	Stopped listening on port 59385
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+Temp\\rust_mozprofile9MJSSJ"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607713932122	Marionette	INFO	Listening on port 59659
+1607713932460	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607714058866	Marionette	INFO	Stopped listening on port 59659
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1607714598639	geckodriver	INFO	Listening on 127.0.0.1:60135
+1607714600750	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileTXT2kO"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607714602006	Marionette	INFO	Listening on port 60141
+1607714602373	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 2377 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 2377 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903473&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=2642037943344835938:1607714610273&zMoatAdReqDomain=espn.com, line 261: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903473&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=2642037943344835938:1607714610273&zMoatAdReqDomain=espn.com, line 261: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903473&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=2642037943344835938:1607714610273&zMoatAdReqDomain=espn.com, line 261: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903473&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=2642037943344835938:1607714610273&zMoatAdReqDomain=espn.com, line 261: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903466&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=2082899647855780453:1607714610258&zMoatAdReqDomain=espn.com, line 261: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903466&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=2082899647855780453:1607714610258&zMoatAdReqDomain=espn.com, line 261: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903466&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=2082899647855780453:1607714610258&zMoatAdReqDomain=espn.com, line 261: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270152&moatClientLevel3=1376118&moatClientLevel4=2903466&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=2082899647855780453:1607714610258&zMoatAdReqDomain=espn.com, line 261: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 393 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 393 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 3082 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 3082 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+ "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofiles59cM7"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607715253295	Marionette	INFO	Listening on port 60900
+1607715253447	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607717502057	geckodriver	INFO	Listening on 127.0.0.1:62076
+1607717503809	geckodriver	INFO	Listening on 127.0.0.1:62082
+1607717505814	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileLcMvG7"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607717507017	Marionette	INFO	Listening on port 62089
+1607717507432	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 2403 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 2403 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 5318 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 5318 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 4672 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 4672 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607722976327	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileOGVUlW"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607722978551	Marionette	INFO	Listening on port 49177
+1607722979052	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://s0.2mdn.net/9215174/1603819421900/js/create.js, line 586: TypeError: that.legal.legalhitarea is undefined
+eate WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6481 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6481 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+ "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileMo7IRb"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607723578976	Marionette	INFO	Listening on port 57427
+1607723579357	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607723598057	Marionette	INFO	Stopped listening on port 57427
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot sendJavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+d: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilexILoqX"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607725728424	Marionette	INFO	Listening on port 59065
+1607725728532	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+rD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1332 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+ "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofile0d2GbS"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings:JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607726951200	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileOz0leP"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607726953790	Marionette	INFO	Listening on port 60842
+1607726953923	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607726998694	Marionette	INFO	Stopped listening on port 60842
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+t warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1489 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1489 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+ 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607727071797	Marionette	INFO	Listening on port 61950
+1607727071888	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607727466169	Marionette	INFO	Stopped listening on port 61953
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! 1607727466970	Marionette	INFO	Stopped listening on port 61951
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+entLevel1=4867366313&moatClientLevel2=2773591627&moatClientLevel3=5532930145&moatClientLevel4=138329829153&moatClientSlicer1=21782482296&moatClientSlicer2=21792634765&zMoatPS=banner&zMoatSW=6C016B8D-5B90-4C23-CCB9-31D60C635B32&zMoatAdUnitPath=/21783347309/espn.com/cbb/scoreboard&zMoatMData=1&zMoatSZ=728x90&zMoatMGV=30,20,10&zMoatMSafety=safe&zMoatMMV=40,30,20,10&zMoatMIVR=&refresh=1, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/espndfp832188684382/moatad.js#moatClientLevel1=4867366313&moatClientLevel2=2773591627&moatClientLevel3=5532930145&moatClientLevel4=138329829153&moatClientSlicer1=21782482296&moatClientSlicer2=21792634765&zMoatPS=banner&zMoatSW=6C016B8D-5B90-4C23-CCB9-31D60C635B32&zMoatAdUnitPath=/21783347309/espn.com/cbb/scoreboard&zMoatMData=1&zMoatSZ=728x90&zMoatMGV=30,20,10&zMoatMSafety=safe&zMoatMMV=40,30,20,10&zMoatMIVR=&refresh=1, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/espndfp832188684382/moatad.js#moatClientLevel1=4867366313&moatClientLevel2=2773591627&moatClientLevel3=5532930145&moatClientLevel4=138329829153&moatClientSlicer1=21782482296&moatClientSlicer2=21792634765&zMoatPS=banner&zMoatSW=6C016B8D-5B90-4C23-CCB9-31D60C635B32&zMoatAdUnitPath=/21783347309/espn.com/cbb/scoreboard&zMoatMData=1&zMoatSZ=728x90&zMoatMGV=30,20,10&zMoatMSafety=safe&zMoatMMV=40,30,20,10&zMoatMIVR=&refresh=1, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1084 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1084 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6406 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6406 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+ 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607727513951	Marionette	INFO	Listening on port 63568
+1607727514548	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.59/0.js, line 611: NS_ERROR_NOT_INITIALIZED: 
+led: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+pagead2.googlesyndication.com/bg1607728203404	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileLLgr4P"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettingJavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1607728499241	Marionette	INFO	Stopped listening on port 65517
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1967 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607728536383	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofiletpPOus"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exisJavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+ 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1937 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesynCan't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607728772144	Marionette	INFO	Listening on port 53353
+1607728772206	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+regFmuc5-vrUA2zacPm4s.js line 1 > eval line 3310 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7661 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7661 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+g command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofile552SIm"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607728834260	Marionette	INFO	Listening on port 53791
+1607728834634	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607729954440	Marionette	INFO	Stopped listening on port 53792
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+licer2=978975&zMoatIDA=IDFA, line 260: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=9374&moatClientLevel2=2&moatClientLevel3=115188760798&moatClientLevel4=485890918934&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 260: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=9374&moatClientLevel2=2&moatClientLevel3=115188760798&moatClientLevel4=485890918934&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 260: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 740 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 740 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+rod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607730242525	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilerJZIU2"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607730246391	Marionette	INFO	Listening on port 56164
+1607730246890	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607730533219	Marionette	INFO	Stopped listening on port 56164
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ooglesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 3683 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 3683 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607730244543	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilew0MeX3"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings:JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+d to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607730438897	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileDHjLbv"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607730442663	Marionette	INFO	Listening on port 57396
+1607730442736	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+1607730535965	Marionette	INFO	Stopped listening on port 57396
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607730440909	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileq6cWJe"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings:JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607730527860	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileiS2mer"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exisJavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+* You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607731334819	Marionette	INFO	Listening on port 60659
+1607731335112	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607731343397	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofile6oVWMp"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607731347109	Marionette	INFO	Listening on port 60840
+1607731347316	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+ox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileMQNKTi"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607731349737	Marionette	INFO	Listening on port 60860
+1607731350114	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+esyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 4771 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+n't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607734328306	Marionette	INFO	Listening on port 65051
+1607734328784	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg1607734337725	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilevu34CE"
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("",1607734339728	mozrunner1607734340385	Marionette	INFO	Listening on port 65240
+1607734340514	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+amageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exisJavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+JavaScript error: https://a.espncdn.com/redesign/0.524.4/js/modules/scoreboard.js, line 4: TypeError: $sbNotes.html is not a function
+ipt error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607734354649	Marionette	INFO	Listening on port 49411
+1607734354766	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+t: No settings file exists,1607734356016	mozrunner::runner	INFO	Running command1607734356659	Marionette	INFO	Listening on port 49560
+160771607734357961	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'egl1607734358812	Marionette	INFO	Listening on port 49718
+160773435899Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find1607734360218	mCan't find symbol 'JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1607734365771	Marionette	INFO	Listening on port 50031
+1607734365923	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.
+ofile?" (new Error("", "(unknown module)"))
+1607734367470	Marionette	INFO	Listening on port 50153
+1607734367670	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+Can't find symbol 'eglSetDamageRegionKHR'.

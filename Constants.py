@@ -1,7 +1,7 @@
 espn_scoreboard_url = 'https://www.espn.com/mens-college-basketball/scoreboard/_/group/50/date/'
 espn_url = 'http://www.espn.com/college-football/boxscore?gameId='
 espn_matchup_url = 'http://www.espn.com/college-football/matchup?gameId='
-espn = 'https://www.espn.com/mens-college-basketball/scoreboard/_/group/50/date/20201209'
+play_by_play = 'https://www.espn.com/mens-college-basketball/playbyplay?gameId='
 
 
 team_dict = {
