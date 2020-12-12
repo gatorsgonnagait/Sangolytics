@@ -1,8 +1,9 @@
-espn_scoreboard_url = 'https://www.espn.com/mens-college-basketball/scoreboard/_/group/50/date/'
+cbb_scoreboard_url = 'https://www.espn.com/mens-college-basketball/scoreboard/_/group/50/date/'
+nba_scoreboard_url = 'https://www.espn.com/nba/scoreboard'
 espn_url = 'http://www.espn.com/college-football/boxscore?gameId='
 espn_matchup_url = 'http://www.espn.com/college-football/matchup?gameId='
-play_by_play = 'https://www.espn.com/mens-college-basketball/playbyplay?gameId='
-
+cbb_play_by_play = 'https://www.espn.com/mens-college-basketball/playbyplay?gameId='
+nba_play_by_play = 'https://www.espn.com/nba/playbyplay?gameId='
 
 team_dict = {
 		"Texas Christian": "TCU",
