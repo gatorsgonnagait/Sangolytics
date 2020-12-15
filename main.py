@@ -79,11 +79,15 @@ class Live_Games_Tool:
 				continue
 
 			try:
-				half = int(soup.find('span', {'class': 'status-detail'}).text.split()[-2][0])
-			except IndexError:
+				if self.version == 'cbb':
+					half = int(soup.find('span', {'class': 'status-detail'}).text.split()[-2][0])
+				elif self.version == 'nba':
+					half = int(soup.find('span', {'class': 'status-detail'}).text.split()[-1][0])
+			except (IndexError, ValueError) as e:
+
 				h = soup.find('span', {'class': 'status-detail'}).text
-				if h == 'Halftime':
-					half = 3
+				if h == 'Halftime' or h == '0.0':
+					half = 0
 					if already_half:
 						time.sleep(60)
 						continue
@@ -96,7 +100,12 @@ class Live_Games_Tool:
 				continue
 
 			time_stamp = lines.find('td', {'class': 'time-stamp'}).text
-			current_time = datetime.strptime(time_stamp, self.time_fmt)
+
+			if len(time_stamp) == 4:
+				current_time = datetime.strptime('00:'+time_stamp.split(':')[0], self.time_fmt)
+			else:
+				current_time = datetime.strptime(time_stamp, self.time_fmt)
+
 			current_minute = int(time_stamp.split(':')[0])
 			score = lines.find('td', {'class': 'combined-score'}).text
 
@@ -106,7 +115,7 @@ class Live_Games_Tool:
 					away = team_a.find('span', {'class': 'long-name'}).text + ' ' + team_a.find('span', {'class': 'short-name'}).text
 					team_h = soup.find('div', {'class':'team home'})
 					home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
-					print(away, 'vs', home)
+					print(away, 'vs', home, time_stamp, half, 'quarter')
 				except IndexError:
 					pass
 
@@ -138,22 +147,32 @@ class Live_Games_Tool:
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
 				print('ppm last ' + str(self.n) + ' minutes', ppm_n)
 
+				if self.version == 'cbb':
+					if half == 1 or half == 3:
+						t = datetime.strptime('20:00', self.time_fmt)
+					elif half == 2:
+						t = datetime.strptime('40:00', self.time_fmt)
+				elif self.version == 'nba':
+					if half == 1:
+						q = '12:00'
+					elif half == 2:
+						q = '24:00'
+					if half == 3:
+						q = '36:00'
+					elif half == 4:
+						q = '48:00'
 
-				if half == 1 or half == 3:
-					t = datetime.strptime('20:00', self.time_fmt)
-				elif half == 2:
-					t = datetime.strptime('40:00', self.time_fmt)
-
+				t = datetime.strptime(q, self.time_fmt)
 				seconds_played = (t - last_time).seconds
 				ppm_game = total_points / (seconds_played / 60)
 				print('ppm game', round(ppm_game, 2))
 
-				if half == 3:
+				if half == 0:
 					print('halftime')
 					already_half = True
 				print()
 
-			time.sleep(5)
+			time.sleep(3)
 
 
 def driver(version, n):
@@ -170,4 +189,4 @@ def driver(version, n):
 
 
 if __name__ == '__main__':
-	driver(version='cbb',n=5)
+	driver(version='nba',n=5)
