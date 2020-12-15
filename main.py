@@ -11,8 +11,8 @@ import threading
 
 class Live_Games_Tool:
 
-	def __init__(self, type, n):
-		self.type = type
+	def __init__(self, version, n):
+		self.version = version
 		self.n = n
 		self.time_fmt = '%M:%S'
 		self.date_fmt = '%Y%m%d'
@@ -21,9 +21,9 @@ class Live_Games_Tool:
 
 	def get_game_urls(self):
 		d = ''
-		if self.type == 'nba':
+		if self.version == 'nba':
 			scoreboard_url = c.nba_scoreboard_url
-		elif self.type == 'cbb':
+		elif self.version == 'cbb':
 			scoreboard_url = c.cbb_scoreboard_url
 			d = datetime.today().strftime(self.date_fmt)
 		else:
@@ -37,18 +37,19 @@ class Live_Games_Tool:
 		page = driver.page_source
 		soup = bs.BeautifulSoup(page, 'html.parser')
 		live_games = soup.find_all('article',{'class':'scoreboard basketball live js-show'})
-		return [lg.attrs['id'] for lg in live_games]
+		return [str(lg.attrs['id']) for lg in live_games]
 
 	def open_web_driver(self, game_id):
 		driver = webdriver.Firefox()
-		if self.type == 'nba':
+		if self.version == 'nba':
 			play_by_play = c.nba_play_by_play
-		elif self.type == 'cbb':
+		elif self.version == 'cbb':
 			play_by_play = c.cbb_play_by_play
 		else:
 			return
 
 		url = play_by_play + game_id
+
 		while True:
 			try:
 				driver.get(url)
@@ -87,6 +88,7 @@ class Live_Games_Tool:
 						time.sleep(60)
 						continue
 				else:
+					print('End of Game')
 					break
 			try:
 				lines = block.find('tbody')
@@ -117,6 +119,7 @@ class Live_Games_Tool:
 					already_half = False
 					past_time = datetime.strptime('20:00', self.time_fmt)
 					line = lines[0]
+					time_diff = past_time - current_time
 				else:
 					for li in lines:
 						time_txt = li.find('td', {'class': 'time-stamp'}).text
@@ -126,7 +129,7 @@ class Live_Games_Tool:
 						if time_diff > timedelta(minutes=self.n):
 							break
 
-				time_diff = past_time - current_time
+
 				past_score = line.find('td', {'class': 'combined-score'}).text
 				past_road_score = int(past_score.split()[0])
 				past_home_score = int(past_score.split()[2])
@@ -153,21 +156,18 @@ class Live_Games_Tool:
 			time.sleep(5)
 
 
-def driver(type, n):
-	lg = Live_Games_Tool(type=type, n=n)
+def driver(version, n):
+	lg = Live_Games_Tool(version=version, n=n)
 	id_list = lg.get_game_urls()
-	print(id_list)
+
 	if not id_list: return
 
 	for id in id_list:
-
-		thread = threading.Thread(target=lg.play_by_play, args=(id))
+		thread = threading.Thread(target=lg.play_by_play, args=[id])
 		thread.start()
 		time.sleep(2)
-
-	#play_by_play(n=5, game_ids=id_list)
 
 
 
 if __name__ == '__main__':
-	driver(type='cbb',n=5)
+	driver(version='cbb',n=5)
