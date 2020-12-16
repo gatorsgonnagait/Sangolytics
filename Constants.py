@@ -5,6 +5,12 @@ espn_matchup_url = 'http://www.espn.com/college-football/matchup?gameId='
 cbb_play_by_play = 'https://www.espn.com/mens-college-basketball/playbyplay?gameId='
 nba_play_by_play = 'https://www.espn.com/nba/playbyplay?gameId='
 
+api_key = 'c06e566dfb583f3a48a89143106b6241'
+nba_version = 'basketball_nba'
+cbb_version = 'basketball_ncaab'
+region = 'us'
+market = 'totals'
+
 team_dict = {
 		"Texas Christian": "TCU",
 		"Nevada-Las Vegas": "UNLV",

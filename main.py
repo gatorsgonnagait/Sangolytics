@@ -7,7 +7,10 @@ import time
 import pandas as pd
 import Constants as c
 import threading
-
+import Tools as t
+import requests
+from datetime import datetime as dt
+from Odds import get_odds
 
 class Live_Games_Tool:
 
@@ -18,6 +21,16 @@ class Live_Games_Tool:
 		self.date_fmt = '%Y%m%d'
 		self.options = Options()
 		self.options.headless = True
+		self.odds_df = None
+		if version == 'nba':
+			self.odds_version = 'basketball_nba'
+		elif version == 'cbb':
+			self.odds_version = 'basketball_ncaab'
+
+	def update_odds(self):
+		while True:
+			self.odds_df = get_odds(version=self.odds_version)
+			time.sleep(60)
 
 	def get_game_urls(self):
 		d = ''
@@ -40,7 +53,7 @@ class Live_Games_Tool:
 		return [str(lg.attrs['id']) for lg in live_games]
 
 	def open_web_driver(self, game_id):
-		driver = webdriver.Firefox()
+		driver = webdriver.Firefox(options=self.options)
 		if self.version == 'nba':
 			play_by_play = c.nba_play_by_play
 		elif self.version == 'cbb':
@@ -93,7 +106,8 @@ class Live_Games_Tool:
 						continue
 				else:
 					print('End of Game')
-					break
+					driver.close()
+					return
 			try:
 				lines = block.find('tbody')
 			except AttributeError:
@@ -110,14 +124,24 @@ class Live_Games_Tool:
 			score = lines.find('td', {'class': 'combined-score'}).text
 
 			if current_minute != last_minute:
-				try:
-					team_a = soup.find('div', {'class':'team away'})
-					away = team_a.find('span', {'class': 'long-name'}).text + ' ' + team_a.find('span', {'class': 'short-name'}).text
-					team_h = soup.find('div', {'class':'team home'})
-					home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
-					print(away, 'vs', home, time_stamp, half, 'quarter')
-				except IndexError:
-					pass
+				while True:
+					try:
+						team_a = soup.find('div', {'class':'team away'})
+						away = team_a.find('span', {'class': 'long-name'}).text + ' ' + team_a.find('span', {'class': 'short-name'}).text
+						team_h = soup.find('div', {'class':'team home'})
+						home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
+						print(away, 'vs', home, time_stamp, half, 'quarter')
+						live_game = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
+						if live_game.empty:
+							print('no live odds')
+							print()
+							driver.close()
+							return
+
+						break
+					except IndexError:
+						time.sleep(.2)
+						continue
 
 				last_minute = current_minute
 				last_time = current_time
@@ -143,19 +167,19 @@ class Live_Games_Tool:
 				past_road_score = int(past_score.split()[0])
 				past_home_score = int(past_score.split()[2])
 				past_total = past_road_score + past_home_score
-				print('current total', total_points)
+				print('current total', total_points, 'live total',live_game['total'].values[0])
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
 				print('ppm last ' + str(self.n) + ' minutes', ppm_n)
 
 				if self.version == 'cbb':
-					if half == 1 or half == 3:
-						t = datetime.strptime('20:00', self.time_fmt)
+					if half == 1 or half == 0:
+						q = '20:00'
 					elif half == 2:
-						t = datetime.strptime('40:00', self.time_fmt)
+						q = '40:00'
 				elif self.version == 'nba':
 					if half == 1:
 						q = '12:00'
-					elif half == 2:
+					elif half == 2 or half == 0:
 						q = '24:00'
 					if half == 3:
 						q = '36:00'
@@ -175,9 +199,12 @@ class Live_Games_Tool:
 			time.sleep(3)
 
 
+
 def driver(version, n):
 	lg = Live_Games_Tool(version=version, n=n)
 	id_list = lg.get_game_urls()
+	t1 = threading.Thread(target=lg.update_odds)
+	t1.start()
 
 	if not id_list: return
 
@@ -189,4 +216,4 @@ def driver(version, n):
 
 
 if __name__ == '__main__':
-	driver(version='nba',n=5)
+	driver(version='cbb',n=5)
