@@ -1,4 +1,5 @@
 from selenium import webdriver, common
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 import urllib.request
 import bs4 as bs
@@ -20,7 +21,7 @@ class Live_Games_Tool:
 		self.time_fmt = '%M:%S'
 		self.date_fmt = '%Y%m%d'
 		self.options = Options()
-		self.options.headless = True
+		self.options.headless = False
 		self.odds_df = None
 		if version == 'nba':
 			self.odds_version = 'basketball_nba'
@@ -66,16 +67,24 @@ class Live_Games_Tool:
 		while True:
 			try:
 				driver.get(url)
+				if self.version == 'nba':
+					time.sleep(1)
+					driver.execute_script("window.open()")
+					driver.switch_to_window(driver.window_handles[1])
+					driver.get(c.nba_gamecast_url+game_id)
+					driver.switch_to_window(driver.window_handles[0])
 			except common.exceptions.TimeoutException:
 				continue
 			break
 
-		time.sleep(4)
+
+		time.sleep(1)
 		return driver
 
 	def play_by_play(self, game_id):
 		driver = self.open_web_driver(game_id=game_id)
 		last_minute = ''
+		last_time = None
 		already_half = False
 
 		while True:
@@ -115,15 +124,17 @@ class Live_Games_Tool:
 
 			time_stamp = lines.find('td', {'class': 'time-stamp'}).text
 
-			if len(time_stamp) == 4:
-				current_time = datetime.strptime('00:'+time_stamp.split(':')[0], self.time_fmt)
+			if '.' in time_stamp:
+				current_time = datetime.strptime('00:'+time_stamp.split('.')[0], self.time_fmt)
+				print(current_time)
 			else:
 				current_time = datetime.strptime(time_stamp, self.time_fmt)
 
-			current_minute = int(time_stamp.split(':')[0])
+			#current_minute = int(time_stamp.split(':')[0])
 			score = lines.find('td', {'class': 'combined-score'}).text
 
-			if current_minute != last_minute:
+			#if current_minute != last_minute:
+			if current_time != last_time:
 				while True:
 					try:
 						team_a = soup.find('div', {'class':'team away'})
@@ -131,23 +142,24 @@ class Live_Games_Tool:
 						team_h = soup.find('div', {'class':'team home'})
 						home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
 						print(away, 'vs', home, time_stamp, half, 'quarter')
-						live_game = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
-						if live_game.empty:
-							print('no live odds')
-							print()
-							driver.close()
-							return
+						# live_game = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
+						# if live_game.empty:
+						# 	print('no live odds')
+						# 	print()
+						# 	driver.close()
+						# 	return
 
 						break
 					except IndexError:
 						time.sleep(.2)
 						continue
 
-				last_minute = current_minute
+				#last_minute = current_minute
 				last_time = current_time
 				road_score = int(score.split()[0])
 				home_score = int(score.split()[2])
 				total_points = road_score + home_score
+				line = None
 				if already_half:
 					already_half = False
 					past_time = datetime.strptime('20:00', self.time_fmt)
@@ -162,12 +174,12 @@ class Live_Games_Tool:
 						if time_diff > timedelta(minutes=self.n):
 							break
 
-
 				past_score = line.find('td', {'class': 'combined-score'}).text
 				past_road_score = int(past_score.split()[0])
 				past_home_score = int(past_score.split()[2])
 				past_total = past_road_score + past_home_score
-				print('current total', total_points, 'live total',live_game['total'].values[0])
+				print(total_points, past_total)
+				print('current total', total_points, 'live total')#,live_game['total'].values[0])
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
 				print('ppm last ' + str(self.n) + ' minutes', ppm_n)
 
@@ -191,13 +203,15 @@ class Live_Games_Tool:
 				ppm_game = total_points / (seconds_played / 60)
 				print('ppm game', round(ppm_game, 2))
 
+
+
 				if half == 0:
 					print('halftime')
 					already_half = True
 				print()
 
 			time.sleep(3)
-
+		driver.close()
 
 
 def driver(version, n):
@@ -205,7 +219,6 @@ def driver(version, n):
 	id_list = lg.get_game_urls()
 	t1 = threading.Thread(target=lg.update_odds)
 	t1.start()
-
 	if not id_list: return
 
 	for id in id_list:
@@ -215,5 +228,6 @@ def driver(version, n):
 
 
 
+
 if __name__ == '__main__':
-	driver(version='cbb',n=5)
+	driver(version='nba',n=5)
