@@ -12,6 +12,7 @@ import Tools as t
 import requests
 from datetime import datetime as dt
 from Odds import get_odds
+import GUI as gui
 
 class Live_Games_Tool:
 
@@ -23,6 +24,7 @@ class Live_Games_Tool:
 		self.options = Options()
 		self.options.headless = False
 		self.odds_df = None
+
 		if version == 'nba':
 			self.odds_version = 'basketball_nba'
 		elif version == 'cbb':

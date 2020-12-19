@@ -7043,7 +7043,8 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-1608173318410	geckodriver	INFO	Listening on 127.0.0.1:61212
+Exiting due to channel error.
+Listening on 127.0.0.1:61212
 1608173320422	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileOmu5TS"
 *** You are running in headless mode.
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
@@ -7101,7 +7102,9 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-play&zMoatMData=1&zMoatSZ=0x0&zMoatMGV=70,60,50,40,30,20,10&zMoatMSafety=safe&zMoatMMV=90,80,70,60,50,40,30,20,10&zMoatMIVR=&refresh=1, line 267: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+Exiting due to channel error.
+Exiting due to channel error.
+oatMSafety=safe&zMoatMMV=90,80,70,60,50,40,30,20,10&zMoatMIVR=&refresh=1, line 267: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/espndfp832188684382/moatad.js#moatClientLevel1=4741246681&moatClientLevel2=2559560834&moatClientLevel3=5119949975&moatClientLevel4=138334441017&moatClientSlicer1=21782482296&moatClientSlicer2=21792516527&zMoatPS=incontent2&zMoatSW=EDFDC778-7B2D-47BF-C762-29DBBFF4BF09&zMoatAdUnitPath=/21783347309/espn.com/nba/playbyplay&zMoatMData=1&zMoatSZ=0x0&zMoatMGV=70,60,50,40,30,20,10&zMoatMSafety=safe&zMoatMMV=90,80,70,60,50,40,30,20,10&zMoatMIVR=&refresh=1, line 267: Failed to create WebGL context: WebGL crJavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 13 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 13 > eval, line 1: Failed to create WebGL context: WebGL creaJavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi56469789, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi56469789, line 276: Failed to create WebGL context: WebGL creation failed: 
@@ -7175,7 +7178,8 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
-9862838/moatvideo.js#_moatApi64193875, line 276: Failed to create WebGL context: WebGL creation failed: 
+Exiting due to channel error.
+193875, line 276: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi64193875, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi64193875, line 276: Failed to create WebGL context: WebGL creation failed: 
@@ -7220,7 +7224,8 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-d to create WebGL context: WebGL creation failed: 
+Exiting due to channel error.
+L creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7160 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7160 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
@@ -7365,7 +7370,9 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-ClientLevel2=2559560834&moatClientLevel3=5119949975&moatClientLevel4=138334441017&moatClientSlicer1=21782482296&moatClientSlicer2=21792516527&zMoatPS=incontent2&zMoatSW=40E24721-818C-40BE-C0A1-E3356CDEE85B&zMoatAdUnitPath=/21783347309/espn.com/nba/playbyplay&zMoatMData=1&zMoatSZ=0x0&zMoatMGV=70,60,50,40,30,20,1JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 1028 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+Exiting due to channel error.
+Exiting due to channel error.
+Level4=138334441017&moatClientSlicer1=21782482296&moatClientSlicer2=21792516527&zMoatPS=incontent2&zMoatSW=40E24721-818C-40BE-C0A1-E3356CDEE85B&zMoatAdUnitPath=/21783347309/espn.com/nba/playbyplay&zMoatMData=1&zMoatSZ=0x0&zMoatMGV=70,60,50,40,30,20,1JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 1028 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 1028 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi61674836, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
@@ -7416,8 +7423,9 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-d by the user agent at the user's request.
-JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi67278307, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+Exiting due to channel error.
+Exiting due to channel error.
+: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi67278307, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi67278307, line 276: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi67278307, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
@@ -7430,8 +7438,8 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-WebGL creation failed: 
-* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+Exiting due to channel error.
+t use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/espndfp832188684382/moatad.js#moatClientLevel1=4741246681&moatClientLevel2=2559560834&moatClientLevel3=5119949975&moatClientLevel4=138334441017&moatClientSlicer1=21782482296&moatClientSlicer2=21792516527&zMoatPS=incontent2&zMoatSW=ACA6ABB2-4087-4D6E-CD71-5C0F138E21D1&zMoatAdUnitPath=/21783347309/espn.com/nba/playbyplay&zMoatMData=1&zMoatSZ=0x0&zMoatMGV=70,60,50,40,30,20,10&zMoatMSafety=safe&zMoatMMV=90,80,70,60,50,40,30,20,10&zMoatMIVR=&refresh=1, line 267: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/espndfp832188684382/moatad.js#moatClientLevel1=4741246681&moatClientLevel2=2559560834&moatClientLevel3=5119949975&moatClientLevel4=138334441017&moatClientSlicer1=21782482296&moatClientSlicer2=21792516527&zMoatPS=incontent2&zMoatSW=ACA6ABB2-4087-4D6E-CD71-5C0F138E21D1&zMoatAdUnitPath=/21783347309/espn.com/nba/playbyplay&zMoatMData=1&zMoatSZ=0x0&zMoatMGV=70,60,50,40,30,20,10&zMoatMSafety=safe&zMoatMMV=90,80,70,60,50,40,30,20,10&zMoatMIVR=&refresh=1, line 267: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
@@ -7581,23 +7589,22 @@ JavaScript error: , line 0: AbortError: The fetching process for the media resou
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: AbortError: The fetching process for the media resource was aborted by the user agent at the user's request.
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-://bugzil.la/1375585).
-JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+Exiting due to channel error.
+ipt error: , line 0: NS_ERROR_NOT_AVAILABLE
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi50556140, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi50556140, line 277: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi50556140, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi50556140, line 277: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi72305535, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi72305535, line 276: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi72305535, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi72305535, line 276: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-1608174982780	geckodriver	INFO	Listening on 127.0.0.1:53624
-1608174984789	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofilewabkUf"
-*** You are running in headless mode.
-JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+Exiting due to channel error.
+s/XULStore.jsm, line 66: Error: Can't find profile directory.
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1608174986179	Marionette	INFO	Listening on port 53629
 1608174986413	Marionette	WARN	TLS certificate errors will be ignored for this session
@@ -7638,15 +7645,14 @@ JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvide
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi45326470, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi45326470, line 277: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi10096515, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi10096515, line 276: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi10096515, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi10096515, line 276: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
-* Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+Exiting due to channel error.
+avaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/espndfp832188684382/moatad.js#moatClientLevel1=4741246681&moatClientLevel2=2559560834&moatClientLevel3=5119949975&moatClientLevel4=138334441017&moatClientSlicer1=21782482296&moatClientSlicer2=21792712767&zMoatPS=incontent2&zMoatSW=B8DAD80F-18AE-452F-C5CA-E8B19B6E028D&zMoatAdUnitPath=/21783347309/espn.com/nba/game&zMoatMData=1&zMoatSZ=0x0&zMoatMGV=80,70,60,50,40,30,20,10&zMoatMSafety=safe&zMoatMMV=70,60,50,40,30,20,10&zMoatMIVR=&refresh=1, line 267: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
@@ -7674,14 +7680,13 @@ JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvide
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi10470961, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi10470961, line 277: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi89921048, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi89921048, line 277: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi89921048, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi89921048, line 277: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
-JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
-* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+zil.la/1375585).
 JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
@@ -7713,18 +7718,15 @@ JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.j
 JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi11528116, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi11528116, line 276: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
-1608178779320	geckodriver	INFO	Listening on 127.0.0.1:57319
-1608178781330	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileqzeTrK"
-Can't find symbol 'eglSwapBuffersWithDamageEXT'.
-Can't find symbol 'eglSetDamageRegionKHR'.
-JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
-1608178783837	Marionette	INFO	Listening on port 57336
-1608178784058	Marionette	WARN	TLS certificate errors will be ignored for this session
-Can't find symbol 'eglSwapBuffersWithDamageEXT'.
-Can't find symbol 'eglSetDamageRegionKHR'.
-1608178790528	geckodriver	INFO	Listening on 127.0.0.1:57516
-1608178792531	mozrunner::runner	INFO	Running command: "C:\\P1608178794533	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileHDUYeh"
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi33592178, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi33592178, line 277: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi33592178, line 277: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/thetradedeskvideo910663478306/moatvideo.js#_moatApi33592178, line 277: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+Exiting due to channel error.
+Exiting due to channel error.
+and: "C:\\P1608178794533	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\evmes\\AppData\\Local\\Temp\\rust_mozprofileHDUYeh"
 Can't find symbol 'eglSwapBuffersWithDamageEXT'.
 Can't find symbol 'eglSetDamageRegionKHR'.
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
