@@ -8850,3 +8850,374 @@ JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexl
 JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7779 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
 JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7779 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
 * Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608693434658	geckodriver	INFO	Listening on 127.0.0.1:57168
+1608693437731	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileGjtNGg"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608693439436	Marionette	INFO	Listening on port 57178
+1608693439777	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6794 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6794 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 5245 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 5245 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 4259 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 4259 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608693459615	geckodriver	INFO	Listening on 127.0.0.1:57498
+1608693462711	mozrunner::runner	INFO	Running command: "C:\\P1608693464666	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileI2N1Tw"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1608693466672	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--mario1608693466717	Marionette	INFO	Listening on port 57549
+1608693466833	Marionette	WARN	TLS certificate errors will be ignored for this session
+1608693468669	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileTkwKXJ"1608693468749	Marionette	INFO	Listening JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608693470910	Marionette	INFO	Listening on port 57674
+ipts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/1608693470676	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileZYq1PP"
+*** You are running in headless mode.
+ess mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608693664276	geckodriver	INFO	Listening on 127.0.0.1:57956
+1608693667337	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileqYGCIH"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608693668944	Marionette	INFO	Listening on port 57967
+1608693669400	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 5175 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 5175 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 7762 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 7762 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=271443&moatClientLevel3=1372627&moatClientLevel4=2852543&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=7078083554211060267:1608705506422&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=271443&moatClientLevel3=1372627&moatClientLevel4=2852543&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=7078083554211060267:1608705506422&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=271443&moatClientLevel3=1372627&moatClientLevel4=2852543&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=7078083554211060267:1608705506422&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=271443&moatClientLevel3=1372627&moatClientLevel4=2852543&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=7078083554211060267:1608705506422&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=281071&moatClientLevel3=1430252&moatClientLevel4=2992747&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=6702359838331929225:1608705506417&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=281071&moatClientLevel3=1430252&moatClientLevel4=2992747&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=6702359838331929225:1608705506417&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=281071&moatClientLevel3=1430252&moatClientLevel4=2992747&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=6702359838331929225:1608705506417&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=281071&moatClientLevel3=1430252&moatClientLevel4=2992747&moatClientSlicer1=4&moatClientSlicer2=0&zMoatAuctionID=6702359838331929225:1608705506417&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7790 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7790 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+headless mode (https://bugzil.la/1375585).
+agsa%3D%26wp%3D2.4245%26rgco%3DUnited%2520States%26rgre%3DCalifornia%26rgme%3D803%26rgci%3DCerritos%26rgz%3D90703%26dt%3DPC%26osf%3DWindows%26os%3DWindows10%26br%3DFirefox%26svpid%3D54531%26rlangs%3D01%26mlang%3D%26did%3D%26rcxt%3DOther%26tmpc%3D%26vrtd%3D%26osi%3D%26osv%3D%26daid%3D%26dnr%3D0%26vpb%3D%26c%3DOAFQBw..%26dur%3DCjAKDGNoYXJnZS1hbGwtMSIgCP___________wESE3R0ZF9kYXRhX2V4Y2x1c2lvbnM.%26durs%3DUvAXvs%26crrelr%3D%26npt%3D%26svscid%3D231930%26mdl%3DFirefox%2520-%2520Windows%26fpa%3D746%26pcm%3D3%26ict%3DCellularNetworkUnknown%26said%3D7b624de9680f4364a79114d10d6c455b%26auct%3D1%26cxlvs%3D0%26us_privacy%3D1---Missing%26r%3Dhttps%3a%2f%2fwww.getcalfresh.org%2fen%3fnew_locale%3den%26s%3dLaads&cb=506826, line 124: unreachable code after return statement
+JavaScript warning: https://html5.adsrvr.org/w8porzc/mgm7yzs/yqq7zlhi/CALIFRESH_DIGITAL_PANDEMIC_EN_300x250.html?clickTAG=https%3A%2F%2Finsight.adsrvr.org%2Ftrack%2Fclk%3Fimp%3Dc0c27d6d-7039-4b39-88a7-bc446d64d436%26ag%3D93jlegx%26sfe%3D121a37fb%26sig%3DskYZDnBrq8zddAFAJFtXJxb9zT7ocqxgdrua6FRyBaE.%26crid%3Dc9oy5n19%26cf%3D1869951%26fq%3D0%26td_s%3Dwww.espn.com%26rcats%3Dtmc%26mcat%3D%26mste%3D%26mfld%3D2%26mssi%3DNone%26mfsi%3Dwwrj9uz0l4%26sv%3Drightmedia%26uhow%3D67%26agsa%3D%26wp%3D2.4245%26rgco%3DUnited%2520States%26rgre%3DCalifornia%26rgme%3D803%26rgci%3DCerritos%26rgz%3D90703%26dt%3DPC%26osf%3DWindows%26os%3DWindows10%26br%3DFirefox%26svpid%3D54531%26rlangs%3D01%26mlang%3D%26did%3D%26rcxt%3DOther%26tmpc%3D%26vrtd%3D%26osi%3D%26osv%3D%26daid%3D%26dnr%3D0%26vpb%3D%26c%3DOAFQBw..%26dur%3DCjAKDGNoYXJnZS1hbGwtMSIgCP___________wESE3R0ZF9kYXRhX2V4Y2x1c2lvbnM.%26durs%3DUvAXvs%26crrelr%3D%26npt%3D%26svscid%3D231930%26mdl%3DFirefox%2520-%2520Windows%26fpa%3D746%26pcm%3D3%26ict%3DCellularNetworkUnknown%26said%3D7b624de9680f4364a79114d10d6c455b%26auct%3D1%26cxlvs%3D0%26us_privacy%3D1---Missing%26r%3Dhttps%3a%2f%2fwww.getcalfresh.org%2fen%3fnew_locale%3den%26s%3dLaads&cb=506826, line 124: unreachable code after return statement
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 4929 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 4929 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608693796296	geckodriver	INFO	Listening on 127.0.0.1:61256
+1608693799356	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilempOHdP"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608693801097	Marionette	INFO	Listening on port 61266
+1608693801426	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 6372 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 6372 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://s.yimg.com/rq/iv/inside.js, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 3139 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 3139 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270151&moatClientLevel3=1376310&moatClientLevel4=2867137&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=3834242027081083320:1608705505394&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270151&moatClientLevel3=1376310&moatClientLevel4=2867137&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=3834242027081083320:1608705505394&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270151&moatClientLevel3=1376310&moatClientLevel4=2867137&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=3834242027081083320:1608705505394&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=270151&moatClientLevel3=1376310&moatClientLevel4=2867137&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=3834242027081083320:1608705505394&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=263700&moatClientLevel3=1330128&moatClientLevel4=2439852&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=6640203889967746246:1608705505395&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=263700&moatClientLevel3=1330128&moatClientLevel4=2439852&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=6640203889967746246:1608705505395&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=263700&moatClientLevel3=1330128&moatClientLevel4=2439852&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=6640203889967746246:1608705505395&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=263700&moatClientLevel3=1330128&moatClientLevel4=2439852&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=6640203889967746246:1608705505395&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6957 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6957 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+GL context: JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8
+###!!! [Parent][MessageChannel] Error: (msgtype=0x3A0147,name=PContent::Msg_AsyncMessage) Channel error: cannot send/recv
+
+de (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 7423 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+a/1375585).
+JJavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 5267 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 5267 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://players.brightcove.net/3948005062001/j8Fbje7Qq_default/index.min.js, line 1: TypeError: this.el_ is null
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi90874856, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi90874856, line 276: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi90874856, line 276: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/grabitjsvidint362359862838/moatvideo.js#_moatApi90874856, line 276: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608695737756	geckodriver	INFO	Listening on 127.0.0.1:50451
+1608695740818	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileWHCtHI"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608695742480	Marionette	INFO	Listening on port 50462
+1608695742872	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 837 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 837 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1913 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1913 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 2482 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 2482 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608695761082	geckodriver	INFO	Listening on 127.0.0.1:50731
+1608695764717	mozrunner::runner	INFO	Running command: "C:\\P1608695766136	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileoBLqvo"
+*** You are running in headless mode.
+1608695768155	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_1608695768279	Marionette	INFO	Listening on port 50773
+16JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find proJavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>1608695772584	Marionette	INFO	Listening on port 50921
+1608695772817	Marionette	WARN	TLS certificate errors will be ignored for this session
+ne 13: Failed to create WebGL context: WebGL creation failed: 
+* CanJavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608705536578	geckodriver	INFO	Listening on 127.0.0.1:54652
+1608705556481	geckodriver	INFO	Listening on 127.0.0.1:54724
+1608705559536	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofilejSCKSs"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608705561525	Marionette	INFO	Listening on port 54736
+1608705561600	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608705573702	geckodriver	INFO	Listening on 127.0.0.1:54807
+1608705576729	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofile7mLNNt"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608705578505	Marionette	INFO	Listening on port 54818
+1608705578790	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1211677&moatClientLevel4=2447903&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1211677&moatClientLevel4=2447903&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1211677&moatClientLevel4=2447903&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1211677&moatClientLevel4=2447903&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7000 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7000 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 882 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 882 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608705633751	geckodriver	INFO	Listening on 127.0.0.1:55114
+1608705636784	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileL4Fly4"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608705638607	Marionette	INFO	Listening on port 55124
+1608705638824	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 87 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 87 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1564 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 1564 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7059 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 7059 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608705676200	geckodriver	INFO	Listening on 127.0.0.1:55413
+1608705679229	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileDEfAxA"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608705680921	Marionette	INFO	Listening on port 55424
+1608705681295	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1391243&moatClientLevel4=2925953&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1391243&moatClientLevel4=2925953&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1391243&moatClientLevel4=2925953&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/millennialnexageinapp768429046591/moatad.js#moatClientLevel1=13222&moatClientLevel2=951609&moatClientLevel3=1391243&moatClientLevel4=2925953&moatClientSlicer1=231930&moatClientSlicer2=978975&zMoatIDA=IDFA, line 263: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=272502&moatClientLevel3=1378194&moatClientLevel4=2896917&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=4957836404864261886:1608705689410&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=272502&moatClientLevel3=1378194&moatClientLevel4=2896917&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=4957836404864261886:1608705689410&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=272502&moatClientLevel3=1378194&moatClientLevel4=2896917&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=4957836404864261886:1608705689410&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=272502&moatClientLevel3=1378194&moatClientLevel4=2896917&moatClientSlicer1=3&moatClientSlicer2=0&zMoatAuctionID=4957836404864261886:1608705689410&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1608705704137	geckodriver	INFO	Listening on 127.0.0.1:55714
+1608705707170	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Evan\\AppData\\Local\\Temp\\rust_mozprofileCWh520"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608705709047	Marionette	INFO	Listening on port 55725
+1608705709240	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/analytics/at.r3.js, line 13: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://a.espncdn.com/prod/scripts/moat/yield.js, line 183: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 5380 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/UBVKjIgL52oAupqoau5bmS4QFq3D8gEqQe5TpWWG23I.js line 1 > eval line 5380 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=229508&moatClientLevel3=1352303&moatClientLevel4=2847788&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=4483039889079050897:1608705717524&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=229508&moatClientLevel3=1352303&moatClientLevel4=2847788&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=4483039889079050897:1608705717524&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=229508&moatClientLevel3=1352303&moatClientLevel4=2847788&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=4483039889079050897:1608705717524&zMoatAdReqDomain=espn.com, line 264: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://z.moatads.com/yahoodisplay873773666324/moatad.js#moatClientLevel1=Yahoo!&moatClientLevel2=229508&moatClientLevel3=1352303&moatClientLevel4=2847788&moatClientSlicer1=8&moatClientSlicer2=0&zMoatAuctionID=4483039889079050897:1608705717524&zMoatAdReqDomain=espn.com, line 264: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6362 > eval line 1 > eval, line 1: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://pagead2.googlesyndication.com/bg/PbZvCEkorD5rxjWOexle1_regFmuc5-vrUA2zacPm4s.js line 1 > eval line 6362 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.59/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.59/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.59/0.js, line 22: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.59/0.js, line 22: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://cdn-ssl.vidible.tv/prod/ad-client/js/10.2.59/0.js, line 611: NS_ERROR_NOT_INITIALIZED: 

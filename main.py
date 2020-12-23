@@ -242,9 +242,8 @@ class Live_Games_Tool:
 
 def driver(version, n):
 	lg = Live_Games_Tool(version=version, n=n)
-	lg.gui.create_box(columns=c.live_columns)
-	# lg.gui.q.put( item=[1, 2])
-	# print(lg.gui.q.get())
+	#lg.gui.create_box(columns=c.live_columns)
+
 	id_list = lg.get_game_urls()
 	t1 = threading.Thread(target=lg.update_odds)
 	t1.start()

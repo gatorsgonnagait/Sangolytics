@@ -15,19 +15,23 @@ class GUI(threading.Thread):
         self.box = None
         self.root = None
         self.df = pd.DataFrame(columns=c.live_columns)
-        self.process_incoming()
 
 
     def run(self):
+
         self.root = tk.Tk()
         self.root.withdraw()
+        self.create_box(columns=c.live_columns)
+        self.process_incoming()
         self.root.mainloop()
-        #self.root = self.create_box(columns=c.live_columns)
+        #
 
 
     def process_incoming(self):
         """Handle all messages currently in the queue, if any."""
+
         while self.q.qsize():
+            print('test')
             try:
                 tdf = self.q.get()
                 # Check contents of message and do whatever is needed. As a
@@ -67,8 +71,11 @@ if __name__ == '__main__':
     df = pd.read_csv('datatest.csv')
     columns = df.columns.tolist()
     gui.create_box(columns=columns)
-    # print(gui.root)
-    fill_box(gui.root, df=df)
+    t1 = threading.Thread(target=gui.process_incoming)
+    t1.start()
+    print('test')
+    #print(gui.root)
+    #fill_box(gui.root, df=df)
 
 
     # df2 = pd.read_csv('datatest2.csv')
