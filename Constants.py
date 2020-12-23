@@ -10,4 +10,4 @@ nba_version = 'basketball_nba'
 cbb_version = 'basketball_ncaab'
 region = 'us'
 market = 'totals'
-
+live_columns = ['Game','Current Total','Live Total','PPM Last N','PPM Game']

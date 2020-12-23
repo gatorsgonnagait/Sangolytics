@@ -12,7 +12,7 @@ import Tools as t
 import requests
 from datetime import datetime as dt
 from Odds import get_odds
-import GUI as gui
+import GUI as g
 
 class Live_Games_Tool:
 
@@ -22,8 +22,9 @@ class Live_Games_Tool:
 		self.time_fmt = '%M:%S'
 		self.date_fmt = '%Y%m%d'
 		self.options = Options()
-		self.options.headless = False
+		self.options.headless = True
 		self.odds_df = None
+		self.gui = g.GUI(version=version)
 
 		if version == 'nba':
 			self.odds_version = 'basketball_nba'
@@ -34,6 +35,7 @@ class Live_Games_Tool:
 		while True:
 			self.odds_df = get_odds(version=self.odds_version)
 			time.sleep(60)
+
 
 	def get_game_urls(self):
 		d = ''
@@ -86,6 +88,8 @@ class Live_Games_Tool:
 	def play_by_play(self, game_id):
 		driver = self.open_web_driver(game_id=game_id)
 		last_minute = ''
+		game = ''
+		live_total = ''
 		last_time = None
 		already_half = False
 
@@ -144,6 +148,9 @@ class Live_Games_Tool:
 						team_h = soup.find('div', {'class':'team home'})
 						home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
 						print(away, 'vs', home, time_stamp, half, 'quarter')
+						game = ' '.join([away, 'vs', home])
+
+
 						# live_game = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
 						# if live_game.empty:
 						# 	print('no live odds')
@@ -180,10 +187,11 @@ class Live_Games_Tool:
 				past_road_score = int(past_score.split()[0])
 				past_home_score = int(past_score.split()[2])
 				past_total = past_road_score + past_home_score
-				print(total_points, past_total)
-				print('current total', total_points, 'live total')#,live_game['total'].values[0])
+				#print(total_points, past_total)
+				#print('current total', total_points, 'live total')#,live_game['total'].values[0])
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
-				print('ppm last ' + str(self.n) + ' minutes', ppm_n)
+				#print('ppm last ' + str(self.n) + ' minutes', ppm_n)
+
 
 				if self.version == 'cbb':
 					if half == 1 or half == 0:
@@ -203,9 +211,25 @@ class Live_Games_Tool:
 				t = datetime.strptime(q, self.time_fmt)
 				seconds_played = (t - last_time).seconds
 				ppm_game = total_points / (seconds_played / 60)
-				print('ppm game', round(ppm_game, 2))
+				#print('ppm game', round(ppm_game, 2))
+				# self.gui.df.at[game, 'Time'] = time_stamp
+				# self.gui.df.at[game, 'Period'] = half
+				# self.gui.df.at[game, 'Game'] = game
+				# self.gui.df.at[game, 'Current Total'] = total_points
+				# self.gui.df.at[game, 'Live Total'] = live_total
+				# self.gui.df.at[game, 'PPM Last N'] = ppm_n
+				# self.gui.df.at[game, 'PPM Game'] = ppm_game
+				df = pd.DataFrame(columns=c.live_columns)
+				df.at[game, 'Time'] = time_stamp
+				df.at[game, 'Period'] = half
+				df.at[game, 'Game'] = game
+				df.at[game, 'Current Total'] = total_points
+				df.at[game, 'Live Total'] = live_total
+				df.at[game, 'PPM Last N'] = ppm_n
+				df.at[game, 'PPM Game'] = ppm_game
+				self.gui.q.put(item=df)
 
-
+				g.fill_box(self.gui.root, self.gui.df)
 
 				if half == 0:
 					print('halftime')
@@ -218,6 +242,9 @@ class Live_Games_Tool:
 
 def driver(version, n):
 	lg = Live_Games_Tool(version=version, n=n)
+	lg.gui.create_box(columns=c.live_columns)
+	# lg.gui.q.put( item=[1, 2])
+	# print(lg.gui.q.get())
 	id_list = lg.get_game_urls()
 	t1 = threading.Thread(target=lg.update_odds)
 	t1.start()
@@ -229,7 +256,5 @@ def driver(version, n):
 		time.sleep(2)
 
 
-
-
 if __name__ == '__main__':
-	driver(version='nba',n=5)
+	driver(version='cbb',n=5)
