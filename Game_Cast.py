@@ -6,13 +6,15 @@ from selenium.webdriver.firefox.options import Options
 import pandas as pd
 import urllib.request
 import Constants as c
+import re
+
 
 def open_web_driver(game_id):
     options = Options()
-    options.headless = True
+    options.headless = False
     driver = webdriver.Firefox(options=options)
 
-    url = 'https://www.espn.com/nba/game?gameId=' + game_id
+    url = 'https://www.espn.com/nba/playbyplay?gameId=' + game_id
 
     while True:
         try:
@@ -25,31 +27,38 @@ def open_web_driver(game_id):
     return driver
 
 def player_stats(players):
-    otf = pd.DataFrame(columns=['POS', 'FG', '3PT', 'REB', 'AST', 'PF', 'PTS'])
+    otf = pd.DataFrame(columns=c.player_columns)
     otf.index.name = 'NAME'
     for player in players:
         p_stats = [p.text.strip() for p in player.find_all('td')]
-        f, l, pos = p_stats[0].split()
-        name = f + ' ' + l
+        p_stats = [re.sub(r"[\n\t]", " ", p) for p in p_stats]
+
+        line = p_stats[0].split()
+        pos = line[-1]
+        name = ' '.join(line[:-1])
         fg, tri, reb, ast, pf, pts = p_stats[1],p_stats[2],p_stats[3],p_stats[4],p_stats[5],p_stats[6]
-        otf.at[name, 'POS'] = pos
+        otf.at[name, 'Name'] = name
+        otf.at[name, 'Pos'] = pos
         otf.at[name, 'FG'] = fg
         otf.at[name, '3PT'] = tri
-        otf.at[name, 'REB'] = reb
-        otf.at[name, 'AST'] = ast
+        otf.at[name, 'Reb'] = reb
+        otf.at[name, 'Ast'] = ast
         otf.at[name, 'PF'] = pf
-        otf.at[name, 'PTS'] = pts
+        otf.at[name, 'Pts'] = pts
     return otf
 
-def current_lineups(id, driver):
-    driver.find_element_by_tag_name('body').send_keys(common.Keys.COMMAND + 't')
-    while True:
-        try:
-            driver.get(c.nba_gamecast_url+id)
-        except common.exceptions.TimeoutException:
-            continue
-        break
-    time.sleep(.2)
+def current_lineups(driver):
+    #driver.execute_script("window.open('');")
+
+
+    driver.switch_to.window(driver.window_handles[1])
+    # while True:
+    #     try:
+    #         driver.get(c.nba_gamecast_url+'401267189')
+    #     except common.exceptions.TimeoutException:
+    #         continue
+    #     break
+    # time.sleep(.2)
     page = driver.page_source
     soup = bs.BeautifulSoup(page, 'html.parser')
     player_table = soup.find('div', {'class':'sub-module tabbedTable on_the_court basketball'})
@@ -60,9 +69,13 @@ def current_lineups(id, driver):
 
     away_df = player_stats(players=away_players)
     home_df = player_stats(players=home_players)
-    return away_df, home_df
+    driver.switch_to.window(driver.window_handles[0])
+    df = away_df.append(home_df)
+    return df
 
 
 if __name__ == '__main__':
+    driver = open_web_driver('401267189')
+    driver.execute_script("window.open('');")
 
-    current_lineups(id='401265854')
+    current_lineups(driver=driver)

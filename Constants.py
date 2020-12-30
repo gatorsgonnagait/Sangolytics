@@ -10,4 +10,5 @@ nba_version = 'basketball_nba'
 cbb_version = 'basketball_ncaab'
 region = 'us'
 market = 'totals'
-live_columns = ['Game','Current Total','Live Total','PPM Last N','PPM Game']
+live_columns = ['Game','Time','Period','Current Total','Live Total','PPM Last N','PPM Game']
+player_columns = ['Name','Team','Pos','FG','3PT','Reb','Ast','PF','Pts']

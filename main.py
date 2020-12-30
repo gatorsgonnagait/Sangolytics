@@ -13,6 +13,8 @@ import requests
 from datetime import datetime as dt
 from Odds import get_odds
 import GUI as g
+import Game_Cast as gc
+import queue
 
 class Live_Games_Tool:
 
@@ -72,11 +74,13 @@ class Live_Games_Tool:
 			try:
 				driver.get(url)
 				if self.version == 'nba':
-					time.sleep(1)
+
 					driver.execute_script("window.open()")
-					driver.switch_to_window(driver.window_handles[1])
-					driver.get(c.nba_gamecast_url+game_id)
-					driver.switch_to_window(driver.window_handles[0])
+					driver.switch_to.window(driver.window_handles[1])
+					time.sleep(.75)
+					driver.get(c.nba_gamecast_url + game_id)
+					driver.switch_to.window(driver.window_handles[0])
+
 			except common.exceptions.TimeoutException:
 				continue
 			break
@@ -85,6 +89,21 @@ class Live_Games_Tool:
 		time.sleep(1)
 		return driver
 
+	def time_difference(self, lines, current_time):
+		line, time_diff = None, None
+		for li in lines:
+			time_txt = li.find('td', {'class': 'time-stamp'}).text
+			if '.' in time_txt:
+				past_time = datetime.strptime('00:' + time_txt.split('.')[0], self.time_fmt)
+			else:
+				past_time = datetime.strptime(time_txt, self.time_fmt)
+			line = li
+			time_diff = past_time - current_time
+			if time_diff > timedelta(minutes=self.n):
+				break
+
+		return  line, time_diff
+
 	def play_by_play(self, game_id):
 		driver = self.open_web_driver(game_id=game_id)
 		last_minute = ''
@@ -92,6 +111,37 @@ class Live_Games_Tool:
 		live_total = ''
 		last_time = None
 		already_half = False
+		df = pd.DataFrame(columns=c.live_columns)#, index=['index'])
+
+		while True:
+			try:
+				page = driver.page_source
+				break
+			except common.exceptions.WebDriverException:
+				continue
+
+		soup = bs.BeautifulSoup(page, "html.parser")
+
+		while True:
+			try:
+				team_a = soup.find('div', {'class': 'team away'})
+				away = team_a.find('span', {'class': 'long-name'}).text + ' ' + team_a.find('span', {'class': 'short-name'}).text
+				team_h = soup.find('div', {'class': 'team home'})
+				home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
+				game = ' '.join([away, 'vs', home])
+
+				break
+			except IndexError:
+				time.sleep(.2)
+				continue
+
+		if self.version == 'nba':
+			player_box = self.gui.create_player_box(columns=c.player_columns, game=game)
+			#player_df = pd.DataFrame(columns=c.player_columns)
+			player_queue = queue.Queue()
+			t2 = threading.Thread(target=self.gui.process_players, args=[player_queue, player_box])
+			t2.start()
+
 
 		while True:
 			try:
@@ -102,37 +152,40 @@ class Live_Games_Tool:
 			soup = bs.BeautifulSoup(page, "html.parser")
 
 			try:
-				block = soup.find('table', {'class': 'plays-region'})
+				#block = soup.find('table', {'class': 'plays-region'})
+				lines = soup.find('div', {'id': 'gamepackage-play-by-play'})
 			except AttributeError:
 				continue
 
 			try:
 				if self.version == 'cbb':
-					half = int(soup.find('span', {'class': 'status-detail'}).text.split()[-2][0])
+					half = soup.find('span', {'class': 'status-detail'}).text.split()[-2]
 				elif self.version == 'nba':
-					half = int(soup.find('span', {'class': 'status-detail'}).text.split()[-1][0])
-			except (IndexError, ValueError) as e:
+					half = soup.find('span', {'class': 'status-detail'}).text.split()[-1]
+			except (IndexError, ValueError, AttributeError) as e:
 
 				h = soup.find('span', {'class': 'status-detail'}).text
-				if h == 'Halftime' or h == '0.0':
-					half = 0
+				if h == 'Halftime':# or h == '0.0':
+					half = h
 					if already_half:
 						time.sleep(60)
 						continue
+				elif 'OT' in h:
+					half = h
 				else:
 					print('End of Game')
+					self.gui.df.drop(index=game, inplace=True)
 					driver.close()
 					return
-			try:
-				lines = block.find('tbody')
-			except AttributeError:
-				continue
-
+			# try:
+			# 	lines = block.find('tbody')
+			# except AttributeError:
+			# 	continue
 			time_stamp = lines.find('td', {'class': 'time-stamp'}).text
 
 			if '.' in time_stamp:
 				current_time = datetime.strptime('00:'+time_stamp.split('.')[0], self.time_fmt)
-				print(current_time)
+				#print(current_time)
 			else:
 				current_time = datetime.strptime(time_stamp, self.time_fmt)
 
@@ -141,29 +194,15 @@ class Live_Games_Tool:
 
 			#if current_minute != last_minute:
 			if current_time != last_time:
-				while True:
-					try:
-						team_a = soup.find('div', {'class':'team away'})
-						away = team_a.find('span', {'class': 'long-name'}).text + ' ' + team_a.find('span', {'class': 'short-name'}).text
-						team_h = soup.find('div', {'class':'team home'})
-						home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
-						print(away, 'vs', home, time_stamp, half, 'quarter')
-						game = ' '.join([away, 'vs', home])
+
+				print(away, 'vs', home, time_stamp, half, 'quarter')
+
+				# live_total = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
+				# if live_total.empty:
+				# 	print('no live odds')
+				# 	print()
 
 
-						# live_game = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
-						# if live_game.empty:
-						# 	print('no live odds')
-						# 	print()
-						# 	driver.close()
-						# 	return
-
-						break
-					except IndexError:
-						time.sleep(.2)
-						continue
-
-				#last_minute = current_minute
 				last_time = current_time
 				road_score = int(score.split()[0])
 				home_score = int(score.split()[2])
@@ -172,12 +211,19 @@ class Live_Games_Tool:
 				if already_half:
 					already_half = False
 					past_time = datetime.strptime('20:00', self.time_fmt)
-					line = lines[0]
+					#line = lines
 					time_diff = past_time - current_time
 				else:
-					for li in lines:
-						time_txt = li.find('td', {'class': 'time-stamp'}).text
-						past_time = datetime.strptime(time_txt, self.time_fmt)
+					#line, time_diff = self.time_difference(lines, current_time)
+					for li in lines.find_all('tr'):
+						try:
+							time_txt = li.find('td', {'class': 'time-stamp'}).text
+						except AttributeError:
+							continue
+						if '.' in time_txt:
+							past_time = datetime.strptime('00:' + time_txt.split('.')[0], self.time_fmt)
+						else:
+							past_time = datetime.strptime(time_txt, self.time_fmt)
 						line = li
 						time_diff = past_time - current_time
 						if time_diff > timedelta(minutes=self.n):
@@ -188,29 +234,41 @@ class Live_Games_Tool:
 				past_home_score = int(past_score.split()[2])
 				past_total = past_road_score + past_home_score
 				#print(total_points, past_total)
-				#print('current total', total_points, 'live total')#,live_game['total'].values[0])
-				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
+				print('current total', total_points, 'live total')#,live_game['total'].values[0])
+				try:
+					ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
+				except ZeroDivisionError:
+					continue
 				#print('ppm last ' + str(self.n) + ' minutes', ppm_n)
 
 
 				if self.version == 'cbb':
-					if half == 1 or half == 0:
+					game_time = 20
+					if half == '1st' or half == 'Halftime':
 						q = '20:00'
-					elif half == 2:
+					elif half == '2nd':
 						q = '40:00'
 				elif self.version == 'nba':
-					if half == 1:
+					game_time = 40
+					if half == '1st':
 						q = '12:00'
-					elif half == 2 or half == 0:
+					elif half == '2nd' or half == 'Halftime':
 						q = '24:00'
-					if half == 3:
+					if half == '3rd':
 						q = '36:00'
-					elif half == 4:
+					elif half == '4th':
 						q = '48:00'
+				if 'OT' in  half:
+					try:
+						ot = int(half[0])
+					except ValueError:
+						ot = 1
+					ot_minutes = game_time + ot * 5
+					q = str(ot_minutes)+':00'
 
 				t = datetime.strptime(q, self.time_fmt)
 				seconds_played = (t - last_time).seconds
-				ppm_game = total_points / (seconds_played / 60)
+				ppm_game = round(total_points / (seconds_played / 60), 2)
 				#print('ppm game', round(ppm_game, 2))
 				# self.gui.df.at[game, 'Time'] = time_stamp
 				# self.gui.df.at[game, 'Period'] = half
@@ -219,19 +277,26 @@ class Live_Games_Tool:
 				# self.gui.df.at[game, 'Live Total'] = live_total
 				# self.gui.df.at[game, 'PPM Last N'] = ppm_n
 				# self.gui.df.at[game, 'PPM Game'] = ppm_game
-				df = pd.DataFrame(columns=c.live_columns)
+
 				df.at[game, 'Time'] = time_stamp
 				df.at[game, 'Period'] = half
 				df.at[game, 'Game'] = game
 				df.at[game, 'Current Total'] = total_points
-				df.at[game, 'Live Total'] = live_total
+				#df.at[game, 'Live Total'] = live_total['total'].values[0]
 				df.at[game, 'PPM Last N'] = ppm_n
 				df.at[game, 'PPM Game'] = ppm_game
-				self.gui.q.put(item=df)
+				if not df.empty:
+					self.gui.q.put(item=df)
+					#self.gui.fill_box(self.gui.df)
 
-				g.fill_box(self.gui.root, self.gui.df)
+				if self.version == 'nba':
+					player_df = gc.current_lineups(driver)
+					player_df[:5]['Team'] = away
+					player_df[5:]['Team'] = home
+					if not player_df.empty:
+						player_queue.put(player_df)
 
-				if half == 0:
+				if half == 'Halftime':
 					print('halftime')
 					already_half = True
 				print()
@@ -242,18 +307,46 @@ class Live_Games_Tool:
 
 def driver(version, n):
 	lg = Live_Games_Tool(version=version, n=n)
-	#lg.gui.create_box(columns=c.live_columns)
+	lg.gui.create_box(columns=c.live_columns)
 
-	id_list = lg.get_game_urls()
-	t1 = threading.Thread(target=lg.update_odds)
-	t1.start()
-	if not id_list: return
+	# t1 = threading.Thread(target=lg.update_odds)
+	# t1.start()
+	#
+	# id_list = lg.get_game_urls()
+	#
+	# if not id_list: return
+	#
+	# for id in id_list:
+	# 	thread = threading.Thread(target=lg.play_by_play, args=[id])
+	# 	thread.start()
+	# 	time.sleep(2)
 
-	for id in id_list:
-		thread = threading.Thread(target=lg.play_by_play, args=[id])
-		thread.start()
-		time.sleep(2)
+	# t2 = threading.Thread(target=lg.gui.process_incoming)
+	# t2.start()
+
+	initial = True
+	id_set = set()
+	while True:
+		id_list = lg.get_game_urls()
+		if not id_list: return
+
+		for id in id_list:
+			if id not in id_set:
+				id_set.add(id)
+				thread = threading.Thread(target=lg.play_by_play, args=[id])
+				try:
+					thread.start()
+				except KeyboardInterrupt:
+					thread.join()
+				time.sleep(2)
+
+		if initial:
+			t2 = threading.Thread(target=lg.gui.process_incoming)
+			t2.start()
+			initial = False
+
+		time.sleep(600)
 
 
 if __name__ == '__main__':
-	driver(version='cbb',n=5)
+	driver(version='nba',n=5)

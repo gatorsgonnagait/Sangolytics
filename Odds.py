@@ -33,5 +33,6 @@ def get_odds(version):
     return df
 
 if __name__ == '__main__':
-    df = get_odds(version='basketball_ncaab')
-    live_total = df[(df['home_team'] == 'Stanford Cardinal') & (df['away_team'] == 'CSU Northridge Matadors')]
+    df = get_odds(version='basketball_nba')
+    live_total = df[(df['home_team'] == 'Denver Nuggets') & (df['away_team'] == 'Sacramento Kings')]
+    print(live_total['total'].values[0])
