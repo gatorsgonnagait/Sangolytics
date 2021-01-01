@@ -15,6 +15,7 @@ from Odds import get_odds
 import GUI as g
 import Game_Cast as gc
 import queue
+import re
 
 class Live_Games_Tool:
 
@@ -27,11 +28,20 @@ class Live_Games_Tool:
 		self.options.headless = True
 		self.odds_df = None
 		self.gui = g.GUI(version=version)
+		self.ot = timedelta(minutes=5)
+
 
 		if version == 'nba':
 			self.odds_version = 'basketball_nba'
+			self.period_minutes = timedelta(minutes=12)
+			self.regulation = timedelta(minutes=48)
+			self.num_periods = 4
 		elif version == 'cbb':
 			self.odds_version = 'basketball_ncaab'
+			self.period_minutes = timedelta(minutes=20)
+			self.regulation = timedelta(minutes=40)
+			self.num_periods = 2
+
 
 	def update_odds(self):
 		while True:
@@ -112,6 +122,9 @@ class Live_Games_Tool:
 		last_time = None
 		already_half = False
 		df = pd.DataFrame(columns=c.live_columns)#, index=['index'])
+		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
+
+
 
 		while True:
 			try:
@@ -121,6 +134,48 @@ class Live_Games_Tool:
 				continue
 
 		soup = bs.BeautifulSoup(page, "html.parser")
+		time.sleep(1)
+		periods = soup.find_all('div',{'id': re.compile(r'^gp-quarter-')})
+		for p in periods:
+			period = int(p.attrs['id'][-1])
+			#print(p.find('tbody'))
+			#print(p.find_all('tr'))
+			for line in p.find_all('tr')[1:]:
+				time_txt = line.find('td', {'class': 'time-stamp'}).text
+				if '.' in time_txt:
+					past_time = datetime.strptime('00:' + time_txt.split('.')[0], self.time_fmt)
+				else:
+					past_time = datetime.strptime(time_txt, self.time_fmt)
+
+				time_index = ' '.join([str(period), time_txt])
+				pbp_df.at[time_index, 'time'] = past_time
+				pbp_df.at[time_index, 'period'] = period
+
+				pbp_df.at[time_index, 'adj_time'] = past_time
+				past_score = line.find('td', {'class': 'combined-score'}).text
+				past_road_score = int(past_score.split()[0])
+				past_home_score = int(past_score.split()[2])
+				#past_total = past_road_score + past_home_score
+				pbp_df.at[time_index, 'away'] = past_road_score
+				pbp_df.at[time_index, 'home'] = past_home_score
+				#pbp_df.at[past_time, 'total'] = past_total
+
+
+		pbp_df['total'] = pbp_df['home'] + pbp_df['away']
+
+		#pbp_df['adj_time'] = pbp_df.apply(lambda row: self.period * row.period - row.time if row.period <= self.regulation else self.ot * row.period - row.time, axis = 1)])
+		for i in pbp_df.index:
+
+			if pbp_df.at[i,'period'] <= self.num_periods:
+				pbp_df.at[i, 'adj_time'] = (datetime.strptime("00:00", "%H:%M") +self.period_minutes * pbp_df.at[i, 'period']) - pbp_df.at[i, 'time']
+			else:
+				print(pbp_df.at[i,'period'])
+				ot_number = pbp_df.at[i,'period'] - self.num_periods
+				pbp_df[i, 'adj_time'] = self.regulation + (datetime.strptime("00:00", "%H:%M") + self.ot * ot_number) - pbp_df[i, 'time']
+		pbp_df.to_csv('test.csv')
+		print('wrote test')
+		return
+
 
 		while True:
 			try:
@@ -129,6 +184,7 @@ class Live_Games_Tool:
 				team_h = soup.find('div', {'class': 'team home'})
 				home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
 				game = ' '.join([away, 'vs', home])
+
 
 				break
 			except IndexError:
@@ -185,12 +241,11 @@ class Live_Games_Tool:
 
 			if '.' in time_stamp:
 				current_time = datetime.strptime('00:'+time_stamp.split('.')[0], self.time_fmt)
-				#print(current_time)
 			else:
 				current_time = datetime.strptime(time_stamp, self.time_fmt)
 
 			#current_minute = int(time_stamp.split(':')[0])
-			score = lines.find('td', {'class': 'combined-score'}).text
+			#score = lines.find('td', {'class': 'combined-score'}).text
 
 			#if current_minute != last_minute:
 			if current_time != last_time:
@@ -205,7 +260,7 @@ class Live_Games_Tool:
 
 				last_time = current_time
 				road_score = int(score.split()[0])
-				home_score = int(score.split()[2])
+				#home_score = int(score.split()[2])
 				total_points = road_score + home_score
 				line = None
 				if already_half:
@@ -339,6 +394,7 @@ def driver(version, n):
 				except KeyboardInterrupt:
 					thread.join()
 				time.sleep(2)
+			break
 
 		if initial:
 			t2 = threading.Thread(target=lg.gui.process_incoming)
@@ -349,4 +405,5 @@ def driver(version, n):
 
 
 if __name__ == '__main__':
-	driver(version='nba',n=5)
+	driver(version='cbb',n=5)
+	f = {}

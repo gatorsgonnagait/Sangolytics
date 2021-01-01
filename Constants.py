@@ -12,3 +12,4 @@ region = 'us'
 market = 'totals'
 live_columns = ['Game','Time','Period','Current Total','Live Total','PPM Last N','PPM Game']
 player_columns = ['Name','Team','Pos','FG','3PT','Reb','Ast','PF','Pts']
+play_by_play_columns = ['time', 'period', 'adj_time', 'away', 'home', 'total']
