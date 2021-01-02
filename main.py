@@ -114,33 +114,24 @@ class Live_Games_Tool:
 
 		return  line, time_diff
 
-	def play_by_play(self, game_id):
-		driver = self.open_web_driver(game_id=game_id)
-		last_minute = ''
-		game = ''
-		live_total = ''
-		last_time = None
-		already_half = False
-		df = pd.DataFrame(columns=c.live_columns)#, index=['index'])
-		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
+	def get_play_lines(self, soup, initial):
 
+		pbp_df = pd.DataFrame(c.play_by_play_columns)
+		pbp_df.index.name = 'time_stamp'
 
+		if initial:
+			periods = soup.find_all('div', {'id': re.compile(r'^gp-quarter-')})
+		else:
+			periods = soup.find_all('div', {'id': re.compile(r'^gp-quarter-')})[0]
 
-		while True:
-			try:
-				page = driver.page_source
-				break
-			except common.exceptions.WebDriverException:
-				continue
-
-		soup = bs.BeautifulSoup(page, "html.parser")
-		time.sleep(1)
-		periods = soup.find_all('div',{'id': re.compile(r'^gp-quarter-')})
 		for p in periods:
 			period = int(p.attrs['id'][-1])
-			#print(p.find('tbody'))
-			#print(p.find_all('tr'))
-			for line in p.find_all('tr')[1:]:
+			if initial:
+				lines = p.find_all('tr')[1:]
+			else:
+				lines = p.find_all('tr')[1]
+
+			for line in lines:
 				time_txt = line.find('td', {'class': 'time-stamp'}).text
 				if '.' in time_txt:
 					past_time = datetime.strptime('00:' + time_txt.split('.')[0], self.time_fmt)
@@ -155,27 +146,46 @@ class Live_Games_Tool:
 				past_score = line.find('td', {'class': 'combined-score'}).text
 				past_road_score = int(past_score.split()[0])
 				past_home_score = int(past_score.split()[2])
-				#past_total = past_road_score + past_home_score
 				pbp_df.at[time_index, 'away'] = past_road_score
 				pbp_df.at[time_index, 'home'] = past_home_score
-				#pbp_df.at[past_time, 'total'] = past_total
-
 
 		pbp_df['total'] = pbp_df['home'] + pbp_df['away']
 
-		#pbp_df['adj_time'] = pbp_df.apply(lambda row: self.period * row.period - row.time if row.period <= self.regulation else self.ot * row.period - row.time, axis = 1)])
 		for i in pbp_df.index:
-
-			if pbp_df.at[i,'period'] <= self.num_periods:
-				pbp_df.at[i, 'adj_time'] = (datetime.strptime("00:00", "%H:%M") +self.period_minutes * pbp_df.at[i, 'period']) - pbp_df.at[i, 'time']
+			if pbp_df.at[i, 'period'] <= self.num_periods:
+				pbp_df.at[i, 'adj_time'] = (datetime.strptime("00:00", "%H:%M") + self.period_minutes * pbp_df.at[i, 'period']) - pbp_df.at[i, 'time']
 			else:
-				print(pbp_df.at[i,'period'])
-				ot_number = pbp_df.at[i,'period'] - self.num_periods
+				ot_number = pbp_df.at[i, 'period'] - self.num_periods
 				pbp_df[i, 'adj_time'] = self.regulation + (datetime.strptime("00:00", "%H:%M") + self.ot * ot_number) - pbp_df[i, 'time']
-		pbp_df.to_csv('test.csv')
-		print('wrote test')
-		return
 
+		return pbp_df
+
+	def play_by_play(self, game_id):
+		driver = self.open_web_driver(game_id=game_id)
+		last_minute = ''
+		game = ''
+		live_total = ''
+		last_time = None
+		already_half = False
+		df = pd.DataFrame(columns=c.live_columns)#, index=['index'])
+		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
+		pbp_df.index.name = 'time_stamp'
+		initial = True
+
+
+		while True:
+			try:
+				page = driver.page_source
+				break
+			except common.exceptions.WebDriverException:
+				continue
+
+		soup = bs.BeautifulSoup(page, "html.parser")
+		time.sleep(1)
+
+		# pbp_df.to_csv('test.csv')
+		# print('wrote test')
+		# return
 
 		while True:
 			try:
@@ -184,8 +194,6 @@ class Live_Games_Tool:
 				team_h = soup.find('div', {'class': 'team home'})
 				home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
 				game = ' '.join([away, 'vs', home])
-
-
 				break
 			except IndexError:
 				time.sleep(.2)
@@ -200,18 +208,39 @@ class Live_Games_Tool:
 
 
 		while True:
+			# try:
+			# 	page = driver.page_source
+			# except common.exceptions.WebDriverException:
+			# 	continue
+			#
+			# soup = bs.BeautifulSoup(page, "html.parser")
+			#
+			# try:
+			# 	#block = soup.find('table', {'class': 'plays-region'})
+			# 	lines = soup.find('div', {'id': 'gamepackage-play-by-play'})
+			# except AttributeError:
+			# 	continue
+
 			try:
 				page = driver.page_source
 			except common.exceptions.WebDriverException:
 				continue
 
 			soup = bs.BeautifulSoup(page, "html.parser")
+			time.sleep(1)
+			if initial:
+				pbp_df = self.get_play_lines(soup, initial=True)
+				initial = False
+			else:
+				new_pbp = self.get_play_lines(soup, initial=False)
+				if new_pbp.first_valid_index not in pbp_df.index:
+					pbp_df = new_pbp.iloc[0].append(pbp_df)
 
-			try:
-				#block = soup.find('table', {'class': 'plays-region'})
-				lines = soup.find('div', {'id': 'gamepackage-play-by-play'})
-			except AttributeError:
-				continue
+
+
+			# pbp_df.to_csv('test.csv')
+			# print('wrote test')
+			# return
 
 			try:
 				if self.version == 'cbb':
