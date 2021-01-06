@@ -12,7 +12,12 @@ class GUI(threading.Thread):
         self.q = queue.Queue()
 
         threading.Thread.__init__(self)
-        self.start()
+        threading.Thread.daemon = True
+        try:
+            self.start()
+        except KeyboardInterrupt:
+            self.join()
+
         self.box = None
         self.root = None
         self.df = pd.DataFrame(columns=c.live_columns)
