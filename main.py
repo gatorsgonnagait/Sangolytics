@@ -33,6 +33,7 @@ class Live_Games_Tool:
 		self.web_driver_dict = {}
 
 
+
 		if version == 'nba':
 			self.odds_version = 'basketball_nba'
 			self.period_minutes = timedelta(minutes=12)
@@ -160,6 +161,7 @@ class Live_Games_Tool:
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
 		pbp_df.index.name = 'time_stamp'
 		initial = True
+		player_queue = queue.Queue()
 
 
 		while True:
@@ -184,6 +186,7 @@ class Live_Games_Tool:
 				time.sleep(.2)
 				continue
 
+
 		if self.version == 'nba':
 			player_box = self.gui.create_player_box(columns=c.player_columns, game=game)
 			player_queue = queue.Queue()
@@ -207,7 +210,7 @@ class Live_Games_Tool:
 					#or (pbp_df['period'].iloc[0] == '4th' and pbp_df['time'].iloc[0] == '4th' and pbp_df['away'].iloc[0] != pbp_df['home'].iloc[0]):
 				print('End of Game')
 				time.sleep(60)
-				self.gui.df.drop(index=game, inplace=True)
+				self.gui.list_box.delete(game)
 				driver.quit()
 				return
 
@@ -299,7 +302,8 @@ def driver(version, n):
 	id_set = set()
 	while True:
 		id_list = lg.get_game_urls()
-		if not id_list: return
+
+		#if not id_list: return
 
 		for id in id_list:
 			if id not in id_set:

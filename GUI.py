@@ -25,6 +25,9 @@ class GUI(threading.Thread):
         #window = tk.Toplevel(self.root)
         #tk.Label(window, text="Sangolytics", font=("Arial", 20)).grid(row=0, columnspan=3)
         self.list_box = ttk.Treeview()
+        self.player_box_dict = {}
+        self.game_row = {}
+        self.game_set = set()
 
 
     def run(self):
@@ -39,22 +42,23 @@ class GUI(threading.Thread):
     def process_incoming(self):
         print('process team stats')
         while True:
+            df = pd.DataFrame()
             while not self.q.empty():
                 try:
                     tdf = self.q.get()
                     if tdf.empty:
                         continue
 
-                    if not tdf['Game'].iloc[0] in self.df.index:
-                        self.df = self.df.append(tdf, ignore_index=False, sort=False)
+                    if not tdf['Game'].iloc[0] in df.index:
+                        df = df.append(tdf, ignore_index=False, sort=False)
                     else:
-                        self.df.update(tdf, overwrite=True)
+                        df.update(tdf, overwrite=True)
 
                     time.sleep(.5)
                 except self.q.empty():
                     pass
             time.sleep(2)
-            self.fill_box(df=self.df)
+            self.fill_box(df=df)
 
     def process_players(self, player_q, box):
         print('process players stats')
@@ -71,6 +75,7 @@ class GUI(threading.Thread):
             time.sleep(2)
             self.fill_players(df=tdf, box=box)
 
+
     def create_box(self, columns):
         print('create box')
         window = tk.Toplevel(self.root)
@@ -80,26 +85,36 @@ class GUI(threading.Thread):
             listBox.heading(col, text=col)
         listBox.grid(row=1, column=0, columnspan=2)
         tk.Button(window, text="Close", width=15, command=self.root.quit).grid(row=4, column=1)
+        #tk.Button(window, text="Players", width=15, command=self.open_players()).grid(row=4, column=0)
         self.list_box = listBox
         #return listBox
 
     def create_player_box(self, columns, game):
         print('create player box')
-        window = tk.Toplevel(self.root)
+        window = tk.Toplevel(tk.Tk())
         tk.Label(window, text=game, font=("Arial", 20)).grid(row=0, columnspan=3)
         listBox = ttk.Treeview(window, columns=columns, show='headings')
         for col in columns:
             listBox.heading(col, text=col)
         listBox.grid(row=1, column=0, columnspan=2)
-        tk.Button(window, text="Close", width=15, command=self.root.quit).grid(row=4, column=1)
+        tk.Button(window, text="Close", width=15, command=listBox.quit).grid(row=4, column=1)
         return listBox
 
 
     def fill_box(self, df):
-        self.list_box.delete(*self.list_box.get_children())
-        for row in df.values.tolist():
-            self.list_box.insert('', 'end', values=row)
-        self.list_box.delete()
+        #live_columns = ['Game','Period','Current Total','Live Total','PPM Last N','PPM Game']
+        for i, row in enumerate(df.values.tolist()):
+            if self.list_box.exists(item=row[0]):
+
+                self.list_box.delete(row[0])
+                #self.list_box.set(row, column=1, value=row[1])
+                self.list_box.insert('', index=self.game_row[row[0]], iid=row[0], values=row)
+            else:
+                self.game_row[row[0]] = i
+                self.list_box.insert('', index=i,iid=row[0], values=row)
+
+
+        #self.list_box.delete()
 
     def fill_players(self, df, box):
         box.delete(*box.get_children())
@@ -107,6 +122,15 @@ class GUI(threading.Thread):
             box.insert('', 'end', values=row)
         box.delete()
 
+    def open_players(self, game, id):
+        player_box = self.create_player_box(columns=c.player_columns, game=game)
+        self.player_box_dict[id] = player_box
+        player_queue = queue.Queue()
+        t2 = threading.Thread(target=self.process_players, args=[player_queue, player_box])
+        try:
+            t2.start()
+        except KeyboardInterrupt:
+            t2.join()
 
 
 # def fill_box(list_box, df):
