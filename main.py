@@ -16,6 +16,7 @@ import GUI as g
 import Game_Cast as gc
 import queue
 import re
+import sys
 
 class Live_Games_Tool:
 
@@ -31,8 +32,6 @@ class Live_Games_Tool:
 		self.ot = timedelta(minutes=5)
 		self.web_driver_urls = None
 		self.web_driver_dict = {}
-
-
 
 		if version == 'nba':
 			self.odds_version = 'basketball_nba'
@@ -149,14 +148,9 @@ class Live_Games_Tool:
 
 	def play_by_play(self, game_id):
 		driver = self.open_web_driver(game_id=game_id)
-
-		last_minute = ''
 		game = ''
-		live_total = ''
-		last_time = None
 		past_total = None
 		time_diff = None
-		already_half = False
 		df = pd.DataFrame(columns=c.live_columns)#, index=['index'])
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
 		pbp_df.index.name = 'time_stamp'
@@ -193,8 +187,9 @@ class Live_Games_Tool:
 			t2 = threading.Thread(target=self.gui.process_players, args=[player_queue, player_box])
 			try:
 				t2.start()
-			except KeyboardInterrupt:
+			except (KeyboardInterrupt, SystemExit):
 				t2.join()
+				sys.exit()
 
 
 		while True:
@@ -277,57 +272,75 @@ class Live_Games_Tool:
 
 			time.sleep(2)
 
+def launch_threads(lg, id_set, max=None):
+	id_list = lg.get_game_urls()
+
+	for id in id_list[:max]:
+		if id not in id_set:
+			id_set.add(id)
+			thread = threading.Thread(target=lg.play_by_play, args=[id])
+			thread.daemon = True
+			try:
+				thread.start()
+			except (KeyboardInterrupt, SystemExit):
+				lg.web_driver_dict[id].quit()
+				thread.join()
+				sys.exit()
+			time.sleep(2)
 
 def driver(version, n):
 
 	lg = Live_Games_Tool(version=version, n=n)
 	lg.gui.create_box(columns=c.live_columns)
 
-	# t1 = threading.Thread(target=lg.update_odds)
-	# t1.start()
-	#
-	# id_list = lg.get_game_urls()
-	#
-	# if not id_list: return
-	#
-	# for id in id_list:
-	# 	thread = threading.Thread(target=lg.play_by_play, args=[id])
-	# 	thread.start()
-	# 	time.sleep(2)
-
-	# t2 = threading.Thread(target=lg.gui.process_incoming)
-	# t2.start()
-
-	initial = True
 	id_set = set()
+	max = 5
+	launch_threads(lg, id_set, max)
+	t2 = threading.Thread(target=lg.gui.process_incoming)
+	try:
+		t2.start()
+	except (KeyboardInterrupt, SystemExit):
+		t2.join()
+		sys.exit()
+
+	start = time.time()
 	while True:
-		id_list = lg.get_game_urls()
 
-		#if not id_list: return
+		end = time.time()
+		if start - end > 420:
+			start = time.time()
+			launch_threads(lg, id_set, max)
 
-		for id in id_list:
-			if id not in id_set:
-				id_set.add(id)
-				thread = threading.Thread(target=lg.play_by_play, args=[id])
-				thread.daemon = True
-				try:
-					thread.start()
-				except KeyboardInterrupt:
-					lg.web_driver_dict[id].quit()
-					thread.join()
-				time.sleep(2)
+		if not lg.gui.is_alive():
+			break
+
+		# id_list = lg.get_game_urls()
+		#
+		# #if not id_list: return
+		#
+		# for id in id_list:
+		# 	if id not in id_set:
+		# 		id_set.add(id)
+		# 		thread = threading.Thread(target=lg.play_by_play, args=[id])
+		# 		thread.daemon = True
+		# 		try:
+		# 			thread.start()
+		# 		except KeyboardInterrupt:
+		# 			lg.web_driver_dict[id].quit()
+		# 			thread.join()
+		# 		time.sleep(2)
 			#break
 
-		if initial:
-			t2 = threading.Thread(target=lg.gui.process_incoming)
-			try:
-				t2.start()
-			except KeyboardInterrupt:
+		# if initial:
+		# 	t2 = threading.Thread(target=lg.gui.process_incoming)
+		# 	try:
+		# 		t2.start()
+		# 	except KeyboardInterrupt:
+		#
+		# 		t2.join()
+		# 	initial = False
 
-				t2.join()
-			initial = False
-
-		time.sleep(600)
+		#time.sleep(600)
 
 
 if __name__ == '__main__':

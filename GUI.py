@@ -5,6 +5,7 @@ import threading
 import Constants as c
 import queue
 import time
+import sys
 
 class GUI(threading.Thread):
     def __init__(self, version):
@@ -15,15 +16,14 @@ class GUI(threading.Thread):
         threading.Thread.daemon = True
         try:
             self.start()
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, SystemExit):
             self.join()
+            sys.exit()
 
         self.box = None
         self.root = None
         self.df = pd.DataFrame(columns=c.live_columns)
         self.player_df = pd.DataFrame(columns=c.player_columns)
-        #window = tk.Toplevel(self.root)
-        #tk.Label(window, text="Sangolytics", font=("Arial", 20)).grid(row=0, columnspan=3)
         self.list_box = ttk.Treeview()
         self.player_box_dict = {}
         self.game_row = {}
@@ -31,11 +31,8 @@ class GUI(threading.Thread):
 
 
     def run(self):
-
         self.root = tk.Tk()
         self.root.withdraw()
-        #self.list_box = self.create_box(columns=c.live_columns)
-        #self.process_incoming()
         self.root.mainloop()
 
 
@@ -85,13 +82,12 @@ class GUI(threading.Thread):
             listBox.heading(col, text=col)
         listBox.grid(row=1, column=0, columnspan=2)
         tk.Button(window, text="Close", width=15, command=self.root.quit).grid(row=4, column=1)
-        #tk.Button(window, text="Players", width=15, command=self.open_players()).grid(row=4, column=0)
         self.list_box = listBox
-        #return listBox
+
 
     def create_player_box(self, columns, game):
         print('create player box')
-        window = tk.Toplevel(tk.Tk())
+        window = tk.Toplevel(self.root)
         tk.Label(window, text=game, font=("Arial", 20)).grid(row=0, columnspan=3)
         listBox = ttk.Treeview(window, columns=columns, show='headings')
         for col in columns:
@@ -105,10 +101,12 @@ class GUI(threading.Thread):
         #live_columns = ['Game','Period','Current Total','Live Total','PPM Last N','PPM Game']
         for i, row in enumerate(df.values.tolist()):
             if self.list_box.exists(item=row[0]):
-
-                self.list_box.delete(row[0])
-                #self.list_box.set(row, column=1, value=row[1])
-                self.list_box.insert('', index=self.game_row[row[0]], iid=row[0], values=row)
+                self.list_box.focus(row[0])
+                self.list_box.set(row[0], column=1, value=row[1])
+                self.list_box.set(row[0], column=2, value=row[2])
+                self.list_box.set(row[0], column=3, value=row[3])
+                self.list_box.set(row[0], column=4, value=row[4])
+                self.list_box.set(row[0], column=5, value=row[5])
             else:
                 self.game_row[row[0]] = i
                 self.list_box.insert('', index=i,iid=row[0], values=row)
