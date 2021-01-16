@@ -1,16 +1,11 @@
 from selenium import webdriver, common
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
-import urllib.request
 import bs4 as bs
 from datetime import datetime, timedelta
 import time
 import pandas as pd
 import Constants as c
 import threading
-import Tools as t
-import requests
-from datetime import datetime as dt
 from Odds import get_odds
 import GUI as g
 import Game_Cast as gc
@@ -20,9 +15,8 @@ import sys
 
 class Live_Games_Tool:
 
-	def __init__(self, version, n):
+	def __init__(self, version):
 		self.version = version
-		self.n = n
 		self.time_fmt = '%M:%S'
 		self.date_fmt = '%Y%m%d'
 		self.options = Options()
@@ -122,29 +116,32 @@ class Live_Games_Tool:
 				else:
 					past_time = datetime.strptime(time_txt, self.time_fmt)
 
-				time_index = ' '.join([str(period), time_txt])
+				past_score = line.find('td', {'class': 'combined-score'}).text
+				past_road_score = past_score.split()[0]
+				past_home_score = past_score.split()[2]
+				time_index = ' '.join([str(period), time_txt, past_road_score, past_home_score])
 				pbp_df.at[time_index, 'time'] = past_time
 				pbp_df.at[time_index, 'period'] = period
 
 				pbp_df.at[time_index, 'adj_time'] = past_time
-				past_score = line.find('td', {'class': 'combined-score'}).text
-				past_road_score = int(past_score.split()[0])
-				past_home_score = int(past_score.split()[2])
-				pbp_df.at[time_index, 'away'] = past_road_score
-				pbp_df.at[time_index, 'home'] = past_home_score
+				pbp_df.at[time_index, 'away'] = int(past_road_score)
+				pbp_df.at[time_index, 'home'] = int(past_home_score)
 				if not initial: break
 			if not initial: break
 
 		pbp_df['total'] = pbp_df['home'] + pbp_df['away']
 
 		for i in pbp_df.index:
+
 			if pbp_df.at[i, 'period'] <= self.num_periods:
 				pbp_df.at[i, 'adj_time'] = (datetime.strptime("00:00", "%H:%M") + self.period_minutes * pbp_df.at[i, 'period']) - pbp_df.at[i, 'time']
 			else:
 				ot_number = pbp_df.at[i, 'period'] - self.num_periods
-				pbp_df[i, 'adj_time'] = self.regulation + (datetime.strptime("00:00", "%H:%M") + self.ot * ot_number) - pbp_df[i, 'time']
+				pbp_df.at[i, 'adj_time'] = self.regulation + (datetime.strptime("00:00", "%H:%M") + self.ot * ot_number) - pbp_df.at[i, 'time']
+
 
 		return pbp_df
+
 
 	def play_by_play(self, game_id):
 		driver = self.open_web_driver(game_id=game_id)
@@ -156,32 +153,35 @@ class Live_Games_Tool:
 		pbp_df.index.name = 'time_stamp'
 		initial = True
 		player_queue = queue.Queue()
+		self.gui.force_continue[game_id] = False
 
-
-		while True:
+		while self.gui.is_alive():
 			try:
 				page = driver.page_source
+				soup = bs.BeautifulSoup(page, "html.parser")
+				time.sleep(.2)
 				break
 			except common.exceptions.WebDriverException:
 				continue
 
-		soup = bs.BeautifulSoup(page, "html.parser")
-		time.sleep(1)
 
-		while True:
+
+		while self.gui.is_alive():
 			try:
 				team_a = soup.find('div', {'class': 'team away'})
 				away = team_a.find('span', {'class': 'long-name'}).text + ' ' + team_a.find('span', {'class': 'short-name'}).text
 				team_h = soup.find('div', {'class': 'team home'})
 				home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
 				game = ' '.join([away, 'vs', home])
+				self.gui.game_names_dict[game_id] = game
+
 				break
 			except IndexError:
 				time.sleep(.2)
 				continue
 
 
-		if self.version == 'nba':
+		if self.gui.player_loop and self.version == 'nba':
 			player_box = self.gui.create_player_box(columns=c.player_columns, game=game)
 			player_queue = queue.Queue()
 			t2 = threading.Thread(target=self.gui.process_players, args=[player_queue, player_box])
@@ -192,7 +192,7 @@ class Live_Games_Tool:
 				sys.exit()
 
 
-		while True:
+		while self.gui.is_alive():
 
 			try:
 				page = driver.page_source
@@ -200,14 +200,17 @@ class Live_Games_Tool:
 				continue
 
 			soup = bs.BeautifulSoup(page, "html.parser")
-			half = soup.find('span', {'class': 'status-detail'}).text
+			try:
+				half = soup.find('span', {'class': 'status-detail'}).text
+			except AttributeError:
+				continue
 			if half == 'Final':\
 					#or (pbp_df['period'].iloc[0] == '4th' and pbp_df['time'].iloc[0] == '4th' and pbp_df['away'].iloc[0] != pbp_df['home'].iloc[0]):
 				print('End of Game')
 				time.sleep(60)
 				self.gui.list_box.delete(game)
 				driver.quit()
-				return
+				break
 
 			if initial:
 				pbp_df = self.get_play_lines(soup, initial=True)
@@ -218,6 +221,9 @@ class Live_Games_Tool:
 
 				if not new_pbp.empty and new_pbp.first_valid_index() not in pbp_df.index:
 					pbp_df = new_pbp.iloc[0].to_frame().T.append(pbp_df)
+				elif self.gui.force_continue[game_id]:
+					self.gui.force_continue[game_id] = False
+					pass
 				else:
 					continue
 
@@ -235,12 +241,10 @@ class Live_Games_Tool:
 				past_time = pbp_df.at[i, 'adj_time']
 				past_total = pbp_df.at[i, 'total']
 				time_diff = current_time - past_time
-				#print(current_time, past_time, time_diff)
-				if time_diff > timedelta(minutes=self.n):
+				if time_diff > timedelta(minutes=self.gui.n):
 					break
 
 			total_points = pbp_df['total'].iloc[0]
-			print('current total', total_points, 'live total')#,live_game['total'].values[0])
 
 			try:
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
@@ -251,12 +255,13 @@ class Live_Games_Tool:
 				ppm_game = round(total_points / (current_time.seconds / 60), 2)
 			except ZeroDivisionError:
 				continue
-			print('ppm game', round(ppm_game, 2))
 
 			df.at[game, 'Period'] = half
 			df.at[game, 'Game'] = game
 			df.at[game, 'Current Total'] = total_points
 			#df.at[game, 'Live Total'] = live_total['total'].values[0]
+			df.at[game, 'Away'] = pbp_df['away'].values[0]
+			df.at[game, 'Home'] = pbp_df['home'].values[0]
 			df.at[game, 'PPM Last N'] = ppm_n
 			df.at[game, 'PPM Game'] = ppm_game
 			if not df.empty:
@@ -272,6 +277,8 @@ class Live_Games_Tool:
 
 			time.sleep(2)
 
+
+
 def launch_threads(lg, id_set, max=None):
 	id_list = lg.get_game_urls()
 
@@ -285,64 +292,47 @@ def launch_threads(lg, id_set, max=None):
 			except (KeyboardInterrupt, SystemExit):
 				lg.web_driver_dict[id].quit()
 				thread.join()
-				sys.exit()
-			time.sleep(2)
 
-def driver(version, n):
+		if not lg.gui.is_alive():
+			break
 
-	lg = Live_Games_Tool(version=version, n=n)
-	lg.gui.create_box(columns=c.live_columns)
+def driver(version):
+
+	lg = Live_Games_Tool(version=version)
+	lg.gui.create_box()
 
 	id_set = set()
-	max = 5
-	launch_threads(lg, id_set, max)
-	t2 = threading.Thread(target=lg.gui.process_incoming)
-	try:
-		t2.start()
-	except (KeyboardInterrupt, SystemExit):
-		t2.join()
-		sys.exit()
+	if version == 'cbb':
+		max = 25
+	else:
+		max = 15
 
+	launch_threads(lg, id_set, max)
+	try:
+		lg.gui.combo_box['values'] = id_set
+	except TypeError:
+		pass
+
+	t2 = threading.Thread(target=lg.gui.process_incoming)
+	t2.start()
 	start = time.time()
 	while True:
 
-		end = time.time()
-		if start - end > 420:
+		if time.time() - start > 420:
 			start = time.time()
 			launch_threads(lg, id_set, max)
 
 		if not lg.gui.is_alive():
 			break
 
-		# id_list = lg.get_game_urls()
-		#
-		# #if not id_list: return
-		#
-		# for id in id_list:
-		# 	if id not in id_set:
-		# 		id_set.add(id)
-		# 		thread = threading.Thread(target=lg.play_by_play, args=[id])
-		# 		thread.daemon = True
-		# 		try:
-		# 			thread.start()
-		# 		except KeyboardInterrupt:
-		# 			lg.web_driver_dict[id].quit()
-		# 			thread.join()
-		# 		time.sleep(2)
-			#break
-
-		# if initial:
-		# 	t2 = threading.Thread(target=lg.gui.process_incoming)
-		# 	try:
-		# 		t2.start()
-		# 	except KeyboardInterrupt:
-		#
-		# 		t2.join()
-		# 	initial = False
-
-		#time.sleep(600)
+	t2.join()
+	for id in id_set:
+		try:
+			lg.web_driver_dict[id].quit()
+		except KeyError:
+			pass
 
 
 if __name__ == '__main__':
-	driver(version='cbb',n=3)
+	driver(version='cbb')
 
