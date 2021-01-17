@@ -100,7 +100,6 @@ class GUI(threading.Thread):
     def open_players(self,id):
         player_box = self.create_player_box(columns=c.player_columns, id=id)
         self.players_on[id] = True
-        print(self.players_on[id])
         self.player_box_dict[id] = player_box
         t2 = threading.Thread(target=self.process_players, args=[id, player_box])
         try:
@@ -108,6 +107,7 @@ class GUI(threading.Thread):
         except (KeyboardInterrupt, SystemExit):
             t2.join()
             sys.exit()
+
 
     def open_player_box(self):
         highlighted = self.combo_box.get()
@@ -119,8 +119,10 @@ class GUI(threading.Thread):
         except KeyError:
             pass
 
+
     def close_player_box(self, id):
         self.player_box_dict[id].quit()
+        self.player_box_dict.pop(id, None)
         self.players_on[id] = False
 
 
@@ -158,7 +160,7 @@ class GUI(threading.Thread):
 
 
     def create_player_box(self, columns, id):
-        window = tk.Frame()
+        window = tk.Toplevel(self.root, width=950)
         tk.Label(window, text=self.id_to_names[id], font=("Arial", 15)).grid(row=0, columnspan=3)
         listBox = ttk.Treeview(window, columns=columns, show='headings')
         for col in columns:
