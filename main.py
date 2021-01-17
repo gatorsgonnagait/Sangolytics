@@ -11,7 +11,7 @@ import GUI as g
 import Game_Cast as gc
 import queue
 import re
-import sys
+
 
 class Live_Games_Tool:
 
@@ -26,6 +26,10 @@ class Live_Games_Tool:
 		self.ot = timedelta(minutes=5)
 		self.web_driver_urls = None
 		self.web_driver_dict = {}
+		if version == 'cbb':
+			self.max = 25
+		else:
+			self.max = 15
 
 		if version == 'nba':
 			self.odds_version = 'basketball_nba'
@@ -59,7 +63,7 @@ class Live_Games_Tool:
 
 		url = scoreboard_url + d
 		self.web_driver_urls.get(url)
-		time.sleep(1.5)
+		time.sleep(.5)
 		page = self.web_driver_urls.page_source
 		soup = bs.BeautifulSoup(page, 'html.parser')
 		live_games = soup.find_all('article',{'class':'scoreboard basketball live js-show'})
@@ -85,7 +89,7 @@ class Live_Games_Tool:
 
 					driver.execute_script("window.open()")
 					driver.switch_to.window(driver.window_handles[1])
-					time.sleep(.75)
+					time.sleep(.25)
 					driver.get(c.nba_gamecast_url + game_id)
 					driver.switch_to.window(driver.window_handles[0])
 
@@ -152,8 +156,10 @@ class Live_Games_Tool:
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
 		pbp_df.index.name = 'time_stamp'
 		initial = True
-		player_queue = queue.Queue()
 		self.gui.force_continue[game_id] = False
+		if self.version == 'nba':
+			self.gui.players_on[game_id] = False
+			self.gui.player_queue_dict[game_id] = queue.Queue()
 
 		while self.gui.is_alive():
 			try:
@@ -165,7 +171,6 @@ class Live_Games_Tool:
 				continue
 
 
-
 		while self.gui.is_alive():
 			try:
 				team_a = soup.find('div', {'class': 'team away'})
@@ -173,23 +178,25 @@ class Live_Games_Tool:
 				team_h = soup.find('div', {'class': 'team home'})
 				home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
 				game = ' '.join([away, 'vs', home])
-				self.gui.game_names_dict[game_id] = game
-
+				self.gui.id_to_names[game_id] = game
+				self.gui.names_to_ids[game] = game_id
+				self.gui.combo_box['values'] = list(self.gui.id_to_names.values())
 				break
 			except IndexError:
 				time.sleep(.2)
 				continue
 
 
-		if self.gui.player_loop and self.version == 'nba':
-			player_box = self.gui.create_player_box(columns=c.player_columns, game=game)
-			player_queue = queue.Queue()
-			t2 = threading.Thread(target=self.gui.process_players, args=[player_queue, player_box])
-			try:
-				t2.start()
-			except (KeyboardInterrupt, SystemExit):
-				t2.join()
-				sys.exit()
+		# if self.gui.is_alive() and self.version == 'nba':
+		# 	player_box = self.gui.create_player_box(columns=c.player_columns, game=game)
+		# 	player_queue = queue.Queue()
+		# 	t2 = threading.Thread(target=self.gui.process_players, args=[player_queue, player_box])
+		# 	try:
+		# 		t2.start()
+		# 	except (KeyboardInterrupt, SystemExit):
+		# 		t2.join()
+		# 		sys.exit()
+
 
 
 		while self.gui.is_alive():
@@ -209,6 +216,8 @@ class Live_Games_Tool:
 				print('End of Game')
 				time.sleep(60)
 				self.gui.list_box.delete(game)
+				self.gui.id_to_names.pop(game, None)
+
 				driver.quit()
 				break
 
@@ -267,12 +276,13 @@ class Live_Games_Tool:
 			if not df.empty:
 				self.gui.q.put(item=df)
 
-			if self.version == 'nba':
+			if self.version == 'nba' and self.gui.players_on[game_id]:
+				print()
 				player_df = gc.current_lineups(driver)
 				player_df[:5]['Team'] = away
 				player_df[5:]['Team'] = home
 				if not player_df.empty:
-					player_queue.put(player_df)
+					self.gui.player_queue_dict[game_id].put(player_df)
 			print()
 
 			time.sleep(2)
@@ -284,7 +294,7 @@ def launch_threads(lg, id_set, max=None):
 
 	for id in id_list[:max]:
 		if id not in id_set:
-			id_set.add(id)
+			id_set.append(id)
 			thread = threading.Thread(target=lg.play_by_play, args=[id])
 			thread.daemon = True
 			try:
@@ -301,27 +311,20 @@ def driver(version):
 	lg = Live_Games_Tool(version=version)
 	lg.gui.create_box()
 
-	id_set = set()
-	if version == 'cbb':
-		max = 25
-	else:
-		max = 15
+	id_set = []
 
-	launch_threads(lg, id_set, max)
-	try:
-		lg.gui.combo_box['values'] = id_set
-	except TypeError:
-		pass
+	launch_threads(lg, id_set, lg.max)
 
 	t2 = threading.Thread(target=lg.gui.process_incoming)
 	t2.start()
+
+
 	start = time.time()
 	while True:
 
 		if time.time() - start > 420:
 			start = time.time()
-			launch_threads(lg, id_set, max)
-
+			launch_threads(lg, id_set, lg.max)
 		if not lg.gui.is_alive():
 			break
 
@@ -334,5 +337,5 @@ def driver(version):
 
 
 if __name__ == '__main__':
-	driver(version='cbb')
+	driver(version='nba')
 
