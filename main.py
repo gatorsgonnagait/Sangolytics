@@ -213,9 +213,9 @@ class Live_Games_Tool:
 				continue
 			if half == 'Final':\
 					#or (pbp_df['period'].iloc[0] == '4th' and pbp_df['time'].iloc[0] == '4th' and pbp_df['away'].iloc[0] != pbp_df['home'].iloc[0]):
-				print('End of Game')
+				print('End of', game)
 				time.sleep(60)
-				self.gui.list_box.delete(game)
+				self.gui.game_box.delete(game)
 				self.gui.id_to_names.pop(game, None)
 
 				driver.quit()
@@ -236,8 +236,8 @@ class Live_Games_Tool:
 				else:
 					continue
 
-			time_stamp = pbp_df['time'].iloc[0]
-			print(away, 'vs', home, time_stamp)
+			#time_stamp = pbp_df['time'].iloc[0]
+			#print(away, 'vs', home, time_stamp)
 
 			# live_total = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
 			# if live_total.empty:
@@ -283,7 +283,6 @@ class Live_Games_Tool:
 				player_df[5:]['Team'] = home
 				if not player_df.empty:
 					self.gui.player_queue_dict[game_id].put(player_df)
-			print()
 
 			time.sleep(2)
 

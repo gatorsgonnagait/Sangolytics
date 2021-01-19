@@ -24,7 +24,7 @@ class GUI(threading.Thread):
         self.root = None
         self.df = pd.DataFrame(columns=c.live_columns)
         self.player_df = pd.DataFrame(columns=c.player_columns)
-        self.list_box = ttk.Treeview()
+        self.game_box = ttk.Treeview()
         self.player_box_dict = {}
         self.players_on = {}
         self.player_queue_dict = {}
@@ -43,6 +43,7 @@ class GUI(threading.Thread):
 
     def run(self):
         self.root = tk.Tk()
+        #self.window = tk.Toplevel()
         self.root.withdraw()
         self.root.mainloop()
 
@@ -71,7 +72,7 @@ class GUI(threading.Thread):
                 return
 
 
-    def process_players(self, id, box):
+    def process_players(self, id):
         player_q = self.player_queue_dict[id]
         while self.is_alive() and self.players_on[id]:
             try:
@@ -83,13 +84,16 @@ class GUI(threading.Thread):
             except player_q.empty():
                 continue
             time.sleep(2)
-            self.fill_players(df=tdf, box=box)
+            try:
+                self.fill_players(df=tdf, box=self.player_box_dict[id])
+            except KeyError:
+                pass
 
 
     def submit_n(self):
         try:
             self.n = round(float(self.n_entry.get()))
-            self.list_box.heading('PPM Last N', text='PPM Last '+str(self.n))
+            self.game_box.heading('PPM Last N', text='PPM Last ' + str(self.n))
             self.n_label = tk.Label(self.window, text='Last ' + str(self.n) + ' Minutes').grid(row=4, column=0)
             for game_id in self.force_continue.keys():
                 self.force_continue[game_id] = True
@@ -101,7 +105,7 @@ class GUI(threading.Thread):
         player_box = self.create_player_box(columns=c.player_columns, id=id)
         self.players_on[id] = True
         self.player_box_dict[id] = player_box
-        t2 = threading.Thread(target=self.process_players, args=[id, player_box])
+        t2 = threading.Thread(target=self.process_players, args=[id])
         try:
             t2.start()
         except (KeyboardInterrupt, SystemExit):
@@ -111,19 +115,18 @@ class GUI(threading.Thread):
 
     def open_player_box(self):
         highlighted = self.combo_box.get()
-        print('button pressed')
         try:
             if not self.names_to_ids[highlighted] in self.player_box_dict.keys():
-                print('open', highlighted)
                 self.open_players(id=self.names_to_ids[highlighted])
         except KeyError:
             pass
 
 
-    def close_player_box(self, id):
-        self.player_box_dict[id].quit()
+    def close_player_box(self, window, id):
+        window.destroy()
         self.player_box_dict.pop(id, None)
         self.players_on[id] = False
+
 
 
     def create_box(self):
@@ -131,22 +134,22 @@ class GUI(threading.Thread):
         label = tk.Label(self.window, text="Sangolytics", font=("Arial", 15), justify='center')
         label.grid(row=0, columnspan=5)
 
-        listBox = ttk.Treeview(self.window, columns=self.live_columns, show='headings', height=20)
+        game_box = ttk.Treeview(self.window, columns=self.live_columns, show='headings', height=20)
 
         for col in self.live_columns:
             if col == 'PPM Last N':
-                listBox.heading(col, text='PPM Last '+str(self.n))
+                game_box.heading(col, text='PPM Last '+str(self.n))
             else:
-                listBox.heading(col, text=col)
+                game_box.heading(col, text=col)
             if col == 'Game':
-                listBox.column(col, minwidth=200, width=350, stretch=True)
+                game_box.column(col, minwidth=200, width=350, stretch=True)
             elif col == 'Period':
-                listBox.column(col, minwidth=100, width=100, stretch=True)
+                game_box.column(col, minwidth=100, width=100, stretch=True)
             else:
-                listBox.column(col, minwidth=100, width=100, stretch=True, anchor=tk.CENTER)
+                game_box.column(col, minwidth=100, width=100, stretch=True, anchor=tk.CENTER)
 
-        listBox.grid(row=1, column=0, columnspan=6)
-        tk.Button(self.window, text="Close", width=10, command=self.root.quit).grid(row=4, column=3)
+        game_box.grid(row=1, column=0, columnspan=6)
+        #tk.Button(self.window, text="Close", width=10, command=self.root.quit).grid(row=4, column=3)
         self.n_label = tk.Label(self.window, text='Last '+str(self.n)+' Minutes').grid(row=4, column=0)
         self.n_entry = tk.Entry(self.window)
         self.n_entry.grid(row=4, column=1)
@@ -156,42 +159,66 @@ class GUI(threading.Thread):
             self.combo_box.grid(row=4, column=4)
             self.combo_box.set('Players on floor')
             tk.Button(self.window, text='Open Players', command=self.open_player_box).grid(row=4, column=5)
-        self.list_box = listBox
+        self.window.protocol("WM_DELETE_WINDOW", self.root.quit)
+        self.game_box = game_box
 
 
     def create_player_box(self, columns, id):
-        window = tk.Toplevel(self.root, width=950)
+        window = tk.Toplevel(self.window, width=950)
         tk.Label(window, text=self.id_to_names[id], font=("Arial", 15)).grid(row=0, columnspan=3)
         listBox = ttk.Treeview(window, columns=columns, show='headings')
         for col in columns:
             listBox.heading(col, text=col)
-            if col == 'Name' or col == 'Team':
+            if col == 'Name':
                 listBox.column(col, minwidth=100, width=100, stretch=True)
+            elif col == 'Team':
+                listBox.column(col, minwidth=150, width=150, stretch=True)
             else:
                 listBox.column(col, minwidth=100, width=100, stretch=True,anchor=tk.CENTER)
         listBox.grid(row=1, column=0, columnspan=2)
-        tk.Button(window, text="Close", width=15, command=lambda: self.close_player_box(id)).grid(row=4, column=1)
+        #tk.Button(window, text="Close", width=15, command=window.quit).grid(row=4, column=1)
+        window.protocol("WM_DELETE_WINDOW", lambda: self.close_player_box(window=window, id=id))
         return listBox
 
 
     def fill_box(self, df):
         for i, row in enumerate(df.values.tolist()):
-            if self.list_box.exists(item=row[0]):
-                self.list_box.focus(row[0])
-                for i in range(1, len(c.live_columns)):
-                    self.list_box.set(row[0], column=i, value=row[i])
+            if self.game_box.exists(item=row[0]):
+                self.game_box.focus(row[0])
+                for j in range(1, len(c.live_columns)):
+                    self.game_box.set(row[0], column=j, value=row[j])
             else:
-                self.list_box.insert('', index=i,iid=row[0], values=row)
+                self.game_box.insert('', index=i, iid=row[0], values=row)
 
 
     def fill_players(self, df, box):
-        for i, row in enumerate(df.values.tolist()):
-            if box.exists(item=row[0]):
-                box.focus(row[0])
-                for i in range(1, len(c.player_columns)):
-                    box.set(row[0], column=i, value=row[i])
+        # kinda working
+        # for i, row in enumerate(df.values.tolist()):
+        #     if box.exists(item=row[0]):
+        #         box.focus(row[0])
+        #         for j in range(1, len(c.player_columns)):
+        #             box.set(row[0], column=j, value=row[j])
+        #     else:
+        #         box.insert('', index=i, iid=row[0], values=row)
+
+
+        for i, player in enumerate(box.get_children()):
+            box.focus(player)
+            if player in df.index:
+                for j in range(1, len(c.player_columns)):
+                    box.set(player, column=j, value=df.at[player, j])
+                df.drop([player])
+
             else:
-                box.insert('', index=i, iid=row[0], values=row)
+                new_player = df.first_valid_index()
+                if len(box.get_children()) <= 10:
+                    box.insert('', index=i, iid=player, values=df.loc[new_player].to_list())
+                else:
+
+                    box.item(player, tags=new_player)
+                    for j in range(0, len(c.player_columns)):
+                        box.set(new_player, column=j, value=df.at[new_player, j])
+                df = df.iloc[1:]
 
 
 
@@ -207,7 +234,7 @@ if __name__ == '__main__':
     t1 = threading.Thread(target=gui.process_incoming)
     t1.start()
     print('test2')
-    print(gui.list_box)
+    print(gui.game_box)
     gui.fill_box(df=df)
 
 
