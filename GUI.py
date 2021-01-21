@@ -33,7 +33,7 @@ class GUI(threading.Thread):
         self.names_to_ids = {}
         self.n = 3
         self.n_entry = None
-        self.live_columns = ['Game','Period','Away','Home','Current Total','Live Total','PPM Last N','PPM Game']
+        self.live_columns = ['Game','Period','Away','Home','Current Total','Live Total','PPM Last N','PPM Game','Live Spread','Margin Last N']
         self.n_label = None
         self.window = None
         self.combo_box = None
@@ -130,9 +130,9 @@ class GUI(threading.Thread):
 
 
     def create_box(self):
-        self.window = tk.Toplevel(self.root, width=950)
+        self.window = tk.Toplevel(self.root, width=950, height=500)
         label = tk.Label(self.window, text="Sangolytics", font=("Arial", 15), justify='center')
-        label.grid(row=0, columnspan=5)
+        label.grid(row=0, columnspan=6)
 
         game_box = ttk.Treeview(self.window, columns=self.live_columns, show='headings', height=20)
 
@@ -144,7 +144,7 @@ class GUI(threading.Thread):
             if col == 'Game':
                 game_box.column(col, minwidth=200, width=350, stretch=True)
             elif col == 'Period':
-                game_box.column(col, minwidth=100, width=100, stretch=True)
+                game_box.column(col, minwidth=130, width=130, stretch=True)
             else:
                 game_box.column(col, minwidth=100, width=100, stretch=True, anchor=tk.CENTER)
 
@@ -192,33 +192,40 @@ class GUI(threading.Thread):
 
 
     def fill_players(self, df, box):
+        # initial fill
+        if len(box.get_children()) < 10:
+            for i, player in enumerate(df.index):
+                box.insert('', index=i, iid=player, values=df.loc[player].to_list())
+
+
         # kinda working
-        # for i, row in enumerate(df.values.tolist()):
-        #     if box.exists(item=row[0]):
-        #         box.focus(row[0])
+        # for i, player in enumerate(df.index):
+        #     if box.exists(item=player):
+        #         box.focus(player)
         #         for j in range(1, len(c.player_columns)):
-        #             box.set(row[0], column=j, value=row[j])
+        #             box.set(player, column=j, value=df.at[player, j])
         #     else:
-        #         box.insert('', index=i, iid=row[0], values=row)
+        #         if len(box.get_children()) <= 10:
+        #             box.insert('', index=i, iid=player, values=df.loc[player].to_list())
 
+        else:
+            df2 = df.copy()
+            for i, player in enumerate(box.get_children()):
+                box.focus(player)
+                if player in df.index:
+                    for j, col in enumerate(c.player_columns[1:], start=1):
+                        box.set(player, column=j, value=df2.at[player, col])
+                    df2.drop([player], inplace=True)
 
-        for i, player in enumerate(box.get_children()):
-            box.focus(player)
-            if player in df.index:
-                for j in range(1, len(c.player_columns)):
-                    box.set(player, column=j, value=df.at[player, j])
-                df.drop([player])
-
-            else:
-                new_player = df.first_valid_index()
-                if len(box.get_children()) <= 10:
-                    box.insert('', index=i, iid=player, values=df.loc[new_player].to_list())
                 else:
+                    new_player = df2.first_valid_index()
+                    print('sub in', new_player)
+                    # still stuck here
+                    box.item(player, text=new_player)
 
-                    box.item(player, tags=new_player)
-                    for j in range(0, len(c.player_columns)):
-                        box.set(new_player, column=j, value=df.at[new_player, j])
-                df = df.iloc[1:]
+                    for j, col in enumerate(c.player_columns):
+                        box.set(new_player, column=j, value=df2.at[new_player, col])
+                    df2 = df2.iloc[1:]
 
 
 
