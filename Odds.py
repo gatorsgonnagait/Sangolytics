@@ -4,16 +4,12 @@ import pandas as pd
 import Tools as t
 import Constants as c
 
-def get_odds(version):
-    api_key = c.api_key
-    sport = version
-    region = c.region
-    market = c.market
+def get_odds(sport, market):
 
     odds_response = requests.get('https://api.the-odds-api.com/v3/odds', params={
-        'api_key': api_key,
+        'api_key': c.api_key,
         'sport': sport,
-        'region': region,
+        'region': c.region,
         'mkt': market,
     }).json()
 

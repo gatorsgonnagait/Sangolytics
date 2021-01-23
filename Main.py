@@ -22,13 +22,18 @@ class Live_Games_Tool:
 		self.date_fmt = '%Y%m%d'
 		self.options = Options()
 		self.options.headless = True
-		self.odds_df = None
+		self.totals_df = None
+		self.spreads_df = None
+		self.updating_odds = False
 		self.gui = g.GUI(version=self.version)
 		self.ot = timedelta(minutes=5)
 		self.web_driver_urls = None
 		self.web_driver_dict = {}
+		self.use_live_total = True
+		self.use_live_spread = True
+		self.id_list = []
 		if self.version == 'cbb':
-			self.max = 25
+			self.max = 30
 		else:
 			self.max = 15
 
@@ -45,9 +50,14 @@ class Live_Games_Tool:
 
 
 	def update_odds(self):
-		while True:
-			self.odds_df = get_odds(version=self.odds_version)
+		self.updating_odds = True
+		while self.id_list:
+			self.totals_df = get_odds(sport=self.odds_version, market='totals')
+			self.spreads_df = get_odds(sport=self.odds_version, market='spreads')
 			time.sleep(60)
+		self.totals_df = None
+		self.spreads_df = None
+		self.updating_odds = False
 
 
 	def get_game_urls(self):
@@ -155,6 +165,9 @@ class Live_Games_Tool:
 		driver = self.open_web_driver(game_id=game_id)
 		game = ''
 		past_total = None
+		past_home, past_away = None, None
+		live_total = ''
+		live_spread = ''
 		time_diff = None
 		df = pd.DataFrame(columns=c.live_columns)#, index=['index'])
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
@@ -192,19 +205,6 @@ class Live_Games_Tool:
 				time.sleep(.2)
 				continue
 
-
-		# if self.gui.is_alive() and self.version == 'nba':
-		# 	player_box = self.gui.create_player_box(columns=c.player_columns, game=game)
-		# 	player_queue = queue.Queue()
-		# 	t2 = threading.Thread(target=self.gui.process_players, args=[player_queue, player_box])
-		# 	try:
-		# 		t2.start()
-		# 	except (KeyboardInterrupt, SystemExit):
-		# 		t2.join()
-		# 		sys.exit()
-
-
-
 		while self.gui.is_alive():
 
 			try:
@@ -225,8 +225,9 @@ class Live_Games_Tool:
 					self.gui.game_box.delete(game)
 				except tk.TclError:
 					pass
-				self.gui.id_to_names.pop(game, None)
-
+				self.gui.id_to_names.pop(game_id, None)
+				self.gui.names_to_ids.pop(game, None)
+				self.id_list.remove(game_id)
 				driver.quit()
 				break
 
@@ -245,21 +246,37 @@ class Live_Games_Tool:
 				else:
 					continue
 
-			# live_total = self.odds_df[(self.odds_df['home_team'].str.lower() == home.lower()) & (self.odds_df['away_team'].str.lower() == away.lower())]
-			# if live_total.empty:
-			# 	print('no live odds')
-			# 	print()
+
+			if self.use_live_total:
+				try:
+					live_total_df = self.totals_df[(self.totals_df['home_team'].str.lower() == home.lower()) & (self.totals_df['away_team'].str.lower() == away.lower())]
+					live_total = live_total_df['total'].values[0]
+				except TypeError:
+					live_total = ''
+			if self.use_live_spread:
+				try:
+					live_spread_df = self.spreads_df[(self.spreads_df['home_team'].str.lower() == home.lower()) & (self.spreads_df['away_team'].str.lower() == away.lower())]
+					live_spread = float(live_spread_df['spread'].values[0]) * -1
+					if live_spread > 0:
+						live_spread = ''.join(['+',str(live_spread)])
+				except TypeError:
+					live_spread = ''
+
 
 			current_time = pbp_df['adj_time'].iloc[0]
+			current_home = pbp_df['home'].iloc[0]
+			current_away = pbp_df['away'].iloc[0]
 			for i in pbp_df[1:].index:
-
 				past_time = pbp_df.at[i, 'adj_time']
 				past_total = pbp_df.at[i, 'total']
+				past_home = pbp_df.at[i, 'home']
+				past_away = pbp_df.at[i, 'away']
 				time_diff = current_time - past_time
 				if time_diff > timedelta(minutes=self.gui.n):
 					break
 
 			total_points = pbp_df['total'].iloc[0]
+			home_margin = (current_home - past_home) - (current_away - past_away)
 
 			try:
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
@@ -274,19 +291,22 @@ class Live_Games_Tool:
 			df.at[game, 'Period'] = half
 			df.at[game, 'Game'] = game
 			df.at[game, 'Current Total'] = total_points
-			#df.at[game, 'Live Total'] = live_total['total'].values[0]
+			df.at[game, 'Live Total'] = live_total
 			df.at[game, 'Away'] = pbp_df['away'].values[0]
 			df.at[game, 'Home'] = pbp_df['home'].values[0]
 			df.at[game, 'PPM Last N'] = ppm_n
 			df.at[game, 'PPM Game'] = ppm_game
+			df.at[game, 'Live Spread'] = live_spread
+			df.at[game, 'Margin Last N'] = home_margin
 			if not df.empty:
 				self.gui.q.put(item=df)
 
 			if self.version == 'nba' and self.gui.players_on[game_id]:
-				print()
 				player_df = gc.current_lineups(driver)
-				player_df[:5]['Team'] = away
-				player_df[5:]['Team'] = home
+
+				player_df['Team'].iloc[0:5] = away
+				player_df['Team'].iloc[5:10] = home
+
 				if not player_df.empty and not player_df.equals(last_player_df):
 					last_player_df = player_df.copy()
 					self.gui.player_queue_dict[game_id].put(player_df)
@@ -295,11 +315,11 @@ class Live_Games_Tool:
 
 
 
-def launch_threads(lg, id_set, max=None):
-	id_list = lg.get_game_urls()
-	for id in id_list[:max]:
-		if id not in id_set:
-			id_set.append(id)
+def launch_threads(lg, id_list, max=None):
+	ids = lg.get_game_urls()
+	for id in ids[:max]:
+		if id not in id_list:
+			id_list.append(id)
 			thread = threading.Thread(target=lg.play_by_play, args=[id])
 			thread.daemon = True
 			try:
@@ -344,24 +364,28 @@ def driver():
 	lg = Live_Games_Tool(version=v)
 
 	lg.gui.create_box()
-	id_set = []
-	launch_threads(lg, id_set, lg.max)
+
+	launch_threads(lg, lg.id_list, lg.max)
 
 	t2 = threading.Thread(target=lg.gui.process_incoming)
 	t2.start()
 
+	lg.update_odds()
 
 	start = time.time()
 	while True:
 
-		if time.time() - start > 420:
+		if time.time() - start > 300:
 			start = time.time()
-			launch_threads(lg, id_set, lg.max)
+			launch_threads(lg, lg.id_list, lg.max)
+			if lg.id_list and not lg.updating_odds:
+				lg.update_odds()
+
 		if not lg.gui.is_alive():
 			break
 
 	t2.join()
-	for id in id_set:
+	for id in lg.id_list:
 		try:
 			lg.web_driver_dict[id].quit()
 		except KeyError:

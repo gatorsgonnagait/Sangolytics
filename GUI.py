@@ -94,6 +94,7 @@ class GUI(threading.Thread):
         try:
             self.n = round(float(self.n_entry.get()))
             self.game_box.heading('PPM Last N', text='PPM Last ' + str(self.n))
+            self.game_box.heading('Margin Last N', text='Margin Last ' + str(self.n))
             self.n_label = tk.Label(self.window, text='Last ' + str(self.n) + ' Minutes').grid(row=4, column=0)
             for game_id in self.force_continue.keys():
                 self.force_continue[game_id] = True
@@ -128,9 +129,8 @@ class GUI(threading.Thread):
         self.players_on[id] = False
 
 
-
     def create_box(self):
-        self.window = tk.Toplevel(self.root, width=950, height=500)
+        self.window = tk.Toplevel(self.root, width=950, height=600)
         label = tk.Label(self.window, text="Sangolytics", font=("Arial", 15), justify='center')
         label.grid(row=0, columnspan=6)
 
@@ -139,6 +139,8 @@ class GUI(threading.Thread):
         for col in self.live_columns:
             if col == 'PPM Last N':
                 game_box.heading(col, text='PPM Last '+str(self.n))
+            elif col == 'Margin Last N':
+                game_box.heading(col, text='Margin Last '+str(self.n))
             else:
                 game_box.heading(col, text=col)
             if col == 'Game':
@@ -197,17 +199,6 @@ class GUI(threading.Thread):
             for i, player in enumerate(df.index):
                 box.insert('', index=i, iid=player, values=df.loc[player].to_list())
 
-
-        # kinda working
-        # for i, player in enumerate(df.index):
-        #     if box.exists(item=player):
-        #         box.focus(player)
-        #         for j in range(1, len(c.player_columns)):
-        #             box.set(player, column=j, value=df.at[player, j])
-        #     else:
-        #         if len(box.get_children()) <= 10:
-        #             box.insert('', index=i, iid=player, values=df.loc[player].to_list())
-
         else:
             df2 = df.copy()
             for i, player in enumerate(box.get_children()):
@@ -219,12 +210,8 @@ class GUI(threading.Thread):
 
                 else:
                     new_player = df2.first_valid_index()
-                    print('sub in', new_player)
-                    # still stuck here
-                    box.item(player, text=new_player)
-
-                    for j, col in enumerate(c.player_columns):
-                        box.set(new_player, column=j, value=df2.at[new_player, col])
+                    box.delete(player)
+                    box.insert('', index=i, iid=new_player, values=df2.loc[new_player].to_list())
                     df2 = df2.iloc[1:]
 
 
