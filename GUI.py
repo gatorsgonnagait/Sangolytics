@@ -26,6 +26,8 @@ class GUI(threading.Thread):
         self.player_df = pd.DataFrame(columns=c.player_columns)
         self.game_box = ttk.Treeview()
         self.player_box_dict = {}
+        self.score_by_quarter_dict = {}
+        self.score_by_quarter_on = {}
         self.players_on = {}
         self.player_queue_dict = {}
         self.game_row = {}
@@ -102,10 +104,18 @@ class GUI(threading.Thread):
             self.n = 3
 
 
+    def open_score_by_quarter(self,id):
+        player_box = self.create_score_by_quarter_box(columns=c.score_by_quarter, id=id)
+        self.score_by_quarter_dict[id] = player_box
+        self.score_by_quarter_on[id] = True
+        self.force_continue[id] = True
+
+
     def open_players(self,id):
         player_box = self.create_player_box(columns=c.player_columns, id=id)
         self.players_on[id] = True
         self.player_box_dict[id] = player_box
+        self.force_continue[id] = True
         t2 = threading.Thread(target=self.process_players, args=[id])
         try:
             t2.start()
@@ -122,6 +132,14 @@ class GUI(threading.Thread):
         except KeyError:
             pass
 
+    def open_score_by_quarter_box(self):
+        highlighted = self.combo_box.get()
+        try:
+            if not self.names_to_ids[highlighted] in self.score_by_quarter_dict.keys():
+                self.open_score_by_quarter(id=self.names_to_ids[highlighted])
+        except KeyError:
+            pass
+
 
     def close_player_box(self, window, id):
         window.destroy()
@@ -129,10 +147,16 @@ class GUI(threading.Thread):
         self.players_on[id] = False
 
 
+    def close_score_by_quarter(self, window, id):
+        window.destroy()
+        self.score_by_quarter_dict.pop(id, None)
+        self.score_by_quarter_on[id] = False
+
+
     def create_box(self):
         self.window = tk.Toplevel(self.root, width=950, height=600)
         label = tk.Label(self.window, text="Sangolytics", font=("Arial", 15), justify='center')
-        label.grid(row=0, columnspan=6)
+        label.grid(row=0, columnspan=7)
 
         game_box = ttk.Treeview(self.window, columns=self.live_columns, show='headings', height=20)
 
@@ -150,8 +174,7 @@ class GUI(threading.Thread):
             else:
                 game_box.column(col, minwidth=100, width=100, stretch=True, anchor=tk.CENTER)
 
-        game_box.grid(row=1, column=0, columnspan=6)
-        #tk.Button(self.window, text="Close", width=10, command=self.root.quit).grid(row=4, column=3)
+        game_box.grid(row=1, column=0, columnspan=7)
         self.n_label = tk.Label(self.window, text='Last '+str(self.n)+' Minutes').grid(row=4, column=0)
         self.n_entry = tk.Entry(self.window)
         self.n_entry.grid(row=4, column=1)
@@ -161,25 +184,46 @@ class GUI(threading.Thread):
             self.combo_box.grid(row=4, column=4)
             self.combo_box.set('Players on floor')
             tk.Button(self.window, text='Open Players', command=self.open_player_box).grid(row=4, column=5)
+            tk.Button(self.window, text='Score by Q', command=self.open_score_by_quarter_box).grid(row=4, column=6)
         self.window.protocol("WM_DELETE_WINDOW", self.root.quit)
         self.game_box = game_box
 
 
     def create_player_box(self, columns, id):
         window = tk.Toplevel(self.window, width=950)
-        tk.Label(window, text=self.id_to_names[id], font=("Arial", 15)).grid(row=0, columnspan=3)
+        label = tk.Label(window, text=self.id_to_names[id], font=("Arial", 15), justify='center')
+        label.grid(row=0, columnspan=3)
         listBox = ttk.Treeview(window, columns=columns, show='headings')
         for col in columns:
             listBox.heading(col, text=col)
-            if col == 'Name':
+            if col == 'Player':
                 listBox.column(col, minwidth=100, width=100, stretch=True)
             elif col == 'Team':
                 listBox.column(col, minwidth=150, width=150, stretch=True)
             else:
                 listBox.column(col, minwidth=100, width=100, stretch=True,anchor=tk.CENTER)
         listBox.grid(row=1, column=0, columnspan=2)
-        #tk.Button(window, text="Close", width=15, command=window.quit).grid(row=4, column=1)
         window.protocol("WM_DELETE_WINDOW", lambda: self.close_player_box(window=window, id=id))
+        return listBox
+
+
+    def create_score_by_quarter_box(self, columns, id):
+        window = tk.Toplevel(self.window, width=950, height=500)
+        label = tk.Label(window, text=self.id_to_names[id], font=("Arial", 15), justify='center')
+        label.grid(row=0, columnspan=10)
+        listBox = ttk.Treeview(window, columns=columns, show='headings', height=20)
+        listBox.grid(row=1, column=0, columnspan=10)
+        for col in columns:
+            listBox.heading(col, text=col)
+            if col == 'Player':
+                listBox.column(col, minwidth=150, width=150, stretch=True)
+            elif col == 'Team':
+                listBox.column(col, minwidth=150, width=150, stretch=True)
+            else:
+                listBox.column(col, minwidth=100, width=100, stretch=True,anchor=tk.CENTER)
+
+        window.protocol("WM_DELETE_WINDOW", lambda: self.close_score_by_quarter(window=window, id=id))
+
         return listBox
 
 
@@ -213,6 +257,28 @@ class GUI(threading.Thread):
                     box.delete(player)
                     box.insert('', index=i, iid=new_player, values=df2.loc[new_player].to_list())
                     df2 = df2.iloc[1:]
+
+
+    def fill_score_by_quarter(self, df, box):
+        cols = ['points', '1st', '2nd', '3rd', '4th']
+        #for player in df.index:
+        for i in range(len(df)):
+            player = df['player'].iloc[i]
+            if box.exists(player):
+                box.focus(player)
+                print(player)
+                for j, col in enumerate(cols, start=2):
+                    if j == 2: print(df)
+                    print(j, col, df[col].iloc[i])
+
+                    box.set(player, column=j, value=df[col].iloc[i])
+
+            else:
+                if df['site'].iloc[i] == 1:
+                    box.insert('', index='end', iid=player, values=df.iloc[i].to_list())
+                else:
+                    box.insert('', index=0, iid=player, values=df.iloc[i].to_list())
+
 
 
 

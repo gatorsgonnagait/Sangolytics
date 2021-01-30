@@ -28,7 +28,7 @@ def open_web_driver(game_id):
 
 def player_stats(players):
     otf = pd.DataFrame(columns=c.player_columns)
-    otf.index.name = 'NAME'
+    otf.index.name = 'Player'
     for player in players:
         p_stats = [p.text.strip() for p in player.find_all('td')]
         p_stats = [re.sub(r"[\n\t]", " ", p) for p in p_stats]
@@ -37,7 +37,7 @@ def player_stats(players):
         pos = line[-1]
         name = ' '.join(line[:-1])
         fg, tri, reb, ast, pf, pts = p_stats[1],p_stats[2],p_stats[3],p_stats[4],p_stats[5],p_stats[6]
-        otf.at[name, 'Name'] = name
+        otf.at[name, 'Player'] = name
         otf.at[name, 'Pos'] = pos
         otf.at[name, 'FG'] = fg
         otf.at[name, '3PT'] = tri

@@ -8,9 +8,9 @@ def most_frequent(List):
 	except IndexError:
 		return None
 
-def format_team_names(team_name):
-	formatted_team = c.team_dict.get(team_name)
-	if formatted_team:
-		return formatted_team
-	else:
-		return team_name
+# def format_player_names(player_name):
+# 	formatted_team = c.team_dict.get(team_name)
+# 	if formatted_team:
+# 		return formatted_team
+# 	else:
+# 		return team_name

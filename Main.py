@@ -35,7 +35,7 @@ class Live_Games_Tool:
 		if self.version == 'cbb':
 			self.max = 30
 		else:
-			self.max = 15
+			self.max = 10
 
 		if self.version == 'nba':
 			self.odds_version = 'basketball_nba'
@@ -123,10 +123,9 @@ class Live_Games_Tool:
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
 		pbp_df.index.name = 'time_stamp'
 
-		periods = soup.find_all('div', {'id': re.compile(r'^gp-quarter-')})#[0]
-
+		periods = soup.find_all('div', {'id': re.compile(r'^gp-quarter-')})
+		# click to open each element here
 		for p in periods:
-
 			period = int(p.attrs['id'][-1])
 
 			for line in p.find_all('tr')[1:]:
@@ -146,8 +145,12 @@ class Live_Games_Tool:
 				pbp_df.at[time_index, 'adj_time'] = past_time
 				pbp_df.at[time_index, 'away'] = int(past_road_score)
 				pbp_df.at[time_index, 'home'] = int(past_home_score)
+				pbp_df.at[time_index, 'play'] = line.find('td', {'class': 'game-details'}).text
+
 				if not initial: break
+
 			if not initial: break
+
 
 		pbp_df['total'] = pbp_df['home'] + pbp_df['away']
 
@@ -160,6 +163,49 @@ class Live_Games_Tool:
 
 		return pbp_df
 
+	def score_by_quarter(self, df, away, home):
+		# which player scored each play
+		# where player isnt null, team isnt null
+		for i in range(len(df) - 1):
+			if 'makes' in df['play'].iloc[i]:
+				if pd.notnull(df['player'].iloc[i]):
+					break
+				player = df['play'].iloc[i].split('makes')[0].strip()
+				# first_initial = player.split()[0][0]
+				# last_name = ' '.join(player.split()[1:])
+				# player = ' '.join([first_initial, last_name])
+				df['player'].iloc[i] = player
+				away_diff = int(df['away'].iloc[i]) - int(df['away'].iloc[i + 1])
+				home_diff = int(df['home'].iloc[i]) - int(df['home'].iloc[i + 1])
+				if away_diff > 0:
+					df['team'].iloc[i] = away
+				else:
+					df['team'].iloc[i] = home
+
+				df['points'].iloc[i] = home_diff + away_diff
+
+		score_by_q = df[df['player'].notnull()]
+		current_period = df['period'].iloc[0]
+		one_hot = pd.get_dummies(score_by_q['period'])
+		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
+
+		one_hot = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['points'], axis='index')
+		one_hot = one_hot.rename(index=str, columns={1: '1st', 2: '2nd', 3:'3rd', 4:'4th'})
+		score_by_q = score_by_q[['player', 'points', 'team']]
+
+		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
+		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()
+		order = pd.CategoricalDtype([away, home], ordered=True)
+		grouped_score['team'] = grouped_score['team'].astype(order)
+		grouped_score.sort_values('team', inplace=True)
+		grouped_score['site'] = grouped_score['team'].apply(lambda x: 1 if x == home else (0 if x == away else x))
+		grouped_score.reset_index(inplace=True)
+		grouped_score.drop(grouped_score.columns[0], axis=1, inplace=True)
+
+		return grouped_score
+
+	# fill score by quarter
+
 
 	def play_by_play(self, game_id):
 		driver = self.open_web_driver(game_id=game_id)
@@ -168,15 +214,18 @@ class Live_Games_Tool:
 		past_home, past_away = None, None
 		live_total = ''
 		live_spread = ''
+		away, home = '', ''
 		time_diff = None
-		df = pd.DataFrame(columns=c.live_columns)#, index=['index'])
+		df = pd.DataFrame(columns=c.live_columns)
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
 		last_player_df = pd.DataFrame(c.player_columns)
 		pbp_df.index.name = 'time_stamp'
 		initial = True
 		self.gui.force_continue[game_id] = False
+
 		if self.version == 'nba':
 			self.gui.players_on[game_id] = False
+			self.gui.score_by_quarter_on[game_id] = False
 			self.gui.player_queue_dict[game_id] = queue.Queue()
 
 		while self.gui.is_alive():
@@ -188,13 +237,29 @@ class Live_Games_Tool:
 			except common.exceptions.WebDriverException:
 				continue
 
+		# opens up the play by play page
+		elements = driver.find_elements_by_class_name('accordion-item')
+		for e in elements:
+			while True:
+				try:
+					e.click()
+					time.sleep(.2)
+					break
+				except common.exceptions.ElementClickInterceptedException:
+					pass
 
 		while self.gui.is_alive():
 			try:
 				team_a = soup.find('div', {'class': 'team away'})
-				away = team_a.find('span', {'class': 'long-name'}).text + ' ' + team_a.find('span', {'class': 'short-name'}).text
+				team_a_city = team_a.find('span', {'class': 'long-name'}).text
+				team_a_mascot = team_a.find('span', {'class': 'short-name'}).text
+				away = ' '.join([team_a_city, team_a_mascot])
+
 				team_h = soup.find('div', {'class': 'team home'})
-				home = team_h.find('span', {'class': 'long-name'}).text + ' ' + team_h.find('span', {'class': 'short-name'}).text
+				team_h_city = team_h.find('span', {'class': 'long-name'}).text
+				team_h_mascot = team_h.find('span', {'class': 'short-name'}).text
+				home = ' '.join([team_h_city, team_h_mascot])
+
 				game = ' '.join([away, 'vs', home])
 				self.gui.id_to_names[game_id] = game
 				self.gui.names_to_ids[game] = game_id
@@ -245,13 +310,14 @@ class Live_Games_Tool:
 					pass
 				else:
 					continue
+			if pbp_df.empty: continue
 
 
 			if self.use_live_total:
 				try:
 					live_total_df = self.totals_df[(self.totals_df['home_team'].str.lower() == home.lower()) & (self.totals_df['away_team'].str.lower() == away.lower())]
 					live_total = live_total_df['total'].values[0]
-				except TypeError:
+				except (TypeError, IndexError) as e:
 					live_total = ''
 			if self.use_live_spread:
 				try:
@@ -259,13 +325,14 @@ class Live_Games_Tool:
 					live_spread = float(live_spread_df['spread'].values[0]) * -1
 					if live_spread > 0:
 						live_spread = ''.join(['+',str(live_spread)])
-				except TypeError:
+				except (TypeError, IndexError) as e:
 					live_spread = ''
 
 
 			current_time = pbp_df['adj_time'].iloc[0]
 			current_home = pbp_df['home'].iloc[0]
 			current_away = pbp_df['away'].iloc[0]
+
 			for i in pbp_df[1:].index:
 				past_time = pbp_df.at[i, 'adj_time']
 				past_total = pbp_df.at[i, 'total']
@@ -298,18 +365,24 @@ class Live_Games_Tool:
 			df.at[game, 'PPM Game'] = ppm_game
 			df.at[game, 'Live Spread'] = live_spread
 			df.at[game, 'Margin Last N'] = home_margin
+
 			if not df.empty:
 				self.gui.q.put(item=df)
 
-			if self.version == 'nba' and self.gui.players_on[game_id]:
-				player_df = gc.current_lineups(driver)
+			if self.version == 'nba':
+				if self.gui.players_on[game_id]:
+					player_df = gc.current_lineups(driver)
 
-				player_df['Team'].iloc[0:5] = away
-				player_df['Team'].iloc[5:10] = home
+					player_df['Team'].iloc[0:5] = away
+					player_df['Team'].iloc[5:10] = home
 
-				if not player_df.empty and not player_df.equals(last_player_df):
-					last_player_df = player_df.copy()
-					self.gui.player_queue_dict[game_id].put(player_df)
+					if not player_df.empty and not player_df.equals(last_player_df):
+						last_player_df = player_df.copy()
+						self.gui.player_queue_dict[game_id].put(player_df)
+
+				if self.gui.score_by_quarter_on[game_id]:
+					score_by_q = self.score_by_quarter(pbp_df, away, home)
+					self.gui.fill_score_by_quarter(score_by_q, self.gui.score_by_quarter_dict[game_id])
 
 			time.sleep(2)
 
@@ -366,11 +439,10 @@ def driver():
 	lg.gui.create_box()
 
 	launch_threads(lg, lg.id_list, lg.max)
-
 	t2 = threading.Thread(target=lg.gui.process_incoming)
 	t2.start()
 
-	lg.update_odds()
+	#lg.update_odds()
 
 	start = time.time()
 	while True:
