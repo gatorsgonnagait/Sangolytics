@@ -105,7 +105,7 @@ class GUI(threading.Thread):
 
 
     def open_score_by_quarter(self,id):
-        player_box = self.create_score_by_quarter_box(columns=c.score_by_quarter, id=id)
+        player_box = self.create_score_by_quarter_box(columns=list(map(str.capitalize, c.score_by_quarter)), id=id)
         self.score_by_quarter_dict[id] = player_box
         self.score_by_quarter_on[id] = True
         self.force_continue[id] = True
@@ -216,9 +216,9 @@ class GUI(threading.Thread):
         for col in columns:
             listBox.heading(col, text=col)
             if col == 'Player':
-                listBox.column(col, minwidth=150, width=150, stretch=True)
+                listBox.column(col, minwidth=170, width=170, stretch=True)
             elif col == 'Team':
-                listBox.column(col, minwidth=150, width=150, stretch=True)
+                listBox.column(col, minwidth=170, width=170, stretch=True)
             else:
                 listBox.column(col, minwidth=100, width=100, stretch=True,anchor=tk.CENTER)
 
@@ -265,19 +265,19 @@ class GUI(threading.Thread):
         for i in range(len(df)):
             player = df['player'].iloc[i]
             if box.exists(player):
-                box.focus(player)
-                print(player)
                 for j, col in enumerate(cols, start=2):
-                    if j == 2: print(df)
-                    print(j, col, df[col].iloc[i])
-
-                    box.set(player, column=j, value=df[col].iloc[i])
+                   # if j == 2: print(df)
+                   # print(j, col, df[col].iloc[i])
+                    q_points = df[col].iloc[i]
+                    box.set(player, column=j, value=q_points)
 
             else:
                 if df['site'].iloc[i] == 1:
-                    box.insert('', index='end', iid=player, values=df.iloc[i].to_list())
+                    position = 'end'
                 else:
-                    box.insert('', index=0, iid=player, values=df.iloc[i].to_list())
+                    position = 0
+                box.insert('', index=position, iid=player, values=df.iloc[i].to_list())
+
 
 
 

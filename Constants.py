@@ -14,4 +14,5 @@ region = 'us'
 live_columns = ['Game','Period','Away','Home','Current Total','Live Total','PPM Last N','PPM Game','Live Spread','Margin Last N']
 player_columns = ['Player','Team','Pos','FG','3PT','Reb','Ast','PF','Pts']
 play_by_play_columns = ['time', 'period', 'adj_time', 'away', 'home', 'total', 'play', 'player', 'points','team']
-score_by_quarter = ['Player', 'Team', 'Points', '1st', '2nd', '3rd', '4th']
+score_by_quarter = ['player', 'team', 'points', '1st', '2nd', '3rd', '4th']
+period_dict = {1: '1st', 2: '2nd', 3:'3rd', 4:'4th', 5:'OT', 6:'2OT', 7:'3OT', 8:'4OT'}

@@ -110,6 +110,7 @@ class Live_Games_Tool:
 					driver.switch_to.window(driver.window_handles[0])
 
 			except common.exceptions.TimeoutException:
+
 				continue
 			break
 
@@ -186,22 +187,25 @@ class Live_Games_Tool:
 
 		score_by_q = df[df['player'].notnull()]
 		current_period = df['period'].iloc[0]
+		if current_period < 4:
+			current_period = 4
+
 		one_hot = pd.get_dummies(score_by_q['period'])
 		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
-
 		one_hot = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['points'], axis='index')
-		one_hot = one_hot.rename(index=str, columns={1: '1st', 2: '2nd', 3:'3rd', 4:'4th'})
+		one_hot = one_hot.rename(index=str, columns=c.period_dict)
 		score_by_q = score_by_q[['player', 'points', 'team']]
-
 		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
 		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()
+
 		order = pd.CategoricalDtype([away, home], ordered=True)
 		grouped_score['team'] = grouped_score['team'].astype(order)
 		grouped_score.sort_values('team', inplace=True)
 		grouped_score['site'] = grouped_score['team'].apply(lambda x: 1 if x == home else (0 if x == away else x))
 		grouped_score.reset_index(inplace=True)
-		grouped_score.drop(grouped_score.columns[0], axis=1, inplace=True)
 
+		grouped_score.drop(grouped_score.columns[0], axis=1, inplace=True)
+		grouped_score = grouped_score.astype({'points': 'int', '1st': 'int', '2nd': 'int', '3rd': 'int', '4th': 'int'})
 		return grouped_score
 
 	# fill score by quarter
@@ -235,9 +239,10 @@ class Live_Games_Tool:
 				time.sleep(.2)
 				break
 			except common.exceptions.WebDriverException:
+				print('error', game_id)
 				continue
 
-		# opens up the play by play page
+		# error in the clicking, gets caught in the loop sometimes
 		elements = driver.find_elements_by_class_name('accordion-item')
 		for e in elements:
 			while True:
@@ -246,6 +251,7 @@ class Live_Games_Tool:
 					time.sleep(.2)
 					break
 				except common.exceptions.ElementClickInterceptedException:
+
 					pass
 
 		while self.gui.is_alive():
@@ -263,9 +269,11 @@ class Live_Games_Tool:
 				game = ' '.join([away, 'vs', home])
 				self.gui.id_to_names[game_id] = game
 				self.gui.names_to_ids[game] = game_id
+				print(game)
 				if self.version == 'nba':
 					self.gui.combo_box['values'] = list(self.gui.id_to_names.values())
 				break
+
 			except IndexError:
 				time.sleep(.2)
 				continue
@@ -275,6 +283,7 @@ class Live_Games_Tool:
 			try:
 				page = driver.page_source
 			except common.exceptions.WebDriverException:
+
 				continue
 
 			soup = bs.BeautifulSoup(page, "html.parser")
@@ -390,9 +399,11 @@ class Live_Games_Tool:
 
 def launch_threads(lg, id_list, max=None):
 	ids = lg.get_game_urls()
+
 	for id in ids[:max]:
 		if id not in id_list:
 			id_list.append(id)
+			print(id)
 			thread = threading.Thread(target=lg.play_by_play, args=[id])
 			thread.daemon = True
 			try:
