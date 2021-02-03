@@ -268,10 +268,11 @@ class GUI(threading.Thread):
             player = df['player'].iloc[i]
             if box.exists(player):
                 for j, col in enumerate(cols, start=2):
-                   # if j == 2: print(df)
-                   # print(j, col, df[col].iloc[i])
-                    q_points = df[col].iloc[i]
-                    box.set(player, column=j, value=q_points)
+                    try:
+                        q_points = df[col].iloc[i]
+                        box.set(player, column=j, value=q_points)
+                    except KeyError:
+                        pass
 
             else:
                 if df['site'].iloc[i] == 1:

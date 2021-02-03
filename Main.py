@@ -177,9 +177,13 @@ class Live_Games_Tool:
 			if m:
 				player = df['play'].iloc[i].split(m)[0].strip()
 				df['player'].iloc[i] = player
-				away_diff = int(df['away'].iloc[i]) - int(df['away'].iloc[i + 1])
-				home_diff = int(df['home'].iloc[i]) - int(df['home'].iloc[i + 1])
-				points = away_diff + home_diff
+				# look back at last 5 and find least difference to account for bad sorted scores
+				last_highest_score_away = df['away'].iloc[i+1:i+5].astype(int).max()
+				last_highest_score_home = df['home'].iloc[i+1:i+5].astype(int).max()
+
+				away_diff = int(df['away'].iloc[i]) - last_highest_score_away#int(df['away'].iloc[i + 1])
+				home_diff = int(df['home'].iloc[i]) - last_highest_score_home#int(df['home'].iloc[i + 1])
+				points = max(away_diff, home_diff)
 				if away_diff > 0:
 					df['team'].iloc[i] = away
 				else:
@@ -204,6 +208,7 @@ class Live_Games_Tool:
 		one_hot = one_hot.rename(index=str, columns=c.period_dict)
 		score_by_q = score_by_q[['player', 'points', 'team']]
 		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
+		#print(score_by_q[score_by_q['player'] == 'Jayson Tatum'])
 		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()
 
 		order = pd.CategoricalDtype([away, home], ordered=True)
