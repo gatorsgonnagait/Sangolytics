@@ -12,6 +12,7 @@ import Game_Cast as gc
 import queue
 import re
 import tkinter as tk
+import Tools as tools
 
 
 class Live_Games_Tool:
@@ -123,7 +124,8 @@ class Live_Games_Tool:
 
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
 		pbp_df.index.name = 'time_stamp'
-
+		limit = 3
+		ct = 0
 		periods = soup.find_all('div', {'id': re.compile(r'^gp-quarter-')})
 		# click to open each element here
 		for p in periods:
@@ -147,10 +149,11 @@ class Live_Games_Tool:
 				pbp_df.at[time_index, 'away'] = int(past_road_score)
 				pbp_df.at[time_index, 'home'] = int(past_home_score)
 				pbp_df.at[time_index, 'play'] = line.find('td', {'class': 'game-details'}).text
+				ct += 1
+				if not initial and ct >= limit: break
 
-				if not initial: break
 
-			if not initial: break
+			if not initial and ct >= limit: break
 
 
 		pbp_df['total'] = pbp_df['home'] + pbp_df['away']
@@ -165,30 +168,35 @@ class Live_Games_Tool:
 		return pbp_df
 
 	def score_by_quarter(self, df, away, home):
-		# which player scored each play
-		# where player isnt null, team isnt null
 		for i in range(len(df) - 1):
+			m = ''
 			if 'makes' in df['play'].iloc[i]:
-				if pd.notnull(df['player'].iloc[i]):
-					break
-				player = df['play'].iloc[i].split('makes')[0].strip()
-				# first_initial = player.split()[0][0]
-				# last_name = ' '.join(player.split()[1:])
-				# player = ' '.join([first_initial, last_name])
+				m = 'makes'
+			elif 'made' in df['play'].iloc[i]:
+				m = 'made'
+			if m:
+				player = df['play'].iloc[i].split(m)[0].strip()
 				df['player'].iloc[i] = player
 				away_diff = int(df['away'].iloc[i]) - int(df['away'].iloc[i + 1])
 				home_diff = int(df['home'].iloc[i]) - int(df['home'].iloc[i + 1])
+				points = away_diff + home_diff
 				if away_diff > 0:
 					df['team'].iloc[i] = away
 				else:
 					df['team'].iloc[i] = home
 
-				df['points'].iloc[i] = home_diff + away_diff
+				if 'free' in df['play'].iloc[i]:
+					points = 1
+				df['points'].iloc[i] = points
 
 		score_by_q = df[df['player'].notnull()]
 		current_period = df['period'].iloc[0]
-		if current_period < 4:
-			current_period = 4
+		if self.version == 'nba':
+			if current_period < 4:
+				current_period = 4
+		else:
+			if current_period < 2:
+				current_period = 2
 
 		one_hot = pd.get_dummies(score_by_q['period'])
 		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
@@ -208,7 +216,6 @@ class Live_Games_Tool:
 		grouped_score = grouped_score.astype({'points': 'int', '1st': 'int', '2nd': 'int', '3rd': 'int', '4th': 'int'})
 		return grouped_score
 
-	# fill score by quarter
 
 
 	def play_by_play(self, game_id):
@@ -226,10 +233,9 @@ class Live_Games_Tool:
 		pbp_df.index.name = 'time_stamp'
 		initial = True
 		self.gui.force_continue[game_id] = False
-
+		self.gui.score_by_quarter_on[game_id] = False
 		if self.version == 'nba':
 			self.gui.players_on[game_id] = False
-			self.gui.score_by_quarter_on[game_id] = False
 			self.gui.player_queue_dict[game_id] = queue.Queue()
 
 		while self.gui.is_alive():
@@ -243,16 +249,14 @@ class Live_Games_Tool:
 				continue
 
 		# error in the clicking, gets caught in the loop sometimes
-		elements = driver.find_elements_by_class_name('accordion-item')
+		elements = driver.find_elements_by_class_name('accordion-header')
 		for e in elements:
-			while True:
-				try:
-					e.click()
-					time.sleep(.2)
-					break
-				except common.exceptions.ElementClickInterceptedException:
-
-					pass
+			try:
+				period_accordion = e.find_element_by_class_name('collapsed')
+				if period_accordion.get_attribute('aria-expanded') == 'false':
+					period_accordion.click()
+			except common.exceptions.NoSuchElementException:
+				pass
 
 		while self.gui.is_alive():
 			try:
@@ -270,8 +274,7 @@ class Live_Games_Tool:
 				self.gui.id_to_names[game_id] = game
 				self.gui.names_to_ids[game] = game_id
 				print(game)
-				if self.version == 'nba':
-					self.gui.combo_box['values'] = list(self.gui.id_to_names.values())
+				self.gui.combo_box['values'] = list(self.gui.id_to_names.values())
 				break
 
 			except IndexError:
@@ -283,7 +286,6 @@ class Live_Games_Tool:
 			try:
 				page = driver.page_source
 			except common.exceptions.WebDriverException:
-
 				continue
 
 			soup = bs.BeautifulSoup(page, "html.parser")
@@ -308,12 +310,14 @@ class Live_Games_Tool:
 			if initial:
 				pbp_df = self.get_play_lines(soup, initial=True)
 				initial = False
-
+				#print(pbp_df)
 			else:
 				new_pbp = self.get_play_lines(soup, initial=False)
-
 				if not new_pbp.empty and new_pbp.first_valid_index() not in pbp_df.index:
+
 					pbp_df = new_pbp.iloc[0].to_frame().T.append(pbp_df)
+					pbp_df.index.name = 'time_stamp'
+					pbp_df = tools.handle_duplicates(df=pbp_df, index='time_stamp')
 				elif self.gui.force_continue[game_id]:
 					self.gui.force_continue[game_id] = False
 					pass
@@ -389,9 +393,9 @@ class Live_Games_Tool:
 						last_player_df = player_df.copy()
 						self.gui.player_queue_dict[game_id].put(player_df)
 
-				if self.gui.score_by_quarter_on[game_id]:
-					score_by_q = self.score_by_quarter(pbp_df, away, home)
-					self.gui.fill_score_by_quarter(score_by_q, self.gui.score_by_quarter_dict[game_id])
+			if self.gui.score_by_quarter_on[game_id]:
+				score_by_q = self.score_by_quarter(pbp_df, away, home)
+				self.gui.fill_score_by_quarter(score_by_q, self.gui.score_by_quarter_dict[game_id])
 
 			time.sleep(2)
 
@@ -403,7 +407,6 @@ def launch_threads(lg, id_list, max=None):
 	for id in ids[:max]:
 		if id not in id_list:
 			id_list.append(id)
-			print(id)
 			thread = threading.Thread(target=lg.play_by_play, args=[id])
 			thread.daemon = True
 			try:

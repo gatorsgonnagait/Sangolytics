@@ -8,9 +8,7 @@ def most_frequent(List):
 	except IndexError:
 		return None
 
-# def format_player_names(player_name):
-# 	formatted_team = c.team_dict.get(team_name)
-# 	if formatted_team:
-# 		return formatted_team
-# 	else:
-# 		return team_name
+def handle_duplicates(df, index):
+	df = df.reset_index().drop_duplicates(keep='last', subset=[index])
+	df.set_index(index, inplace=True)
+	return df

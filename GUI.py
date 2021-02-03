@@ -179,12 +179,14 @@ class GUI(threading.Thread):
         self.n_entry = tk.Entry(self.window)
         self.n_entry.grid(row=4, column=1)
         tk.Button(self.window, text='Change N',command=self.submit_n).grid(row=4, column=2)
+
+        self.combo_box = ttk.Combobox(self.window, textvariable='Select game', values=None, width=40)
+        self.combo_box.grid(row=4, column=4)
+        self.combo_box.set('Select game')
+        tk.Button(self.window, text='Score by Q', command=self.open_score_by_quarter_box).grid(row=4, column=6)
         if self.version == 'nba':
-            self.combo_box = ttk.Combobox(self.window, textvariable='Players on floor', values=None, width=40)
-            self.combo_box.grid(row=4, column=4)
-            self.combo_box.set('Players on floor')
             tk.Button(self.window, text='Open Players', command=self.open_player_box).grid(row=4, column=5)
-            tk.Button(self.window, text='Score by Q', command=self.open_score_by_quarter_box).grid(row=4, column=6)
+
         self.window.protocol("WM_DELETE_WINDOW", self.root.quit)
         self.game_box = game_box
 
@@ -277,34 +279,3 @@ class GUI(threading.Thread):
                 else:
                     position = 0
                 box.insert('', index=position, iid=player, values=df.iloc[i].to_list())
-
-
-
-
-
-
-if __name__ == '__main__':
-
-    gui = GUI(version='cbb')
-    df = pd.read_csv('datatest.csv', index_col=['index'])
-    print(df.loc['tenn auburn'])
-    columns = df.columns.tolist()
-
-    gui.create_box(columns=columns)
-    t1 = threading.Thread(target=gui.process_incoming)
-    t1.start()
-    print('test2')
-    print(gui.game_box)
-    gui.fill_box(df=df)
-
-
-    # df2 = pd.read_csv('datatest2.csv')
-    # gui.root = gui.create_box(df=df)
-    # fill_box(list_box=gui.root, df=df2)
-
-
-# one windows with df of all games
-# for nba, window for each game with all the current players on the floor
-# call the gamecast functions for nba
-
-# create original 
