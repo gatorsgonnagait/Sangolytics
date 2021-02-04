@@ -263,7 +263,7 @@ class GUI(threading.Thread):
 
     def fill_score_by_quarter(self, df, box):
         cols = ['points', '1st', '2nd', '3rd', '4th']
-        #for player in df.index:
+
         for i in range(len(df)):
             player = df['player'].iloc[i]
             if box.exists(player):

@@ -124,7 +124,7 @@ class Live_Games_Tool:
 
 		pbp_df = pd.DataFrame(columns=c.play_by_play_columns)
 		pbp_df.index.name = 'time_stamp'
-		limit = 3
+		limit = 10
 		ct = 0
 		periods = soup.find_all('div', {'id': re.compile(r'^gp-quarter-')})
 		# click to open each element here
@@ -178,12 +178,18 @@ class Live_Games_Tool:
 				player = df['play'].iloc[i].split(m)[0].strip()
 				df['player'].iloc[i] = player
 				# look back at last 5 and find least difference to account for bad sorted scores
-				last_highest_score_away = df['away'].iloc[i+1:i+5].astype(int).max()
-				last_highest_score_home = df['home'].iloc[i+1:i+5].astype(int).max()
-
-				away_diff = int(df['away'].iloc[i]) - last_highest_score_away#int(df['away'].iloc[i + 1])
-				home_diff = int(df['home'].iloc[i]) - last_highest_score_home#int(df['home'].iloc[i + 1])
+				last_highest_score_away = df['away'].iloc[i+1:i+11].astype(int).max()
+				last_highest_score_home = df['home'].iloc[i+1:i+11].astype(int).max()
+				away_diff = int(df['away'].iloc[i]) - last_highest_score_away
+				home_diff = int(df['home'].iloc[i]) - last_highest_score_home
 				points = max(away_diff, home_diff)
+				# accounts for mistake if player gets 0 points in the play
+				if points == 0:
+					away_diff = int(df['away'].iloc[i-1]) - int(df['away'].iloc[i])
+					home_diff = int(df['home'].iloc[i-1]) - int(df['home'].iloc[i])
+					print(away_diff, home_diff)
+					points = max(away_diff, home_diff)
+
 				if away_diff > 0:
 					df['team'].iloc[i] = away
 				else:
@@ -208,7 +214,7 @@ class Live_Games_Tool:
 		one_hot = one_hot.rename(index=str, columns=c.period_dict)
 		score_by_q = score_by_q[['player', 'points', 'team']]
 		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
-		#print(score_by_q[score_by_q['player'] == 'Jayson Tatum'])
+		#print(score_by_q[score_by_q['player'] == 'Zion Williamson'])
 		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()
 
 		order = pd.CategoricalDtype([away, home], ordered=True)
