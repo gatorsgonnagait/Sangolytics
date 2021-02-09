@@ -213,7 +213,7 @@ class GUI(threading.Thread):
         window = tk.Toplevel(self.window, width=950, height=500)
         label = tk.Label(window, text=self.id_to_names[id], font=("Arial", 15), justify='center')
         label.grid(row=0, columnspan=10)
-        listBox = ttk.Treeview(window, columns=columns, show='headings', height=20)
+        listBox = ttk.Treeview(window, columns=columns, show='headings', height=22)
         listBox.grid(row=1, column=0, columnspan=10)
         for col in columns:
             listBox.heading(col, text=col)

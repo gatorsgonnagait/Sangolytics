@@ -12,9 +12,10 @@ def get_odds(sport, market):
         'region': c.region,
         'mkt': market,
     }).json()
-
-    df = pd.DataFrame.from_dict(odds_response['data'])
-
+    try:
+        df = pd.DataFrame.from_dict(odds_response['data'])
+    except  KeyError:
+        return
     df['date'] = df['commence_time'].apply(lambda x: dt.fromtimestamp(x).replace(hour=0, minute=0, tzinfo=None))
     df['left_home'] = df.apply(lambda row: 1 if row.teams[0] == row.home_team else 0, axis = 1)
     df['away_team'] = df.apply(lambda row: row.teams[1] if row.left_home == 1 else row.teams[0], axis = 1)

@@ -185,10 +185,16 @@ class Live_Games_Tool:
 				points = max(away_diff, home_diff)
 				# accounts for mistake if player gets 0 points in the play
 				if points == 0:
-					away_diff = int(df['away'].iloc[i-1]) - int(df['away'].iloc[i])
-					home_diff = int(df['home'].iloc[i-1]) - int(df['home'].iloc[i])
-					print(away_diff, home_diff)
-					points = max(away_diff, home_diff)
+					last_highest_score_away = df['away'].iloc[i-6:i-1].astype(int).min()
+					last_highest_score_home = df['home'].iloc[i-6:i-1].astype(int).min()
+					away_diff = last_highest_score_away - int(df['away'].iloc[i])
+					home_diff = last_highest_score_home - int(df['home'].iloc[i])
+					points = min(away_diff, home_diff)
+
+					# away_diff = int(df['away'].iloc[i-1]) - int(df['away'].iloc[i])
+					# home_diff = int(df['home'].iloc[i-1]) - int(df['home'].iloc[i])
+					# print(away_diff, home_diff)
+					#points = max(away_diff, home_diff)
 
 				if away_diff > 0:
 					df['team'].iloc[i] = away
@@ -214,7 +220,7 @@ class Live_Games_Tool:
 		one_hot = one_hot.rename(index=str, columns=c.period_dict)
 		score_by_q = score_by_q[['player', 'points', 'team']]
 		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
-		#print(score_by_q[score_by_q['player'] == 'Zion Williamson'])
+		#print(score_by_q[score_by_q['player'] == 'LeBron James'])
 		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()
 
 		order = pd.CategoricalDtype([away, home], ordered=True)
@@ -321,7 +327,6 @@ class Live_Games_Tool:
 			if initial:
 				pbp_df = self.get_play_lines(soup, initial=True)
 				initial = False
-				#print(pbp_df)
 			else:
 				new_pbp = self.get_play_lines(soup, initial=False)
 				if not new_pbp.empty and new_pbp.first_valid_index() not in pbp_df.index:
@@ -472,11 +477,11 @@ def driver():
 	start = time.time()
 	while True:
 
-		if time.time() - start > 300:
+		if time.time() - start > 180:
 			start = time.time()
 			launch_threads(lg, lg.id_list, lg.max)
-			if lg.id_list and not lg.updating_odds:
-				lg.update_odds()
+			# if lg.id_list and not lg.updating_odds:
+			# 	lg.update_odds()
 
 		if not lg.gui.is_alive():
 			break
