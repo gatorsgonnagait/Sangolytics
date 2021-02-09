@@ -28,8 +28,3 @@ def get_odds(sport, market):
     df[bet] = df.apply(lambda x:  t.most_frequent([i['odds'][market]['points'][1] for i in x.sites]) if ( x.home_team == 0) else t.most_frequent([i['odds'][market]['points'][0] for i in x.sites]), axis=1)
     df.drop(['left_home'], axis=1, inplace=True)
     return df
-
-if __name__ == '__main__':
-    df = get_odds(version='basketball_nba')
-    live_total = df[(df['home_team'] == 'Denver Nuggets') & (df['away_team'] == 'Sacramento Kings')]
-    print(live_total['total'].values[0])
