@@ -472,7 +472,7 @@ def driver():
 	t2 = threading.Thread(target=lg.gui.process_incoming)
 	t2.start()
 
-	#lg.update_odds()
+	lg.update_odds()
 
 	start = time.time()
 	while True:
@@ -480,8 +480,8 @@ def driver():
 		if time.time() - start > 180:
 			start = time.time()
 			launch_threads(lg, lg.id_list, lg.max)
-			# if lg.id_list and not lg.updating_odds:
-			# 	lg.update_odds()
+			if lg.id_list and not lg.updating_odds:
+				lg.update_odds()
 
 		if not lg.gui.is_alive():
 			break
