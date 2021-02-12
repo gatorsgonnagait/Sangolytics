@@ -178,23 +178,18 @@ class Live_Games_Tool:
 				player = df['play'].iloc[i].split(m)[0].strip()
 				df['player'].iloc[i] = player
 				# look back at last 5 and find least difference to account for bad sorted scores
-				last_highest_score_away = df['away'].iloc[i+1:i+11].astype(int).max()
-				last_highest_score_home = df['home'].iloc[i+1:i+11].astype(int).max()
+				last_highest_score_away = df['away'].iloc[i+1:i+15].astype(int).max()
+				last_highest_score_home = df['home'].iloc[i+1:i+15].astype(int).max()
 				away_diff = int(df['away'].iloc[i]) - last_highest_score_away
 				home_diff = int(df['home'].iloc[i]) - last_highest_score_home
 				points = max(away_diff, home_diff)
 				# accounts for mistake if player gets 0 points in the play
 				if points == 0:
-					last_highest_score_away = df['away'].iloc[i-6:i-1].astype(int).min()
-					last_highest_score_home = df['home'].iloc[i-6:i-1].astype(int).min()
+					last_highest_score_away = df['away'].iloc[i-15:i-1].astype(int).min()
+					last_highest_score_home = df['home'].iloc[i-5:i-1].astype(int).min()
 					away_diff = last_highest_score_away - int(df['away'].iloc[i])
 					home_diff = last_highest_score_home - int(df['home'].iloc[i])
 					points = min(away_diff, home_diff)
-
-					# away_diff = int(df['away'].iloc[i-1]) - int(df['away'].iloc[i])
-					# home_diff = int(df['home'].iloc[i-1]) - int(df['home'].iloc[i])
-					# print(away_diff, home_diff)
-					#points = max(away_diff, home_diff)
 
 				if away_diff > 0:
 					df['team'].iloc[i] = away
