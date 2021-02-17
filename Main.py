@@ -13,6 +13,12 @@ import queue
 import re
 import tkinter as tk
 import Tools as tools
+import matplotlib
+matplotlib.use('tkagg')
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib import style
+
 
 
 class Live_Games_Tool:
@@ -34,9 +40,9 @@ class Live_Games_Tool:
 		self.use_live_spread = True
 		self.id_list = []
 		if self.version == 'cbb':
-			self.max = 30
+			self.max = 1
 		else:
-			self.max = 10
+			self.max = 1
 
 		if self.version == 'nba':
 			self.odds_version = 'basketball_nba'
@@ -231,6 +237,20 @@ class Live_Games_Tool:
 
 
 	def play_by_play(self, game_id):
+		style.use("ggplot")
+		fig = plt.figure()
+		ax1 = fig.add_subplot(1, 1, 1)
+
+		def animate(i):
+			ax1.clear()
+			ax1.plot(xar, yar)
+
+		def graph():
+			ani = animation.FuncAnimation(fig, animate, interval=1000)
+			plt.show()
+
+		xar = []
+		yar = []
 		driver = self.open_web_driver(game_id=game_id)
 		game = ''
 		past_total = None
@@ -321,7 +341,7 @@ class Live_Games_Tool:
 
 			if initial:
 				pbp_df = self.get_play_lines(soup, initial=True)
-				initial = False
+
 			else:
 				new_pbp = self.get_play_lines(soup, initial=False)
 				if not new_pbp.empty and new_pbp.first_valid_index() not in pbp_df.index:
@@ -369,6 +389,23 @@ class Live_Games_Tool:
 			total_points = pbp_df['total'].iloc[0]
 			home_margin = (current_home - past_home) - (current_away - past_away)
 
+
+			x = int(current_time.seconds)
+			y = home_margin
+
+			xar.append(x)
+			yar.append(y)
+
+			print(xar)
+			print(yar)
+
+			if initial:
+				t = threading.Thread(target=graph)
+				t.daemon = True
+				t.start()
+			else:
+				ani = animation.FuncAnimation(fig, animate, interval=1000)
+
 			try:
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)
 			except ZeroDivisionError:
@@ -408,6 +445,7 @@ class Live_Games_Tool:
 				score_by_q = self.score_by_quarter(pbp_df, away, home)
 				self.gui.fill_score_by_quarter(score_by_q, self.gui.score_by_quarter_dict[game_id])
 
+			initial = False
 			time.sleep(2)
 
 
