@@ -7,14 +7,10 @@ import pandas as pd
 import Constants as c
 import threading
 from Odds import get_odds
-import GUI as g
 import Game_Cast as gc
 import queue
 import re
-import tkinter as tk
 import Tools as tools
-# import matplotlib
-# matplotlib.use('tkagg')
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib import style
@@ -22,7 +18,7 @@ from multiprocessing import Process
 from matplotlib.ticker import MaxNLocator
 
 
-class Live_Games_Tool:
+class MGA_Version:
 
 	def __init__(self, version):
 		self.version = version
@@ -32,14 +28,20 @@ class Live_Games_Tool:
 		self.options.headless = True
 		self.totals_df = None
 		self.spreads_df = None
-		# self.updating_odds = False
-		self.gui = g.GUI(version=self.version)
 		self.ot = timedelta(minutes=5)
 		self.web_driver_urls = None
 		self.web_driver_dict = {}
+		self.score_by_quarter_on = {}
 		self.use_live_total = False
 		self.use_live_spread = False
 		self.id_list = []
+		self.players_on = {}
+		self.player_queue_dict = {}
+		self.score_by_quarter_on = {}
+		self.n = 3
+
+
+
 		if self.version == 'cbb':
 			self.max = 1
 		else:
@@ -80,8 +82,8 @@ class Live_Games_Tool:
 
 		self.web_driver_urls = webdriver.Firefox(options=self.options)
 
-		url = scoreboard_url + d
-		while self.gui.is_alive():
+		url = scoreboard_url# + d
+		while True:
 			try:
 				self.web_driver_urls.get(url)
 			except common.exceptions.TimeoutException:
@@ -222,7 +224,6 @@ class Live_Games_Tool:
 		one_hot = one_hot.rename(index=str, columns=c.period_dict)
 		score_by_q = score_by_q[['player', 'points', 'team']]
 		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
-		#print(score_by_q[score_by_q['player'] == 'LeBron James'])
 		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()
 
 		order = pd.CategoricalDtype([away, home], ordered=True)
@@ -258,13 +259,11 @@ class Live_Games_Tool:
 		last_player_df = pd.DataFrame(c.player_columns)
 		pbp_df.index.name = 'time_stamp'
 		initial = True
-		self.gui.force_continue[game_id] = False
-		self.gui.score_by_quarter_on[game_id] = False
-		if self.version == 'nba':
-			self.gui.players_on[game_id] = False
-			self.gui.player_queue_dict[game_id] = queue.Queue()
+		self.score_by_quarter_on[game_id] = False
+		self.players_on[game_id] = False
+		self.player_queue_dict[game_id] = queue.Queue()
 
-		while self.gui.is_alive():
+		while True:
 			try:
 				page = driver.page_source
 				soup = bs.BeautifulSoup(page, "html.parser")
@@ -274,7 +273,6 @@ class Live_Games_Tool:
 				print('error', game_id)
 				continue
 
-		# error in the clicking, gets caught in the loop sometimes
 		elements = driver.find_elements_by_class_name('accordion-header')
 		for e in elements:
 			try:
@@ -284,7 +282,7 @@ class Live_Games_Tool:
 			except common.exceptions.NoSuchElementException:
 				pass
 
-		while self.gui.is_alive():
+		while True:
 			try:
 				team_a = soup.find('div', {'class': 'team away'})
 				team_a_city = team_a.find('span', {'class': 'long-name'}).text
@@ -297,17 +295,14 @@ class Live_Games_Tool:
 				home = ' '.join([team_h_city, team_h_mascot])
 
 				game = ' '.join([away, 'vs', home])
-				self.gui.id_to_names[game_id] = game
-				self.gui.names_to_ids[game] = game_id
 				print(game)
-				self.gui.combo_box['values'] = list(self.gui.id_to_names.values())
 				break
 
 			except IndexError:
 				time.sleep(.2)
 				continue
 
-		while self.gui.is_alive():
+		while True:#self.gui.is_alive():
 
 			try:
 				page = driver.page_source
@@ -319,16 +314,10 @@ class Live_Games_Tool:
 				half = soup.find('span', {'class': 'status-detail'}).text
 			except AttributeError:
 				continue
-			if half.startswith('Final'):#\
-					#or (half.startswith('End') and pbp_df['time'].iloc[0] == '4th' and pbp_df['away'].iloc[0] != pbp_df['home'].iloc[0]):
+			if half.startswith('Final'):
 				print('End of', game)
 				time.sleep(60)
-				try:
-					self.gui.game_box.delete(game)
-				except tk.TclError:
-					pass
-				self.gui.id_to_names.pop(game_id, None)
-				self.gui.names_to_ids.pop(game, None)
+
 				self.id_list.remove(game_id)
 				driver.quit()
 				break
@@ -342,9 +331,7 @@ class Live_Games_Tool:
 					pbp_df = new_pbp.iloc[0].to_frame().T.append(pbp_df)
 					pbp_df.index.name = 'time_stamp'
 					pbp_df = tools.handle_duplicates(df=pbp_df, index='time_stamp')
-				elif self.gui.force_continue[game_id]:
-					self.gui.force_continue[game_id] = False
-					pass
+
 				else:
 					continue
 			if pbp_df.empty: continue
@@ -376,48 +363,36 @@ class Live_Games_Tool:
 				past_home = pbp_df.at[i, 'home']
 				past_away = pbp_df.at[i, 'away']
 				time_diff = current_time - past_time
-				if time_diff > timedelta(minutes=self.gui.n):
+				if time_diff > timedelta(minutes=self.n):
 					break
 
 			total_points = pbp_df['total'].iloc[0]
 			home_margin = (current_home - past_home) - (current_away - past_away)
-
 			pbp_df['adj_time'] = pd.to_timedelta(pbp_df['adj_time'])
 
-			yar = (pbp_df['home'] -  pbp_df['away']).tolist()
-			xar = pbp_df['adj_time'].dt.total_seconds().tolist()
-			#pbp_df.to_csv('time_test.csv')
+			# yar = (pbp_df['home'] -  pbp_df['away']).tolist()
+			# xar = pbp_df['adj_time'].dt.total_seconds().tolist()
+			#
+			# x = int(current_time.seconds)
+			# print(x, home_margin)
+			# xar.append(x)
+			# yar.append(home_margin)
+			#
+			# if initial:
+			# 	figure, ax = plt.subplots(figsize=(8, 6))
+			# 	line1, = ax.plot(xar, yar)
+			# 	ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+			# 	last_min = min(yar) - 4
+			# 	last_max = max(yar) + 4
+			# 	plt.axis([xar[0], xar[-1] + limit, last_min, last_max])
+			#
+			# line1.set_xdata(xar)
+			# line1.set_ydata(yar)
+			# figure.canvas.flush_events()
+			# figure.canvas.draw()
+			# ax.clear()
+			# ax.plot(xar, yar)
 
-			x = int(current_time.seconds)
-			print(x, home_margin)
-			xar.append(x)
-			yar.append(home_margin)
-
-			if initial:
-
-				figure, ax = plt.subplots(figsize=(8, 6))
-				line1, = ax.plot(xar, yar)
-				ax.yaxis.set_major_locator(MaxNLocator(integer=True))
-				last_min = min(yar) - 4
-				last_max = max(yar) + 4
-				plt.axis([xar[0], xar[-1] + limit, last_min, last_max])
-
-
-			line1.set_xdata(xar)
-			line1.set_ydata(yar)
-
-			figure.canvas.draw()
-			figure.canvas.flush_events()
-			time.sleep(1)
-			ax.clear()
-			ax.xaxis.set_major_locator(MaxNLocator(integer=True))
-			ax.plot(xar, yar)
-
-			# if k > limit:
-			# 	temp_line = yar[:-limit]
-			# 	last_min = min(temp_line) - 4
-			# 	last_max = max(temp_line) + 4
-			# 	plt.axis([1000 + k - 5, 1010 + k - 5, last_min, last_max])
 
 			k += 1
 
@@ -443,22 +418,22 @@ class Live_Games_Tool:
 			df.at[game, 'Margin Last N'] = home_margin
 
 			if not df.empty:
-				self.gui.q.put(item=df)
+				# do something here
+
+				print(df)
+				pass
 
 			if self.version == 'nba':
-				if self.gui.players_on[game_id]:
+				if self.players_on[game_id]:
 					player_df = gc.current_lineups(driver)
 
 					player_df['Team'].iloc[0:5] = away
 					player_df['Team'].iloc[5:10] = home
 
-					if not player_df.empty and not player_df.equals(last_player_df):
-						last_player_df = player_df.copy()
-						self.gui.player_queue_dict[game_id].put(player_df)
 
-			if self.gui.score_by_quarter_on[game_id]:
+			if self.score_by_quarter_on[game_id]:
 				score_by_q = self.score_by_quarter(pbp_df, away, home)
-				self.gui.fill_score_by_quarter(score_by_q, self.gui.score_by_quarter_dict[game_id])
+				# pass to website here
 			initial = False
 			time.sleep(2)
 
@@ -466,7 +441,7 @@ class Live_Games_Tool:
 
 def launch_threads(lg, id_list, max=None):
 	ids = lg.get_game_urls()
-
+	print(ids)
 	for id in ids[:max]:
 		if id not in id_list:
 			id_list.append(id)
@@ -478,63 +453,33 @@ def launch_threads(lg, id_list, max=None):
 				lg.web_driver_dict[id].quit()
 				thread.join()
 
-		if not lg.gui.is_alive():
-			break
 
 
 
-
-class Sport_Option:
-	def __init__(self):
-		self.version = None
-		self.root = None
-
-	def return_version(self, string):
-		self.root.destroy()
-		self.version = string
-
-	def option(self):
-		self.root = tk.Tk()
-		self.root.withdraw()
-
-		window = tk.Toplevel(self.root, width=350, height=200)
-		label = tk.Label(window, text="Option", font=("Arial", 15), justify='center')
-		label.grid(row=0, columnspan=3)
-
-		button1 = tk.Button(window, text='College', command= lambda: self.return_version('cbb'), height=8, width=20)
-		button1.grid(row=1, column=0)
-		button2 = tk.Button(window, text='NBA', command= lambda: self.return_version('nba'), height=8, width=20)
-		button2.grid(row=1, column=1)
-		self.root.mainloop()
-		return self.version
 
 def driver():
-	so = Sport_Option()
-	v = so.option()
-	lg = Live_Games_Tool(version=v)
 
-	lg.gui.create_box()
+	lg = MGA_Version(version='cbb')
 
 	launch_threads(lg, lg.id_list, lg.max)
-	t2 = threading.Thread(target=lg.gui.process_incoming)
-	t2.start()
 
 	if lg.use_live_total or lg.use_live_spread:
 		lg.update_odds()
 
 	start = time.time()
-	while True:
+	try:
+		while True:
 
-		if time.time() - start > 180:
-			start = time.time()
-			launch_threads(lg, lg.id_list, lg.max)
-			if lg.id_list and (lg.use_live_total or lg.use_live_spread):
-				lg.update_odds()
+			if time.time() - start > 180:
+				start = time.time()
+				launch_threads(lg, lg.id_list, lg.max)
+				if lg.id_list and (lg.use_live_total or lg.use_live_spread):
+					lg.update_odds()
 
-		if not lg.gui.is_alive():
-			break
+	except KeyboardInterrupt:
+		pass
 
-	t2.join()
+
 	for id in lg.id_list:
 		try:
 			lg.web_driver_dict[id].quit()
@@ -545,3 +490,4 @@ def driver():
 if __name__ == '__main__':
 	driver()
 
+# return the game state without all the gui stuff
