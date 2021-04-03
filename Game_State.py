@@ -421,6 +421,7 @@ class MGA_Version:
 				# do something here
 
 				print(df)
+				quit()
 				pass
 
 			if self.version == 'nba':

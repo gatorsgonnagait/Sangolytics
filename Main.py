@@ -13,13 +13,7 @@ import queue
 import re
 import tkinter as tk
 import Tools as tools
-# import matplotlib
-# matplotlib.use('tkagg')
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-from matplotlib import style
-from multiprocessing import Process
-from matplotlib.ticker import MaxNLocator
+
 
 
 class Live_Games_Tool:
@@ -43,7 +37,7 @@ class Live_Games_Tool:
 		if self.version == 'cbb':
 			self.max = 1
 		else:
-			self.max = 1
+			self.max = 4
 
 		if self.version == 'nba':
 			self.odds_version = 'basketball_nba'
@@ -149,6 +143,14 @@ class Live_Games_Tool:
 				past_road_score = past_score.split()[0]
 				past_home_score = past_score.split()[2]
 				time_index = ' '.join([str(period), time_txt, past_road_score, past_home_score])
+
+				#finish this
+				timeout_df = pbp_df[pbp_df['time_index'] == time_index]
+				if timeout_df.empty:
+					same_time_count = 1
+				else:
+					same_time_count = timeout_df['same_time_count'].max() + 1
+
 				pbp_df.at[time_index, 'time'] = past_time
 				pbp_df.at[time_index, 'period'] = period
 
@@ -175,37 +177,66 @@ class Live_Games_Tool:
 		return pbp_df
 
 	def score_by_quarter(self, df, away, home):
+		df.to_csv('score_by_q.csv')
 		for i in range(len(df) - 1):
 			m = ''
 			if 'makes' in df['play'].iloc[i]:
 				m = 'makes'
 			elif 'made' in df['play'].iloc[i]:
 				m = 'made'
-			if m:
-				player = df['play'].iloc[i].split(m)[0].strip()
-				df['player'].iloc[i] = player
-				# look back at last 5 and find least difference to account for bad sorted scores
-				last_highest_score_away = df['away'].iloc[i+1:i+15].astype(int).max()
-				last_highest_score_home = df['home'].iloc[i+1:i+15].astype(int).max()
-				away_diff = int(df['away'].iloc[i]) - last_highest_score_away
-				home_diff = int(df['home'].iloc[i]) - last_highest_score_home
-				points = max(away_diff, home_diff)
-				# accounts for mistake if player gets 0 points in the play
-				if points == 0:
-					last_highest_score_away = df['away'].iloc[i-15:i-1].astype(int).min()
-					last_highest_score_home = df['home'].iloc[i-5:i-1].astype(int).min()
-					away_diff = last_highest_score_away - int(df['away'].iloc[i])
-					home_diff = last_highest_score_home - int(df['home'].iloc[i])
-					points = min(away_diff, home_diff)
+			elif 'misses' in df['play'].iloc[i]:
+				m = 'misses'
+			if not m: continue
 
-				if away_diff > 0:
-					df['team'].iloc[i] = away
-				else:
-					df['team'].iloc[i] = home
-
+			player = df['play'].iloc[i].split(m)[0].strip()
+			df['player'].iloc[i] = player
+			if m == 'makes' or m == 'made':
 				if 'free' in df['play'].iloc[i]:
 					points = 1
+					df['ft_makes'].iloc[i] = 1
+				else:
+					# look back at last 5 and find least difference to account for bad sorted scores
+					last_highest_score_away = df['away'].iloc[i+1:i+15].astype(int).max()
+					last_highest_score_home = df['home'].iloc[i+1:i+15].astype(int).max()
+					away_diff = int(df['away'].iloc[i]) - last_highest_score_away
+					home_diff = int(df['home'].iloc[i]) - last_highest_score_home
+					points = max(away_diff, home_diff)
+
+					# accounts for mistake if player gets 0 points in the play
+					if points == 0:
+						last_highest_score_away = df['away'].iloc[i-15:i-1].astype(int).min()
+						last_highest_score_home = df['home'].iloc[i-5:i-1].astype(int).min()
+						away_diff = last_highest_score_away - int(df['away'].iloc[i])
+						home_diff = last_highest_score_home - int(df['home'].iloc[i])
+						points = min(away_diff, home_diff)
+					elif points == 2:
+						df['fg_makes'].iloc[i] = 1
+					elif points == 3:
+						df['3_makes'].iloc[i] = 1
+
+					if away_diff > 0:
+						df['team'].iloc[i] = away
+					else:
+						df['team'].iloc[i] = home
+
 				df['points'].iloc[i] = points
+
+			elif m == 'misses':
+				if 'free' in df['play'].iloc[i]:
+					df['ft_misses'].iloc[i] = 1
+				elif 'two' in df['play'].iloc[i]:
+					df['fg_misses'].iloc[i] = 1
+				elif 'three' in df['play'].iloc[i]:
+					df['3_misses'].iloc[i] = 1
+				else:
+					for word in df['play'].iloc[i].split():
+						if word.endswith('-foot'):
+							shot_distance = int(word.split('-')[0])
+							if shot_distance > 22:
+								df['3_misses'].iloc[i] = 1
+							else:
+								df['fg_misses'].iloc[i] = 1
+							break
 
 		score_by_q = df[df['player'].notnull()]
 		current_period = df['period'].iloc[0]
@@ -216,10 +247,14 @@ class Live_Games_Tool:
 			if current_period < 2:
 				current_period = 2
 
+		# fills with one or zeros
 		one_hot = pd.get_dummies(score_by_q['period'])
 		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
+		# points * 1 = amount of points the player has in the quarter
 		one_hot = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['points'], axis='index')
 		one_hot = one_hot.rename(index=str, columns=c.period_dict)
+
+		print(score_by_q)
 		score_by_q = score_by_q[['player', 'points', 'team']]
 		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
 		#print(score_by_q[score_by_q['player'] == 'LeBron James'])
@@ -238,11 +273,11 @@ class Live_Games_Tool:
 
 
 	def play_by_play(self, game_id):
-		limit = 600
-		plt.ion()
-		xar = []
-		yar = []
-		k = 0
+		# limit = 600
+		# plt.ion()
+		# xar = []
+		# yar = []
+		# k = 0
 
 
 		driver = self.open_web_driver(game_id=game_id)
@@ -384,34 +419,33 @@ class Live_Games_Tool:
 
 			pbp_df['adj_time'] = pd.to_timedelta(pbp_df['adj_time'])
 
-			yar = (pbp_df['home'] -  pbp_df['away']).tolist()
-			xar = pbp_df['adj_time'].dt.total_seconds().tolist()
-			#pbp_df.to_csv('time_test.csv')
+			# yar = (pbp_df['home'] -  pbp_df['away']).tolist()
+			# xar = pbp_df['adj_time'].dt.total_seconds().tolist()
 
-			x = int(current_time.seconds)
-			print(x, home_margin)
-			xar.append(x)
-			yar.append(home_margin)
-
-			if initial:
-
-				figure, ax = plt.subplots(figsize=(8, 6))
-				line1, = ax.plot(xar, yar)
-				ax.yaxis.set_major_locator(MaxNLocator(integer=True))
-				last_min = min(yar) - 4
-				last_max = max(yar) + 4
-				plt.axis([xar[0], xar[-1] + limit, last_min, last_max])
-
-
-			line1.set_xdata(xar)
-			line1.set_ydata(yar)
-
-			figure.canvas.draw()
-			figure.canvas.flush_events()
-			time.sleep(1)
-			ax.clear()
-			ax.xaxis.set_major_locator(MaxNLocator(integer=True))
-			ax.plot(xar, yar)
+			# x = int(current_time.seconds)
+			# print(x, home_margin)
+			# xar.append(x)
+			# yar.append(home_margin)
+			#
+			# if initial:
+			#
+			# 	figure, ax = plt.subplots(figsize=(8, 6))
+			# 	line1, = ax.plot(xar, yar)
+			# 	ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+			# 	last_min = min(yar) - 4
+			# 	last_max = max(yar) + 4
+			# 	plt.axis([xar[0], xar[-1] + limit, last_min, last_max])
+			#
+			#
+			# line1.set_xdata(xar)
+			# line1.set_ydata(yar)
+			#
+			# figure.canvas.draw()
+			# figure.canvas.flush_events()
+			# time.sleep(1)
+			# ax.clear()
+			# ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+			# ax.plot(xar, yar)
 
 			# if k > limit:
 			# 	temp_line = yar[:-limit]
@@ -419,7 +453,7 @@ class Live_Games_Tool:
 			# 	last_max = max(temp_line) + 4
 			# 	plt.axis([1000 + k - 5, 1010 + k - 5, last_min, last_max])
 
-			k += 1
+			# k += 1
 
 			try:
 				ppm_n = round((total_points - past_total) / (time_diff.seconds / 60), 2)

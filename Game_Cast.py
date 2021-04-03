@@ -55,7 +55,4 @@ def current_lineups(driver):
     away_players = away.find_all('tr')[2:]
     home_players = home.find_all('tr')[2:]
     away_df = player_stats(players=away_players)
-    home_df = player_stats(players=home_players)
-    driver.switch_to.window(driver.window_handles[0])
-    df = away_df.append(home_df)
-    return df
+
