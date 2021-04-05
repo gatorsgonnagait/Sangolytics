@@ -144,20 +144,24 @@ class Live_Games_Tool:
 				past_home_score = past_score.split()[2]
 				time_index = ' '.join([str(period), time_txt, past_road_score, past_home_score])
 
-				#finish this
+				#if theres a missed free throw, the score doesnt change, and the time stays the same, this accounts for that scenario
 				timeout_df = pbp_df[pbp_df['time_index'] == time_index]
 				if timeout_df.empty:
 					same_time_count = 1
 				else:
 					same_time_count = timeout_df['same_time_count'].max() + 1
 
-				pbp_df.at[time_index, 'time'] = past_time
-				pbp_df.at[time_index, 'period'] = period
+				index =  ' '.join([time_index, same_time_count])
+				pbp_df.at[index, 'time_index'] = time_index
+				pbp_df.at[index, 'same_time_count'] = same_time_count
 
-				pbp_df.at[time_index, 'adj_time'] = past_time
-				pbp_df.at[time_index, 'away'] = int(past_road_score)
-				pbp_df.at[time_index, 'home'] = int(past_home_score)
-				pbp_df.at[time_index, 'play'] = line.find('td', {'class': 'game-details'}).text
+				pbp_df.at[index, 'time'] = past_time
+				pbp_df.at[index, 'period'] = period
+
+				pbp_df.at[index, 'adj_time'] = past_time
+				pbp_df.at[index, 'away'] = int(past_road_score)
+				pbp_df.at[index, 'home'] = int(past_home_score)
+				pbp_df.at[index, 'play'] = line.find('td', {'class': 'game-details'}).text
 				ct += 1
 				if not initial and ct >= limit: break
 
