@@ -222,6 +222,7 @@ class MGA_Version:
 		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
 		one_hot = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['points'], axis='index')
 		one_hot = one_hot.rename(index=str, columns=c.period_dict)
+
 		score_by_q = score_by_q[['player', 'points', 'team']]
 		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
 		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()

@@ -151,7 +151,7 @@ class Live_Games_Tool:
 				else:
 					same_time_count = timeout_df['same_time_count'].max() + 1
 
-				index =  ' '.join([time_index, same_time_count])
+				index =  ' '.join([time_index, str(same_time_count)])
 				pbp_df.at[index, 'time_index'] = time_index
 				pbp_df.at[index, 'same_time_count'] = same_time_count
 
@@ -181,7 +181,7 @@ class Live_Games_Tool:
 		return pbp_df
 
 	def score_by_quarter(self, df, away, home):
-		df.to_csv('score_by_q.csv')
+
 		for i in range(len(df) - 1):
 			m = ''
 			if 'makes' in df['play'].iloc[i]:
@@ -190,9 +190,15 @@ class Live_Games_Tool:
 				m = 'made'
 			elif 'misses' in df['play'].iloc[i]:
 				m = 'misses'
+			elif 'blocks' in df['play'].iloc[i]:
+				m = 'blocks'
 			if not m: continue
 
-			player = df['play'].iloc[i].split(m)[0].strip()
+			if m == 'blocks':
+				player = df['play'].iloc[i].split(m)[1].split("'")[0].strip()
+			else:
+				player = df['play'].iloc[i].split(m)[0].strip()
+
 			df['player'].iloc[i] = player
 			if m == 'makes' or m == 'made':
 				if 'free' in df['play'].iloc[i]:
@@ -225,10 +231,10 @@ class Live_Games_Tool:
 
 				df['points'].iloc[i] = points
 
-			elif m == 'misses':
+			elif m == 'misses' or m == 'blocks':
 				if 'free' in df['play'].iloc[i]:
 					df['ft_misses'].iloc[i] = 1
-				elif 'two' in df['play'].iloc[i]:
+				elif 'two' in df['play'].iloc[i] or 'layup' in df['play'].iloc[i]:
 					df['fg_misses'].iloc[i] = 1
 				elif 'three' in df['play'].iloc[i]:
 					df['3_misses'].iloc[i] = 1
@@ -242,6 +248,7 @@ class Live_Games_Tool:
 								df['fg_misses'].iloc[i] = 1
 							break
 
+		df.to_csv('score_by_q_' + away + '_' + home + '.csv')
 		score_by_q = df[df['player'].notnull()]
 		current_period = df['period'].iloc[0]
 		if self.version == 'nba':
@@ -256,7 +263,7 @@ class Live_Games_Tool:
 		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
 		# points * 1 = amount of points the player has in the quarter
 		one_hot = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['points'], axis='index')
-		one_hot = one_hot.rename(index=str, columns=c.period_dict)
+		one_hot = one_hot.rename(index=str, columns=c.period_points)
 
 		print(score_by_q)
 		score_by_q = score_by_q[['player', 'points', 'team']]
