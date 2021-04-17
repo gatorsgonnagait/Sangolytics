@@ -105,7 +105,7 @@ class GUI(threading.Thread):
 
 
     def open_score_by_quarter(self,id):
-        player_box = self.create_score_by_quarter_box(columns=list(map(str.capitalize, c.score_by_quarter)), id=id)
+        player_box = self.create_score_by_quarter_box(columns=c.score_by_quarter, id=id)
         self.score_by_quarter_dict[id] = player_box
         self.score_by_quarter_on[id] = True
         self.force_continue[id] = True
@@ -265,7 +265,7 @@ class GUI(threading.Thread):
         cols = ['points', '1st', '2nd', '3rd', '4th']
 
         for i in range(len(df)):
-            player = df['player'].iloc[i]
+            player = df['Player'].iloc[i]
             if box.exists(player):
                 for j, col in enumerate(cols, start=2):
                     try:

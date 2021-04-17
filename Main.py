@@ -180,6 +180,72 @@ class Live_Games_Tool:
 
 		return pbp_df
 
+
+	def  field_goals_by_quarter(self, df, away, home):
+
+		current_period = 4
+		score_by_q = df[df['player'].notna()]#.reset_index(drop=True)
+		score_by_q = score_by_q.rename(index=str, columns={"player": "Player", "team": "Team", "points": "Points"})
+		score_by_q.drop(['time', 'adj_time'], axis=1, inplace=True)
+		#score_by_q.to_csv('score_by_q_' + away + '_' + home + '.csv')
+		# get a list of the players on each team
+		for player in pd.unique(score_by_q['Player'].dropna()).tolist():
+			try:
+				team = pd.unique(score_by_q[score_by_q['Player'] == player]['Team'].dropna())[0]
+			except IndexError:
+				team = ''
+			score_by_q.loc[(score_by_q['Player'] == player) & (score_by_q['Team'].isna()), 'Team'] = team
+
+		score_by_q.fillna(0, inplace=True)
+		# fills with one or zeros
+		one_hot = pd.get_dummies(score_by_q['period'])
+		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
+
+		# points * 1 = amount of points the player has in the quarter
+		one_hot_points = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['Points'], axis='index')
+		one_hot_points = one_hot_points.rename(index=str, columns=c.period_points).reset_index(drop=True)
+
+		one_hot_fg_makes = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['fg_makes'], axis='index')
+		one_hot_fg_makes = one_hot_fg_makes.rename(index=str, columns=c.period_fg_makes).reset_index(drop=True)
+		one_hot_fg_misses = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['fg_misses'], axis='index')
+		one_hot_fg_misses = one_hot_fg_misses.rename(index=str, columns=c.period_fg_misses).reset_index(drop=True)
+
+		one_hot_ft_makes = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['ft_makes'], axis='index')
+		one_hot_ft_makes = one_hot_ft_makes.rename(index=str, columns=c.period_ft_makes).reset_index(drop=True)
+		one_hot_ft_misses = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['ft_misses'], axis='index')
+		one_hot_ft_misses = one_hot_ft_misses.rename(index=str, columns=c.period_ft_misses).reset_index(drop=True)
+
+		one_hot_3_makes = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['3_makes'], axis='index')
+		one_hot_3_makes = one_hot_3_makes.rename(index=str, columns=c.period_3_makes).reset_index(drop=True)
+		one_hot_3_misses = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['3_misses'], axis='index')
+		one_hot_3_misses = one_hot_3_misses.rename(index=str, columns=c.period_3_misses).reset_index(drop=True)
+
+		score_by_q_s = score_by_q[['Player', 'Team', 'Points']]
+		new = pd.concat([score_by_q_s, one_hot_points, one_hot_fg_makes, one_hot_fg_misses, one_hot_3_makes, one_hot_3_misses,one_hot_ft_makes, one_hot_ft_misses], axis=1, ignore_index=False)
+		# print(score_by_q[score_by_q['player'] == 'LeBron James'])
+		grouped_score = new.groupby(['Player', 'Team'], as_index=False).sum()
+
+		fg_df = pd.DataFrame(columns=c.fg_cols)
+
+		for i in range(1, current_period + 1):
+			fg_attempts = grouped_score[str(i) + 'Q FG'].astype(int) + grouped_score[str(i) + 'Q FGM'].astype(int)
+			fg_df[str(i) + 'Q FG-FGA'] = grouped_score[str(i) + 'Q FG'].astype(int).astype(str).str.cat(fg_attempts.astype(str), sep="-")
+
+			ft_attempts = grouped_score[str(i) + 'Q FT'].astype(int) + grouped_score[str(i) + 'Q FTM'].astype(int)
+			fg_df[str(i) + 'Q FT-FTA'] = grouped_score[str(i) + 'Q FT'].astype(int).astype(str).str.cat(ft_attempts.astype(str), sep="-")
+
+			three_attempts = grouped_score[str(i) + 'Q 3P'].astype(int) + grouped_score[str(i) + 'Q 3PM'].astype(int)
+			fg_df[str(i) + 'Q 3P-3PA'] = grouped_score[str(i) + 'Q 3P'].astype(int).astype(str).str.cat(three_attempts.astype(str), sep="-")
+
+		final = pd.concat([grouped_score[['Player', 'Team', 'Points']], fg_df], axis=1, ignore_index=False)
+		order = pd.CategoricalDtype([away, home], ordered=True)
+		final['Team'] = final['Team'].astype(order)
+		final.sort_values('Team', inplace=True)
+		final['site'] = final['Team'].apply(lambda x: 1 if x == home else (0 if x == away else x))
+		return final
+
+
+
 	def score_by_quarter(self, df, away, home):
 
 		for i in range(len(df) - 1):
@@ -247,40 +313,8 @@ class Live_Games_Tool:
 							else:
 								df['fg_misses'].iloc[i] = 1
 							break
-
-		df.to_csv('score_by_q_' + away + '_' + home + '.csv')
-		score_by_q = df[df['player'].notnull()]
-		current_period = df['period'].iloc[0]
-		if self.version == 'nba':
-			if current_period < 4:
-				current_period = 4
-		else:
-			if current_period < 2:
-				current_period = 2
-
-		# fills with one or zeros
-		one_hot = pd.get_dummies(score_by_q['period'])
-		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
-		# points * 1 = amount of points the player has in the quarter
-		one_hot = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['points'], axis='index')
-		one_hot = one_hot.rename(index=str, columns=c.period_points)
-
-		print(score_by_q)
-		score_by_q = score_by_q[['player', 'points', 'team']]
-		score_by_q = pd.concat([score_by_q, one_hot], axis=1)
-		#print(score_by_q[score_by_q['player'] == 'LeBron James'])
-		grouped_score = score_by_q.groupby(['player', 'team'], as_index=False).sum()
-
-		order = pd.CategoricalDtype([away, home], ordered=True)
-		grouped_score['team'] = grouped_score['team'].astype(order)
-		grouped_score.sort_values('team', inplace=True)
-		grouped_score['site'] = grouped_score['team'].apply(lambda x: 1 if x == home else (0 if x == away else x))
-		grouped_score.reset_index(inplace=True)
-
-		grouped_score.drop(grouped_score.columns[0], axis=1, inplace=True)
-		grouped_score = grouped_score.astype({'points': 'int', '1st': 'int', '2nd': 'int', '3rd': 'int', '4th': 'int'})
-		return grouped_score
-
+		return df
+		#df.to_csv('score_by_q_' + away + '_' + home + '.csv')
 
 
 	def play_by_play(self, game_id):
@@ -503,6 +537,7 @@ class Live_Games_Tool:
 
 			if self.gui.score_by_quarter_on[game_id]:
 				score_by_q = self.score_by_quarter(pbp_df, away, home)
+				score_by_q = self.field_goals_by_quarter(score_by_q, away, home)
 				self.gui.fill_score_by_quarter(score_by_q, self.gui.score_by_quarter_dict[game_id])
 			initial = False
 			time.sleep(2)
