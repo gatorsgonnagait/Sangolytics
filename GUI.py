@@ -185,7 +185,7 @@ class GUI(threading.Thread):
         self.combo_box.set('Select game')
         tk.Button(self.window, text='Score by Q', command=self.open_score_by_quarter_box).grid(row=4, column=6)
         if self.version == 'nba':
-            tk.Button(self.window, text='Open Players', command=self.open_player_box).grid(row=4, column=5)
+            tk.Button(self.window, text='Open players', command=self.open_player_box).grid(row=4, column=5)
 
         self.window.protocol("WM_DELETE_WINDOW", self.root.quit)
         self.game_box = game_box
@@ -198,9 +198,9 @@ class GUI(threading.Thread):
         listBox = ttk.Treeview(window, columns=columns, show='headings')
         for col in columns:
             listBox.heading(col, text=col)
-            if col == 'Player':
+            if col == 'player':
                 listBox.column(col, minwidth=100, width=100, stretch=True)
-            elif col == 'Team':
+            elif col == 'team':
                 listBox.column(col, minwidth=150, width=150, stretch=True)
             else:
                 listBox.column(col, minwidth=100, width=100, stretch=True,anchor=tk.CENTER)
@@ -217,9 +217,9 @@ class GUI(threading.Thread):
         listBox.grid(row=1, column=0, columnspan=10)
         for col in columns:
             listBox.heading(col, text=col)
-            if col == 'Player':
+            if col == 'player':
                 listBox.column(col, minwidth=170, width=170, stretch=True)
-            elif col == 'Team':
+            elif col == 'team':
                 listBox.column(col, minwidth=170, width=170, stretch=True)
             else:
                 listBox.column(col, minwidth=100, width=100, stretch=True,anchor=tk.CENTER)
@@ -262,18 +262,14 @@ class GUI(threading.Thread):
 
 
     def fill_score_by_quarter(self, df, box):
-        cols = ['points', '1st', '2nd', '3rd', '4th']
-
         for i in range(len(df)):
-            player = df['Player'].iloc[i]
+            player = df['player'].iloc[i]
             if box.exists(player):
-                for j, col in enumerate(cols, start=2):
+                for j, col in enumerate(c.score_by_quarter):
                     try:
-                        q_points = df[col].iloc[i]
-                        box.set(player, column=j, value=q_points)
-                    except KeyError:
-                        pass
-
+                        box.set(player, column=j, value=df[col].iloc[i])
+                    except:
+                        print(j, col, i)
             else:
                 if df['site'].iloc[i] == 1:
                     position = 'end'

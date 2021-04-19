@@ -26,7 +26,7 @@ def open_web_driver(game_id):
 
 def player_stats(players):
     otf = pd.DataFrame(columns=c.player_columns)
-    otf.index.name = 'Player'
+    otf.index.name = 'player'
     for player in players:
         p_stats = [p.text.strip() for p in player.find_all('td')]
         p_stats = [re.sub(r"[\n\t]", " ", p) for p in p_stats]
@@ -34,7 +34,7 @@ def player_stats(players):
         pos = line[-1]
         name = ' '.join(line[:-1])
         fg, tri, reb, ast, pf, pts = p_stats[1],p_stats[2],p_stats[3],p_stats[4],p_stats[5],p_stats[6]
-        otf.at[name, 'Player'] = name
+        otf.at[name, 'player'] = name
         otf.at[name, 'Pos'] = pos
         otf.at[name, 'FG'] = fg
         otf.at[name, '3PT'] = tri
@@ -55,4 +55,5 @@ def current_lineups(driver):
     away_players = away.find_all('tr')[2:]
     home_players = home.find_all('tr')[2:]
     away_df = player_stats(players=away_players)
-
+    home_df = player_stats(players=home_players)
+    return away_df.append(home_df)

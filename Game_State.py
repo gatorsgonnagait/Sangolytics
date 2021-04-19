@@ -429,8 +429,8 @@ class MGA_Version:
 				if self.players_on[game_id]:
 					player_df = gc.current_lineups(driver)
 
-					player_df['Team'].iloc[0:5] = away
-					player_df['Team'].iloc[5:10] = home
+					player_df['team'].iloc[0:5] = away
+					player_df['team'].iloc[5:10] = home
 
 
 			if self.score_by_quarter_on[game_id]:

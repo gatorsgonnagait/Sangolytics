@@ -44,6 +44,7 @@ class Live_Games_Tool:
 			self.period_minutes = timedelta(minutes=12)
 			self.regulation = timedelta(minutes=48)
 			self.num_periods = 4
+			self.players_on_floor = []
 		elif self.version == 'cbb':
 			self.odds_version = 'basketball_ncaab'
 			self.period_minutes = timedelta(minutes=20)
@@ -181,20 +182,21 @@ class Live_Games_Tool:
 		return pbp_df
 
 
-	def  field_goals_by_quarter(self, df, away, home):
+	def field_goals_by_quarter(self, df, away, home):
 
+		#print('update', away, home)
 		current_period = 4
 		score_by_q = df[df['player'].notna()]#.reset_index(drop=True)
-		score_by_q = score_by_q.rename(index=str, columns={"player": "Player", "team": "Team", "points": "Points"})
+		#score_by_q = score_by_q.rename(index=str, columns={"player": "player", "team": "team", "points": "points"})
 		score_by_q.drop(['time', 'adj_time'], axis=1, inplace=True)
-		#score_by_q.to_csv('score_by_q_' + away + '_' + home + '.csv')
+		score_by_q.to_csv('score_by_q_' + away + '_' + home + '.csv')
 		# get a list of the players on each team
-		for player in pd.unique(score_by_q['Player'].dropna()).tolist():
+		for player in pd.unique(score_by_q['player'].dropna()).tolist():
 			try:
-				team = pd.unique(score_by_q[score_by_q['Player'] == player]['Team'].dropna())[0]
+				team = pd.unique(score_by_q[score_by_q['player'] == player]['team'].dropna())[0]
 			except IndexError:
 				team = ''
-			score_by_q.loc[(score_by_q['Player'] == player) & (score_by_q['Team'].isna()), 'Team'] = team
+			score_by_q.loc[(score_by_q['player'] == player) & (score_by_q['team'].isna()), 'team'] = team
 
 		score_by_q.fillna(0, inplace=True)
 		# fills with one or zeros
@@ -202,7 +204,7 @@ class Live_Games_Tool:
 		one_hot = one_hot.T.reindex(list(range(1, current_period + 1))).T.fillna(0)
 
 		# points * 1 = amount of points the player has in the quarter
-		one_hot_points = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['Points'], axis='index')
+		one_hot_points = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['points'], axis='index')
 		one_hot_points = one_hot_points.rename(index=str, columns=c.period_points).reset_index(drop=True)
 
 		one_hot_fg_makes = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['fg_makes'], axis='index')
@@ -220,15 +222,20 @@ class Live_Games_Tool:
 		one_hot_3_misses = one_hot[list(range(1, current_period + 1))].multiply(score_by_q['3_misses'], axis='index')
 		one_hot_3_misses = one_hot_3_misses.rename(index=str, columns=c.period_3_misses).reset_index(drop=True)
 
-		score_by_q_s = score_by_q[['Player', 'Team', 'Points']]
+		score_by_q_s = score_by_q[['player', 'team', 'points']].reset_index(drop=True)
 		new = pd.concat([score_by_q_s, one_hot_points, one_hot_fg_makes, one_hot_fg_misses, one_hot_3_makes, one_hot_3_misses,one_hot_ft_makes, one_hot_ft_misses], axis=1, ignore_index=False)
 		# print(score_by_q[score_by_q['player'] == 'LeBron James'])
-		grouped_score = new.groupby(['Player', 'Team'], as_index=False).sum()
+		#new.drop(['time', 'adj_time'], axis=1, inplace=True)
+
+		grouped_score = new.groupby(['player', 'team'], as_index=False).sum()
+		#print(grouped_score['1Q FG'])
+
 
 		fg_df = pd.DataFrame(columns=c.fg_cols)
 
 		for i in range(1, current_period + 1):
 			fg_attempts = grouped_score[str(i) + 'Q FG'].astype(int) + grouped_score[str(i) + 'Q FGM'].astype(int)
+			#print(fg_attempts)
 			fg_df[str(i) + 'Q FG-FGA'] = grouped_score[str(i) + 'Q FG'].astype(int).astype(str).str.cat(fg_attempts.astype(str), sep="-")
 
 			ft_attempts = grouped_score[str(i) + 'Q FT'].astype(int) + grouped_score[str(i) + 'Q FTM'].astype(int)
@@ -237,11 +244,11 @@ class Live_Games_Tool:
 			three_attempts = grouped_score[str(i) + 'Q 3P'].astype(int) + grouped_score[str(i) + 'Q 3PM'].astype(int)
 			fg_df[str(i) + 'Q 3P-3PA'] = grouped_score[str(i) + 'Q 3P'].astype(int).astype(str).str.cat(three_attempts.astype(str), sep="-")
 
-		final = pd.concat([grouped_score[['Player', 'Team', 'Points']], fg_df], axis=1, ignore_index=False)
+		final = pd.concat([grouped_score[['player', 'team', 'points']], fg_df], axis=1, ignore_index=False)
 		order = pd.CategoricalDtype([away, home], ordered=True)
-		final['Team'] = final['Team'].astype(order)
-		final.sort_values('Team', inplace=True)
-		final['site'] = final['Team'].apply(lambda x: 1 if x == home else (0 if x == away else x))
+		final['team'] = final['team'].astype(order)
+		final.sort_values('team', inplace=True)
+		final['site'] = final['team'].apply(lambda x: 1 if x == home else (0 if x == away else x))
 		return final
 
 
@@ -527,13 +534,19 @@ class Live_Games_Tool:
 			if self.version == 'nba':
 				if self.gui.players_on[game_id]:
 					player_df = gc.current_lineups(driver)
+					self.players_on_floor = player_df['player'].tolist()
 
-					player_df['Team'].iloc[0:5] = away
-					player_df['Team'].iloc[5:10] = home
+					print(self.players_on_floor)
 
-					if not player_df.empty and not player_df.equals(last_player_df):
-						last_player_df = player_df.copy()
-						self.gui.player_queue_dict[game_id].put(player_df)
+					try:
+						player_df['team'].iloc[0:5] = away
+						player_df['team'].iloc[5:10] = home
+						if not player_df.empty and not player_df.equals(last_player_df):
+							last_player_df = player_df.copy()
+							self.gui.player_queue_dict[game_id].put(player_df)
+					except TypeError:
+						pass
+
 
 			if self.gui.score_by_quarter_on[game_id]:
 				score_by_q = self.score_by_quarter(pbp_df, away, home)

@@ -12,7 +12,7 @@ nba_version = 'basketball_nba'
 cbb_version = 'basketball_ncaab'
 region = 'us'
 live_columns = ['Game','Period','Away','Home','Current Total','Live Total','PPM Last N','PPM Game','Live Spread','Margin Last N']
-player_columns = ['Player','Team','Pos','FG','3PT','Reb','Ast','PF','Pts']
+player_columns = ['player','team','Pos','FG','3PT','Reb','Ast','PF','Pts']
 play_by_play_columns = ['time_index', 'same_time_count', 'time' ,'period', 'adj_time', 'away', 'home', 'total', 'play', 'player', 'fg_makes', 'fg_misses', '3_makes', '3_misses', 'ft_makes', 'ft_misses', 'points','team']
 
 # score_by_quarter = ['player', 'team', 'points',
@@ -26,7 +26,7 @@ fg_cols = ['1Q FG-FGA','1Q 3P-3PA','1Q FT-FTA',
           '3Q FG-FGA','3Q 3P-3PA','3Q FT-FTA',
           '4Q FG-FGA','4Q 3P-3PA','4Q FT-FTA' ]
 
-score_by_quarter = ['Player', 'Team', 'Points'] + fg_cols
+score_by_quarter = ['player', 'team', 'points'] + fg_cols
 
 
 period_points = {1: '1Q PTS', 2: '2Q PTS', 3:'3Q PTS', 4:'4Q PTS', 5:'OT PTS', 6:'2OT PTS', 7:'3OT', 8:'4OT'}
