@@ -44,7 +44,7 @@ class Live_Games_Tool:
 			self.period_minutes = timedelta(minutes=12)
 			self.regulation = timedelta(minutes=48)
 			self.num_periods = 4
-			self.players_on_floor = []
+			self.players_on_floor_dict = {}
 		elif self.version == 'cbb':
 			self.odds_version = 'basketball_ncaab'
 			self.period_minutes = timedelta(minutes=20)
@@ -224,7 +224,8 @@ class Live_Games_Tool:
 
 		score_by_q_s = score_by_q[['player', 'team', 'points']].reset_index(drop=True)
 		new = pd.concat([score_by_q_s, one_hot_points, one_hot_fg_makes, one_hot_fg_misses, one_hot_3_makes, one_hot_3_misses,one_hot_ft_makes, one_hot_ft_misses], axis=1, ignore_index=False)
-		# print(score_by_q[score_by_q['player'] == 'LeBron James'])
+		# print(score_by_q[score_by_q['player'] == 'LeBron James']
+		# )
 		#new.drop(['time', 'adj_time'], axis=1, inplace=True)
 
 		grouped_score = new.groupby(['player', 'team'], as_index=False).sum()
@@ -320,6 +321,12 @@ class Live_Games_Tool:
 							else:
 								df['fg_misses'].iloc[i] = 1
 							break
+						elif word == 'jumper' or word == 'pullup':
+							df['fg_misses'].iloc[i] = 1
+							break
+					if df['3_misses'].iloc[i] == 0 and df['fg_misses'].iloc[i] == 0:
+						df['fg_misses'].iloc[i] = 1
+
 		return df
 		#df.to_csv('score_by_q_' + away + '_' + home + '.csv')
 
@@ -534,9 +541,7 @@ class Live_Games_Tool:
 			if self.version == 'nba':
 				if self.gui.players_on[game_id]:
 					player_df = gc.current_lineups(driver)
-					self.players_on_floor = player_df['player'].tolist()
-
-					print(self.players_on_floor)
+					self.players_on_floor_dict[game_id] = player_df['player'].tolist()
 
 					try:
 						player_df['team'].iloc[0:5] = away

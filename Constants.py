@@ -15,12 +15,6 @@ live_columns = ['Game','Period','Away','Home','Current Total','Live Total','PPM 
 player_columns = ['player','team','Pos','FG','3PT','Reb','Ast','PF','Pts']
 play_by_play_columns = ['time_index', 'same_time_count', 'time' ,'period', 'adj_time', 'away', 'home', 'total', 'play', 'player', 'fg_makes', 'fg_misses', '3_makes', '3_misses', 'ft_makes', 'ft_misses', 'points','team']
 
-# score_by_quarter = ['player', 'team', 'points',
-#                     '1 FG', '1 FGA','1 FG', '1 3PT','1 3PTA', '1 FT','1 FTA',
-#                     '2 FG', '2 FGA','2 FG', '2 3PT','2 3PTA', '2 FT','2 FTA',
-#                     '3 FG', '3 FGA','3 FG', '3 3PT','3 3PTA', '3 FT','3 FTA',
-#                     '4 FG', '4 FGA','4 FG', '4 3PT','4 3PTA', '4 FT','4 FTA',]
-
 fg_cols = ['1Q FG-FGA','1Q 3P-3PA','1Q FT-FTA',
           '2Q FG-FGA','2Q 3P-3PA','2Q FT-FTA',
           '3Q FG-FGA','3Q 3P-3PA','3Q FT-FTA',
@@ -39,4 +33,54 @@ period_ft_misses = {1: '1Q FTM', 2: '2Q FTM', 3:'3Q FTM', 4:'4Q FTM', 5:'OT', 6:
 
 period_3_makes = {1: '1Q 3P', 2: '2Q 3P', 3:'3Q 3P', 4:'4Q 3P', 5:'OT', 6:'2OT', 7:'3OT', 8:'4OT'}
 period_3_misses = {1: '1Q 3PM', 2: '2Q 3PM', 3:'3Q 3PM', 4:'4Q 3PM', 5:'OT', 6:'2OT', 7:'3OT', 8:'4OT'}
+
+
+team_dict = {
+    'Orlando': 'Magic',
+    'Atlanta Hawks':'Hawks',
+    'Boston Celtics':'Celtics',
+    'Brooklyn Nets':'Nets',
+    'New Jersey Nets':'Nets',
+    'Charlotte Hornets':'Hornets',
+    'Charlotte Bobcats':'Hornets',
+    'Chicago Bulls':'Bulls',
+    'Cleveland Cavaliers':'Cavaliers',
+    'Dallas Mavericks':'Mavericks',
+    'Denver Nuggets':'Nuggets',
+    'Detroit Pistons':'Pistons',
+    'Golden State Warriors':'Warriors',
+    'Houston Rockets':'Rockets',
+    'Indiana Pacers':'Pacers',
+    'Los Angeles Clippers':'Clippers',
+    'Los Angeles Lakers':'Lakers',
+    'Memphis Grizzlies':'Grizzlies',
+    'Vancouver Grizzlies':'Grizzlies',
+    'Miami Heat':'Heat',
+    'Milwaukee Bucks':'Bucks',
+    'Minnesota Timberwolves':'Timberwolves',
+    'New Orleans Pelicans':'Pelicans',
+    'New Orleans Hornets':'Pelicans',
+    'New York Knicks':'Knicks',
+    'Oklahoma City Thunder':'Thunder',
+    'Seattle Supersonics':'Thunder',
+    'Orlando Magic':'Magic',
+    'Philadelphia 76ers':'76ers',
+    'Philadelphia 76Ers':'76ers',
+    'Phoenix Suns':'Suns',
+    'Portland Trail Blazers':'Blazers',
+    'Sacramento Kings':'Kings',
+    'San Antonio Spurs':'Spurs',
+    'Toronto Raptors':'Raptors',
+    'Utah Jazz':'Jazz',
+    'Washington Wizards':'Wizards'
+}
+
+
+def format_team_names(team_name):
+	formatted_team = team_dict.get(team_name)
+	if formatted_team:
+		return formatted_team
+	else:
+		return team_name
+
 
